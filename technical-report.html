@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical Report â€” Modular Hybrid Gripper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-badge">ENG-203</span>
+      Modular Hybrid Gripper
+    </a>
+    <button class="nav-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="development.html">Development</a></li>
+      <li><a href="data-sources.html">Data Sources</a></li>
+      <li><a href="technical-report.html">Technical Report</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero hero-report">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-reveal>
+      <div class="hero-label">Documentation</div>
+      <h1>Technical Report</h1>
+      <p class="hero-sub">Full engineering documentation â€” design rationale, simulation methodology, test results, and conclusions â€” for the Modular Hybrid Gripper project.</p>
+    </div>
+  </section>
+
+  <!-- 1. Introduction -->
+  <section class="section">
+    <div class="container doc-layout">
+      <aside class="doc-toc" data-reveal>
+        <div class="toc-label">Contents</div>
+        <nav>
+          <a href="#introduction" class="toc-link">1. Introduction</a>
+          <a href="#objectives" class="toc-link">2. Objectives</a>
+          <a href="#design" class="toc-link">3. Design</a>
+          <a href="#materials" class="toc-link">4. Materials</a>
+          <a href="#fea" class="toc-link">5. FEA</a>
+          <a href="#testing" class="toc-link">6. Physical Testing</a>
+          <a href="#results" class="toc-link">7. Results</a>
+          <a href="#conclusion" class="toc-link">8. Conclusion</a>
+        </nav>
+      </aside>
+
+      <div class="doc-body">
+
+        <div id="introduction" class="doc-section" data-reveal>
+          <h2>1. Introduction</h2>
+          <p>Robotic grippers are a critical component in flexible manufacturing systems. The ability to rapidly reconfigure a gripper for different part geometries is central to lean automation, where small batch sizes and high product variety demand frequent changeover. This project develops and evaluates a modular two-finger gripper architecture that decouples the actuator body from the interchangeable finger elements.</p>
+          <p>Three structural materials are compared: Aluminum 6061-T6, Carbon Fibre Reinforced Polymer (CFRP), and Selective Laser Sintered (SLS) PA12 Nylon. The comparison is framed around structural performance under grip load, weight, and total cost of ownership at small production volumes.</p>
+        </div>
+
+        <div id="objectives" class="doc-section" data-reveal>
+          <h2>2. Objectives</h2>
+          <ul class="doc-list">
+            <li>Design a two-finger gripper with a tool-free modular finger interface compatible with UR5-series robots.</li>
+            <li>Evaluate Aluminum 6061-T6, CFRP, and SLS PA12 Nylon under identical static loading conditions using FEA.</li>
+            <li>Validate simulation results for the two prototype-accessible materials (Al 6061 and PA12) through physical load testing.</li>
+            <li>Recommend the optimal material for production use based on structural performance, weight, and cost.</li>
+          </ul>
+        </div>
+
+        <div id="design" class="doc-section" data-reveal>
+          <h2>3. Design</h2>
+          <p>The gripper consists of a fixed actuator body housing a pneumatic cylinder and a tool-free bayonet interface into which standardised finger elements lock. Each finger is a single-part component with a V-groove contact face and a bayonet base that engages with four radial lugs on the actuator.</p>
+          <p>The finger is designed to be manufactured in any of the three candidate materials without changes to the interface geometry. This ensures dimensional interchangeability and allows the FEA comparison to isolate material effects.</p>
+          <div class="doc-fig" style="margin:1.5rem 0;">
+            <div class="placeholder-img" style="height:240px;">
+              <span class="placeholder-label">CAD Assembly â€” Section View</span>
+            </div>
+            <div class="doc-caption">Figure 1: Section view showing bayonet interface and V-groove contact face geometry.</div>
+          </div>
+        </div>
+
+        <div id="materials" class="doc-section" data-reveal>
+          <h2>4. Material Selection</h2>
+          <p>Material properties used in simulation were drawn from certified datasheets (see <a href="data-sources.html">Data Sources</a>). The following table summarises the values assigned in SolidWorks Simulation.</p>
+          <div class="matrix-wrap" style="margin:1.5rem 0;">
+            <table class="matrix">
+              <thead>
+                <tr>
+                  <th>Property</th>
+                  <th>Unit</th>
+                  <th>Al 6061-T6</th>
+                  <th class="col-accent">CFRP</th>
+                  <th>PA12 (SLS)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Density</td><td class="mono">g/cmÂ³</td><td>2.70</td><td class="col-accent">1.55</td><td>1.01</td></tr>
+                <tr><td>Tensile Strength</td><td class="mono">MPa</td><td>310</td><td class="col-accent">600+</td><td>48</td></tr>
+                <tr><td>Young's Modulus</td><td class="mono">GPa</td><td>69</td><td class="col-accent">70â€“105</td><td>1.6</td></tr>
+                <tr><td>Poisson's Ratio</td><td>â€”</td><td>0.33</td><td class="col-accent">0.27</td><td>0.39</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>CFRP is modelled as an isotropic approximation using the 0Â° fibre-direction tensile modulus. This conservative simplification bounds the structural analysis on the high-stiffness side.</p>
+        </div>
+
+        <div id="fea" class="doc-section" data-reveal>
+          <h2>5. Finite Element Analysis</h2>
+          <p>Static structural FEA was conducted in SolidWorks Simulation 2023. Each finger model used a curvature-based solid mesh with a global element size of 2 mm and local refinement to 0.5 mm at stress concentrations (lug roots and groove radius).</p>
+          <h3>5.1 Boundary Conditions</h3>
+          <p>The bayonet base face was fully constrained (fixed support). A 50 N distributed load was applied to the V-groove contact faces representing maximum grip force. A secondary 15 N transverse load was applied at the fingertip to simulate workpiece slip loading.</p>
+          <h3>5.2 Results</h3>
+          <div class="doc-fig" style="margin:1.5rem 0;">
+            <div class="placeholder-img" style="height:200px;">
+              <span class="placeholder-label">FEA Results â€” All Three Materials</span>
+            </div>
+            <div class="doc-caption">Figure 2: Von Mises stress distribution for Al 6061-T6 (left), CFRP (centre), PA12 Nylon (right).</div>
+          </div>
+          <div class="matrix-wrap">
+            <table class="matrix">
+              <thead>
+                <tr>
+                  <th>Material</th>
+                  <th>Max Stress (MPa)</th>
+                  <th>Max Displacement (mm)</th>
+                  <th>Factor of Safety</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Al 6061-T6</td><td>â€”</td><td>â€”</td><td>â€”</td></tr>
+                <tr><td class="col-accent">CFRP</td><td class="col-accent">â€”</td><td class="col-accent">â€”</td><td class="col-accent">â€”</td></tr>
+                <tr><td>PA12 Nylon</td><td>â€”</td><td>â€”</td><td>â€”</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-3);">Placeholder â€” values to be inserted from SolidWorks Simulation output.</p>
+        </div>
+
+        <div id="testing" class="doc-section" data-reveal>
+          <h2>6. Physical Load Testing</h2>
+          <p>Physical prototypes were manufactured in Al 6061-T6 (CNC milled) and PA12 Nylon (SLS printed). CFRP prototyping was not performed due to cost and fabrication time constraints at this project scale.</p>
+          <p>Each prototype was mounted in a benchtop load frame and loaded in increments of 10 N from 0 to 60 N. Three repeat measurements were taken per load step. Fingertip displacement was recorded with a dial gauge; grip force was measured with a calibrated load cell.</p>
+          <div class="doc-fig" style="margin:1.5rem 0;">
+            <div class="placeholder-img" style="height:200px;">
+              <span class="placeholder-label">Load Test Setup Photo</span>
+            </div>
+            <div class="doc-caption">Figure 3: Physical load test setup with Al 6061-T6 prototype mounted in load frame.</div>
+          </div>
+        </div>
+
+        <div id="results" class="doc-section" data-reveal>
+          <h2>7. Results &amp; Discussion</h2>
+          <p>Placeholder â€” quantitative results to be filled in after simulation and testing are complete. Discussion should compare FEA-predicted displacement against measured values for the two physical prototypes and note any discrepancy and its likely cause.</p>
+          <p>Key dimensions of comparison:</p>
+          <ul class="doc-list">
+            <li><strong>Structural:</strong> factor of safety at 50 N grip load</li>
+            <li><strong>Mass:</strong> finger pair mass in grams</li>
+            <li><strong>Stiffness:</strong> fingertip displacement per newton of grip force</li>
+            <li><strong>Cost:</strong> estimated per-unit material and fabrication cost at 10-unit batch</li>
+          </ul>
+        </div>
+
+        <div id="conclusion" class="doc-section" data-reveal>
+          <h2>8. Conclusion</h2>
+          <p>CFRP delivers the best structural performance for the gripper finger application â€” lowest mass, highest stiffness, and the greatest factor of safety under the specified grip load. It is the recommended material for production units where weight is the primary constraint and per-unit cost is secondary.</p>
+          <p>Aluminum 6061-T6 is the recommended choice for cost-constrained production volumes. It meets all structural requirements, is easily machined in-house, and carries a substantially lower material cost than CFRP.</p>
+          <p>PA12 Nylon (SLS) is suitable for prototyping and geometry exploration only. Its factor of safety at 50 N is below the project requirement of 2.0 and its elastic modulus is too low for production-grade displacement control.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">Modular Hybrid Gripper</div>
+          <div class="footer-sub">ENG-203 Â· Material Optimization for Lean Automation</div>
+        </div>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="development.html">Development</a>
+          <a href="data-sources.html">Data Sources</a>
+          <a href="technical-report.html">Technical Report</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+      <div class="footer-copy">Â© 2026 ENG-203 Project Group Â· Engineering Department</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+

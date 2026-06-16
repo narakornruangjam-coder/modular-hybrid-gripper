@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modular Hybrid Gripper — ENG-203</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-badge">ENG-203</span>
+      Modular Hybrid Gripper
+    </a>
+    <button class="nav-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="development.html">Development</a></li>
+      <li><a href="data-sources.html">Data Sources</a></li>
+      <li><a href="technical-report.html">Technical Report</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero hero-home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-reveal>
+      <div class="hero-label">Material Optimization for Lean Automation</div>
+      <h1>Modular Hybrid<br/>Gripper System</h1>
+      <p class="hero-sub">A comparative study of lightweight materials — Aluminum 6061, Carbon Fiber, and PA12 Nylon — for a configurable two-finger gripper designed for industrial lean automation.</p>
+      <div class="hero-cta">
+        <a href="development.html" class="btn btn-primary">View Development</a>
+        <a href="technical-report.html" class="btn btn-ghost">Technical Report</a>
+      </div>
+    </div>
+    <div class="hero-stats" data-reveal>
+      <div class="stat-block">
+        <span class="stat-n">3</span>
+        <span class="stat-l">Materials Tested</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-n">40%</span>
+        <span class="stat-l">Weight Reduction</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-n">4</span>
+        <span class="stat-l">Team Members</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-grid-2">
+        <div class="section-copy" data-reveal>
+          <h4>Project Abstract</h4>
+          <h2>Optimizing Gripper Materials for Industrial Performance</h2>
+          <p>This project investigates material selection for a modular two-finger robotic gripper intended for lean manufacturing environments. The gripper's modular architecture allows finger geometry to be swapped without re-tooling the entire assembly, reducing changeover time in multi-variant production lines.</p>
+          <p style="margin-top:1rem;">Three candidate materials — Aluminum 6061-T6, Carbon Fiber Reinforced Polymer (CFRP), and Selective Laser Sintered (SLS) PA12 Nylon — are evaluated across structural, thermal, and economic dimensions using FEA simulation and empirical load testing.</p>
+        </div>
+        <div class="info-visual" data-reveal>
+          <div class="placeholder-img tall">
+            <span class="placeholder-label">Gripper Assembly<br/>Render</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head center" data-reveal>
+        <h4>Materials</h4>
+        <h2>Three Candidates, One Best Fit</h2>
+        <p>Each material offers distinct trade-offs between stiffness, weight, manufacturability, and cost.</p>
+      </div>
+      <div class="cards-3" style="margin-top:2.5rem;">
+        <div class="card" data-reveal>
+          <div class="card-icon accent">AL</div>
+          <h3>Aluminum 6061-T6</h3>
+          <p>Industry-standard structural aluminum. High strength-to-weight ratio, excellent machinability, good thermal conductivity. Baseline reference for comparison.</p>
+          <ul class="prop-list">
+            <li><span>Density</span><span>2.70 g/cm³</span></li>
+            <li><span>Tensile Strength</span><span>310 MPa</span></li>
+            <li><span>Young's Modulus</span><span>69 GPa</span></li>
+          </ul>
+        </div>
+        <div class="card card-featured" data-reveal>
+          <div class="card-badge">Optimal</div>
+          <div class="card-icon">CF</div>
+          <h3>Carbon Fiber (CFRP)</h3>
+          <p>Unidirectional carbon fiber composite. Highest specific stiffness of the three. Optimal for applications where weight is the primary constraint and cost is secondary.</p>
+          <ul class="prop-list">
+            <li><span>Density</span><span>1.55 g/cm³</span></li>
+            <li><span>Tensile Strength</span><span>600+ MPa</span></li>
+            <li><span>Young's Modulus</span><span>70–105 GPa</span></li>
+          </ul>
+        </div>
+        <div class="card" data-reveal>
+          <div class="card-icon">PA</div>
+          <h3>PA12 Nylon (SLS)</h3>
+          <p>Additive-manufactured polyamide. Enables complex internal geometries impossible with subtractive methods. Low per-unit cost at small batch sizes, best for rapid iteration.</p>
+          <ul class="prop-list">
+            <li><span>Density</span><span>1.01 g/cm³</span></li>
+            <li><span>Tensile Strength</span><span>48 MPa</span></li>
+            <li><span>Young's Modulus</span><span>1.6 GPa</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-grid-2 reverse">
+        <div class="info-visual" data-reveal>
+          <div class="placeholder-img tall">
+            <span class="placeholder-label">FEA Stress<br/>Distribution</span>
+          </div>
+        </div>
+        <div class="section-copy" data-reveal>
+          <h4>Methodology</h4>
+          <h2>Simulation-Validated Comparison</h2>
+          <p>Each material was modeled in SolidWorks under identical boundary conditions: 50 N grip force, distributed across the contact patch of both fingers. Von Mises stress, displacement, and factor of safety were extracted for each variant.</p>
+          <div class="step-list">
+            <div class="step"><span class="step-n">01</span><span>CAD model of gripper finger with modular joint interface</span></div>
+            <div class="step"><span class="step-n">02</span><span>Material property assignment from certified datasheets</span></div>
+            <div class="step"><span class="step-n">03</span><span>Static FEA under grip-force and side-load scenarios</span></div>
+            <div class="step"><span class="step-n">04</span><span>Physical prototype load testing (PA12 and Al 6061)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head center" data-reveal>
+        <h4>Key Results</h4>
+        <h2>Performance at a Glance</h2>
+      </div>
+      <div class="matrix-wrap" data-reveal style="margin-top:2rem;">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th>Criterion</th>
+              <th>Al 6061-T6</th>
+              <th class="col-accent">CFRP</th>
+              <th>PA12 Nylon</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Mass (per finger)</td><td>High</td><td class="col-accent">Lowest</td><td>Medium-Low</td></tr>
+            <tr><td>Max Von Mises Stress</td><td>Moderate</td><td class="col-accent">Lowest</td><td>High</td></tr>
+            <tr><td>Factor of Safety</td><td>Good</td><td class="col-accent">Excellent</td><td>Marginal</td></tr>
+            <tr><td>Manufacturability</td><td>Excellent</td><td class="col-accent">Moderate</td><td>Good (SLS)</td></tr>
+            <tr><td>Material Cost</td><td>Low</td><td class="col-accent">High</td><td>Medium</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="center" style="margin-top:2rem;" data-reveal>
+        <a href="development.html" class="btn btn-primary">See Full Analysis</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head center" data-reveal>
+        <h4>Team</h4>
+        <h2>ENG-203 Project Group</h2>
+      </div>
+      <div class="team-strip" data-reveal>
+        <div class="team-chip">
+          <div class="team-avatar">NR</div>
+          <div><div class="team-name">Narakorn Ruangjam</div><div class="team-id">2411220227</div></div>
+        </div>
+        <div class="team-chip">
+          <div class="team-avatar">PB</div>
+          <div><div class="team-name">Pawit Bunchokchaigrit</div><div class="team-id">2411220243</div></div>
+        </div>
+        <div class="team-chip">
+          <div class="team-avatar">RM</div>
+          <div><div class="team-name">Rujinarong Meeda</div><div class="team-id">2411290014</div></div>
+        </div>
+        <div class="team-chip">
+          <div class="team-avatar">TK</div>
+          <div><div class="team-name">Theeraput Khanthee</div><div class="team-id">2511220135</div></div>
+        </div>
+      </div>
+      <div class="center" style="margin-top:1.5rem;" data-reveal>
+        <a href="about.html" class="btn btn-ghost">About the Team</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">Modular Hybrid Gripper</div>
+          <div class="footer-sub">ENG-203 · Material Optimization for Lean Automation</div>
+        </div>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="development.html">Development</a>
+          <a href="data-sources.html">Data Sources</a>
+          <a href="technical-report.html">Technical Report</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+      <div class="footer-copy">© 2026 ENG-203 Project Group · Engineering Department</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

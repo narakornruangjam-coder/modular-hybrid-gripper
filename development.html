@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Development & Analysis â€” Modular Hybrid Gripper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-badge">ENG-203</span>
+      Modular Hybrid Gripper
+    </a>
+    <button class="nav-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="development.html">Development</a></li>
+      <li><a href="data-sources.html">Data Sources</a></li>
+      <li><a href="technical-report.html">Technical Report</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero hero-dev">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-reveal>
+      <div class="hero-label">Design, Simulation & Testing</div>
+      <h1>Development<br/>&amp; Analysis</h1>
+      <p class="hero-sub">From initial concept through CAD modelling, FEA simulation, and physical load testing â€” the full development pipeline for the modular hybrid gripper.</p>
+    </div>
+  </section>
+
+  <!-- 1. Design Requirements -->
+  <section class="section">
+    <div class="container">
+      <div class="section-grid-2">
+        <div class="section-copy" data-reveal>
+          <h4>Phase 1</h4>
+          <h2>Design Requirements</h2>
+          <p>The gripper must handle parts ranging from 10â€“80 mm diameter, sustain a grip force of up to 50 N, and integrate with a standard UR5-compatible flange. Finger profiles are swappable without replacing the actuator body.</p>
+          <div class="req-list" style="margin-top:1.5rem;">
+            <div class="req-row">
+              <span class="req-label">Grip force</span>
+              <span class="req-val">50 N (max)</span>
+            </div>
+            <div class="req-row">
+              <span class="req-label">Stroke</span>
+              <span class="req-val">0â€“80 mm</span>
+            </div>
+            <div class="req-row">
+              <span class="req-label">Mount</span>
+              <span class="req-val">ISO 9283 / UR5 flange</span>
+            </div>
+            <div class="req-row">
+              <span class="req-label">Safety factor</span>
+              <span class="req-val">â‰¥ 2.0</span>
+            </div>
+            <div class="req-row">
+              <span class="req-label">Mass target</span>
+              <span class="req-val">&lt; 350 g (per finger pair)</span>
+            </div>
+            <div class="req-row">
+              <span class="req-label">Finger change time</span>
+              <span class="req-val">&lt; 2 min (no tools)</span>
+            </div>
+          </div>
+        </div>
+        <div class="info-visual" data-reveal>
+          <div class="placeholder-img tall">
+            <span class="placeholder-label">Design Spec<br/>Diagram</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. CAD Modelling -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <h4>Phase 2</h4>
+        <h2>CAD Modelling</h2>
+        <p>All components were modelled in SolidWorks 2023. The finger body is parametric â€” swapping material in the simulation requires only a material-property override, not a new model.</p>
+      </div>
+      <div class="img-trio" style="margin-top:2rem;" data-reveal>
+        <div class="placeholder-img">
+          <span class="placeholder-label">Isometric View</span>
+        </div>
+        <div class="placeholder-img">
+          <span class="placeholder-label">Exploded View</span>
+        </div>
+        <div class="placeholder-img">
+          <span class="placeholder-label">Cross-section</span>
+        </div>
+      </div>
+      <div class="info-blocks" style="margin-top:2.5rem;">
+        <div class="info-block" data-reveal>
+          <h3>Modular Joint Interface</h3>
+          <p>A keyed bayonet-style interface allows each finger to be locked and released with a 90Â° twist. The interface surface carries shear load through four radial lugs machined into the finger base.</p>
+        </div>
+        <div class="info-block" data-reveal>
+          <h3>Actuator Body</h3>
+          <p>The actuator housing remains constant across all three material variants. Finger geometry changes only affect the replaceable finger element, keeping the comparison controlled and the cost of switching low.</p>
+        </div>
+        <div class="info-block" data-reveal>
+          <h3>Contact Geometry</h3>
+          <p>V-groove contact faces distribute load across a larger area than flat-jaw designs. The angle is set at 120Â° to centre cylindrical parts passively under grip force.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Materials -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <h4>Phase 3</h4>
+        <h2>Material Property Comparison</h2>
+      </div>
+      <div class="matrix-wrap" style="margin-top:2rem;" data-reveal>
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Unit</th>
+              <th>Al 6061-T6</th>
+              <th class="col-accent">CFRP (UD)</th>
+              <th>PA12 Nylon (SLS)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Density</td>
+              <td class="mono">g/cmÂ³</td>
+              <td>2.70</td>
+              <td class="col-accent">1.55</td>
+              <td>1.01</td>
+            </tr>
+            <tr>
+              <td>Tensile Strength</td>
+              <td class="mono">MPa</td>
+              <td>310</td>
+              <td class="col-accent">600+</td>
+              <td>48</td>
+            </tr>
+            <tr>
+              <td>Yield Strength</td>
+              <td class="mono">MPa</td>
+              <td>276</td>
+              <td class="col-accent">â€”</td>
+              <td>43</td>
+            </tr>
+            <tr>
+              <td>Young's Modulus</td>
+              <td class="mono">GPa</td>
+              <td>69</td>
+              <td class="col-accent">70â€“105</td>
+              <td>1.6</td>
+            </tr>
+            <tr>
+              <td>Thermal Expansion</td>
+              <td class="mono">Âµm/mÂ·Â°C</td>
+              <td>23.6</td>
+              <td class="col-accent">0â€“2</td>
+              <td>~100</td>
+            </tr>
+            <tr>
+              <td>Machinability</td>
+              <td>â€”</td>
+              <td>Excellent</td>
+              <td class="col-accent">Difficult</td>
+              <td>SLS only</td>
+            </tr>
+            <tr>
+              <td>Relative Cost</td>
+              <td>â€”</td>
+              <td>Low</td>
+              <td class="col-accent">High</td>
+              <td>Medium</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FEA -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <h4>Phase 4</h4>
+        <h2>Finite Element Analysis</h2>
+        <p>Static structural FEA was run in SolidWorks Simulation. Boundary conditions were identical for all three material variants to isolate the effect of material properties.</p>
+      </div>
+      <div class="section-grid-2" style="margin-top:2rem;">
+        <div class="info-visual" data-reveal>
+          <div class="placeholder-img tall">
+            <span class="placeholder-label">Von Mises Stress<br/>â€” Al 6061-T6</span>
+          </div>
+        </div>
+        <div class="section-copy" data-reveal>
+          <h3>Boundary Conditions</h3>
+          <p>The finger base (bayonet interface) was fixed. A 50 N distributed load was applied across the V-groove contact faces at the fingertip. A secondary 15 N side-load was applied orthogonal to the grip axis to simulate workpiece slip.</p>
+          <div class="req-list" style="margin-top:1.5rem;">
+            <div class="req-row">
+              <span class="req-label">Primary load</span>
+              <span class="req-val">50 N (grip)</span>
+            </div>
+            <div class="req-row">
+              <span class="req-label">Secondary load</span>
+              <span class="req-val">15 N (side)</span>
+            </div>
+            <div class="req-row">
+              <span class="req-label">Fixture</span>
+              <span class="req-val">Fixed at bayonet base</span>
+            </div>
+            <div class="req-row">
+              <span class="req-label">Mesh type</span>
+              <span class="req-val">Solid, curvature-based</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEA Results per material -->
+      <div class="info-blocks" style="margin-top:2.5rem;">
+        <div class="result-block" data-reveal>
+          <div class="result-label">Al 6061-T6</div>
+          <div class="placeholder-img" style="height:180px;"><span class="placeholder-label">Stress Plot</span></div>
+          <div class="result-stats">
+            <div class="req-row"><span class="req-label">Max stress</span><span class="req-val">â€” MPa</span></div>
+            <div class="req-row"><span class="req-label">Max displacement</span><span class="req-val">â€” mm</span></div>
+            <div class="req-row"><span class="req-label">Factor of safety</span><span class="req-val">â€”</span></div>
+          </div>
+        </div>
+        <div class="result-block result-block--featured" data-reveal>
+          <div class="result-label accent-text">CFRP <span class="card-badge" style="position:relative;top:0;right:0;margin-left:8px;">Best</span></div>
+          <div class="placeholder-img" style="height:180px;"><span class="placeholder-label">Stress Plot</span></div>
+          <div class="result-stats">
+            <div class="req-row"><span class="req-label">Max stress</span><span class="req-val">â€” MPa</span></div>
+            <div class="req-row"><span class="req-label">Max displacement</span><span class="req-val">â€” mm</span></div>
+            <div class="req-row"><span class="req-label">Factor of safety</span><span class="req-val">â€”</span></div>
+          </div>
+        </div>
+        <div class="result-block" data-reveal>
+          <div class="result-label">PA12 Nylon</div>
+          <div class="placeholder-img" style="height:180px;"><span class="placeholder-label">Stress Plot</span></div>
+          <div class="result-stats">
+            <div class="req-row"><span class="req-label">Max stress</span><span class="req-val">â€” MPa</span></div>
+            <div class="req-row"><span class="req-label">Max displacement</span><span class="req-val">â€” mm</span></div>
+            <div class="req-row"><span class="req-label">Factor of safety</span><span class="req-val">â€”</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Physical Testing -->
+  <section class="section">
+    <div class="container">
+      <div class="section-grid-2">
+        <div class="section-copy" data-reveal>
+          <h4>Phase 5</h4>
+          <h2>Physical Load Testing</h2>
+          <p>Prototypes in Al 6061-T6 and SLS PA12 were manufactured for destructive and non-destructive load testing. CFRP prototyping was cost-prohibitive at this scale; simulation results are used for that variant.</p>
+          <p style="margin-top:1rem;">A calibrated load cell measured actual grip force at the contact face while a dial gauge recorded displacement at the fingertip. Tests were conducted at 10 N increments from 0 to 60 N.</p>
+          <div class="req-list" style="margin-top:1.5rem;">
+            <div class="req-row">
+              <span class="req-label">Test rig</span>
+              <span class="req-val">Benchtop load frame</span>
+            </div>
+            <div class="req-row">
+              <span class="req-label">Sensor</span>
+              <span class="req-val">Load cell + dial gauge</span>
+            </div>
+            <div class="req-row">
+              <span class="req-label">Load steps</span>
+              <span class="req-val">0â€“60 N @ 10 N increments</span>
+            </div>
+            <div class="req-row">
+              <span class="req-label">Repeats</span>
+              <span class="req-val">3 per condition</span>
+            </div>
+          </div>
+        </div>
+        <div class="info-visual" data-reveal>
+          <div class="placeholder-img tall">
+            <span class="placeholder-label">Load Test<br/>Setup Photo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Discussion -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <h4>Phase 6</h4>
+        <h2>Discussion &amp; Recommendation</h2>
+      </div>
+      <div class="info-blocks" style="margin-top:2rem;">
+        <div class="info-block" data-reveal>
+          <h3>CFRP â€” Best Structural Performance</h3>
+          <p>Carbon fibre delivers the highest factor of safety and lowest displacement under load. Its low density reduces tool-change inertia. The trade-off is material and fabrication cost, plus anisotropic behaviour that requires careful fibre orientation control.</p>
+        </div>
+        <div class="info-block" data-reveal>
+          <h3>Al 6061-T6 â€” Best All-Round Value</h3>
+          <p>Aluminium meets all structural requirements with a comfortable safety margin and is easily CNC-machined in-house. For production quantities above ~20 units, it is the most economically rational choice.</p>
+        </div>
+        <div class="info-block" data-reveal>
+          <h3>PA12 Nylon â€” Best for Rapid Iteration</h3>
+          <p>SLS nylon enables geometry changes overnight without tooling cost, making it ideal for early-stage prototyping. It does not meet the structural requirements for sustained 50 N operation and should not be used in production.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">Modular Hybrid Gripper</div>
+          <div class="footer-sub">ENG-203 Â· Material Optimization for Lean Automation</div>
+        </div>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="development.html">Development</a>
+          <a href="data-sources.html">Data Sources</a>
+          <a href="technical-report.html">Technical Report</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+      <div class="footer-copy">Â© 2026 ENG-203 Project Group Â· Engineering Department</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
