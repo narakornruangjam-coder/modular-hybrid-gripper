@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.classList.add('js');</script>
   <title>Modular Hybrid Gripper — ENG-203</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,11 +29,12 @@
     </ul>
   </nav>
 
+  <main>
   <section class="hero hero-home">
     <div class="hero-overlay"></div>
     <div class="hero-content" data-reveal>
       <div class="hero-label">Material Optimization for Lean Automation</div>
-      <h1>Modular Hybrid<br/>Gripper System</h1>
+      <h1>Modular Hybrid Gripper System</h1>
       <p class="hero-sub">A comparative study of lightweight materials — Aluminum 6061, Carbon Fiber, and PA12 Nylon — for a configurable two-finger gripper designed for industrial lean automation.</p>
       <div class="hero-cta">
         <a href="development.html" class="btn btn-primary">View Development</a>
@@ -59,15 +61,13 @@
     <div class="container">
       <div class="section-grid-2">
         <div class="section-copy" data-reveal>
-          <h4>Project Abstract</h4>
+          <p class="kicker">Project Abstract</p>
           <h2>Optimizing Gripper Materials for Industrial Performance</h2>
           <p>This project investigates material selection for a modular two-finger robotic gripper intended for lean manufacturing environments. The gripper's modular architecture allows finger geometry to be swapped without re-tooling the entire assembly, reducing changeover time in multi-variant production lines.</p>
           <p style="margin-top:1rem;">Three candidate materials — Aluminum 6061-T6, Carbon Fiber Reinforced Polymer (CFRP), and Selective Laser Sintered (SLS) PA12 Nylon — are evaluated across structural, thermal, and economic dimensions using FEA simulation and empirical load testing.</p>
         </div>
         <div class="info-visual" data-reveal>
-          <div class="placeholder-img tall">
-            <span class="placeholder-label">Gripper Assembly<br/>Render</span>
-          </div>
+          <img src="images/gripper-assembly.png" alt="Modular hybrid gripper assembly render" class="section-img tall" />
         </div>
       </div>
     </div>
@@ -76,7 +76,7 @@
   <section class="section section-alt">
     <div class="container">
       <div class="section-head center" data-reveal>
-        <h4>Materials</h4>
+        <p class="kicker">Materials</p>
         <h2>Three Candidates, One Best Fit</h2>
         <p>Each material offers distinct trade-offs between stiffness, weight, manufacturability, and cost.</p>
       </div>
@@ -125,7 +125,7 @@
           </div>
         </div>
         <div class="section-copy" data-reveal>
-          <h4>Methodology</h4>
+          <p class="kicker">Methodology</p>
           <h2>Simulation-Validated Comparison</h2>
           <p>Each material was modeled in SolidWorks under identical boundary conditions: 50 N grip force, distributed across the contact patch of both fingers. Von Mises stress, displacement, and factor of safety were extracted for each variant.</p>
           <div class="step-list">
@@ -142,27 +142,45 @@
   <section class="section section-alt">
     <div class="container">
       <div class="section-head center" data-reveal>
-        <h4>Key Results</h4>
-        <h2>Performance at a Glance</h2>
+        <p class="kicker">Key Results</p>
+        <h2>Material Performance Matrix</h2>
+        <p>Five criteria evaluated via FEA simulation and load testing at 50 N grip force.</p>
       </div>
       <div class="matrix-wrap" data-reveal style="margin-top:2rem;">
         <table class="matrix">
+          <caption class="sr-only">Performance comparison of three gripper materials. CFRP is the recommended selection.</caption>
           <thead>
             <tr>
-              <th>Criterion</th>
-              <th>Al 6061-T6</th>
-              <th class="col-accent">CFRP</th>
-              <th>PA12 Nylon</th>
+              <th scope="col">Criterion</th>
+              <th scope="col">Al 6061-T6</th>
+              <th scope="col" class="col-accent">CFRP <span class="col-recommended">Recommended</span></th>
+              <th scope="col">PA12 Nylon</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Mass (per finger)</td><td>High</td><td class="col-accent">Lowest</td><td>Medium-Low</td></tr>
-            <tr><td>Max Von Mises Stress</td><td>Moderate</td><td class="col-accent">Lowest</td><td>High</td></tr>
-            <tr><td>Factor of Safety</td><td>Good</td><td class="col-accent">Excellent</td><td>Marginal</td></tr>
-            <tr><td>Manufacturability</td><td>Excellent</td><td class="col-accent">Moderate</td><td>Good (SLS)</td></tr>
-            <tr><td>Material Cost</td><td>Low</td><td class="col-accent">High</td><td>Medium</td></tr>
+            <tr>
+              <th scope="row">Mass per finger <span class="criterion-dir">↓ lower is better</span></th>
+              <td>High</td><td class="col-accent">Lowest</td><td>Low–Medium</td>
+            </tr>
+            <tr>
+              <th scope="row">Peak stress (Von Mises) <span class="criterion-dir">↓ lower is better</span></th>
+              <td>Moderate</td><td class="col-accent">Lowest</td><td>High</td>
+            </tr>
+            <tr>
+              <th scope="row">Safety factor <span class="criterion-dir">↑ higher is better</span></th>
+              <td>Good</td><td class="col-accent">Excellent</td><td>Marginal</td>
+            </tr>
+            <tr>
+              <th scope="row">Ease of manufacture</th>
+              <td>Excellent</td><td class="col-accent">Moderate</td><td>Good — SLS only</td>
+            </tr>
+            <tr>
+              <th scope="row">Material cost <span class="criterion-dir">↓ lower is better</span></th>
+              <td>Low</td><td class="col-accent">High</td><td>Medium</td>
+            </tr>
           </tbody>
         </table>
+        <p class="matrix-note">CFRP is recommended for weight-critical applications despite higher material cost. Al 6061-T6 is preferred when cost and manufacturability are the primary constraints.</p>
       </div>
       <div class="center" style="margin-top:2rem;" data-reveal>
         <a href="development.html" class="btn btn-primary">See Full Analysis</a>
@@ -173,7 +191,7 @@
   <section class="section">
     <div class="container">
       <div class="section-head center" data-reveal>
-        <h4>Team</h4>
+        <p class="kicker">Team</p>
         <h2>ENG-203 Project Group</h2>
       </div>
       <div class="team-strip" data-reveal>
@@ -199,6 +217,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <footer class="footer">
     <div class="container">

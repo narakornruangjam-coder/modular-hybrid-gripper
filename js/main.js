@@ -4,11 +4,25 @@ document.addEventListener('DOMContentLoaded', function () {
   var links = document.querySelector('.nav-links');
   if (btn && links) {
     btn.addEventListener('click', function () {
-      links.classList.toggle('open');
+      var open = links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
     links.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { links.classList.remove('open'); });
+      a.addEventListener('click', function () {
+        links.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
     });
+  }
+
+  // Frosted nav: intensify background/blur once scrolled off the top
+  var nav = document.querySelector('.nav');
+  if (nav) {
+    var onScroll = function () {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 
   // Mark active nav link
