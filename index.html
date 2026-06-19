@@ -8,7 +8,7 @@
   <meta name="description" content="ENG-203 mini-project: a modular two-finger robotic gripper, with material optimization across Aluminum 6061-T6, CFRP, and SLS PA12 Nylon for lean automation." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -22,12 +22,19 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="development.html">Development</a></li>
-      <li><a href="data-sources.html">Data Sources</a></li>
-      <li><a href="technical-report.html">Technical Report</a></li>
-      <li><a href="reflection.html">Reflection</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" data-th="หน้าแรก">Home</a></li>
+      <li><a href="development.html" data-th="การพัฒนา">Development</a></li>
+      <li><a href="data-sources.html" data-th="แหล่งข้อมูล">Data Sources</a></li>
+      <li><a href="technical-report.html" data-th="รายงานทางเทคนิค">Technical Report</a></li>
+      <li><a href="reflection.html" data-th="การสะท้อนคิด">Reflection</a></li>
+      <li><a href="about.html" data-th="เกี่ยวกับเรา">About</a></li>
+      <li class="nav-lang">
+        <span class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-opt" data-lang="en">EN</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button type="button" class="lang-opt" data-lang="th">TH</button>
+        </span>
+      </li>
     </ul>
   </nav>
 
@@ -35,26 +42,26 @@
   <section class="hero hero-home">
     <div class="hero-overlay"></div>
     <div class="hero-content" data-reveal>
-      <div class="hero-label">Material Optimization for Lean Automation</div>
+      <div class="hero-label" data-th="การเพิ่มประสิทธิภาพวัสดุสำหรับระบบอัตโนมัติแบบลีน">Material Optimization for Lean Automation</div>
       <h1>Modular Hybrid Gripper System</h1>
-      <p class="hero-sub">A comparative study of lightweight materials — Aluminum 6061, Carbon Fiber, and PA12 Nylon — for a configurable two-finger gripper designed for industrial lean automation.</p>
+      <p class="hero-sub" data-th="การศึกษาเปรียบเทียบวัสดุน้ำหนักเบา — อะลูมิเนียม 6061, คาร์บอนไฟเบอร์ และไนลอน PA12 — สำหรับกริปเปอร์สองนิ้วที่ปรับเปลี่ยนได้ ออกแบบเพื่อระบบอัตโนมัติแบบลีนในงานอุตสาหกรรม">A comparative study of lightweight materials — Aluminum 6061, Carbon Fiber, and PA12 Nylon — for a configurable two-finger gripper designed for industrial lean automation.</p>
       <div class="hero-cta">
-        <a href="development.html" class="btn btn-primary">View Development</a>
-        <a href="technical-report.html" class="btn btn-ghost">Technical Report</a>
+        <a href="development.html" class="btn btn-primary" data-th="ดูการพัฒนา">View Development</a>
+        <a href="technical-report.html" class="btn btn-ghost" data-th="รายงานทางเทคนิค">Technical Report</a>
       </div>
     </div>
     <div class="hero-stats" data-reveal>
       <div class="stat-block">
         <span class="stat-n">3</span>
-        <span class="stat-l">Materials Tested</span>
+        <span class="stat-l" data-th="วัสดุที่ทดสอบ">Materials Tested</span>
       </div>
       <div class="stat-block">
         <span class="stat-n">40%</span>
-        <span class="stat-l">Weight Reduction</span>
+        <span class="stat-l" data-th="การลดน้ำหนัก">Weight Reduction</span>
       </div>
       <div class="stat-block">
         <span class="stat-n">4</span>
-        <span class="stat-l">Team Members</span>
+        <span class="stat-l" data-th="สมาชิกในทีม">Team Members</span>
       </div>
     </div>
   </section>
@@ -63,10 +70,10 @@
     <div class="container">
       <div class="section-grid-2">
         <div class="section-copy" data-reveal>
-          <p class="kicker">Project Abstract</p>
-          <h2>Optimizing Gripper Materials for Industrial Performance</h2>
-          <p>This project investigates material selection for a modular two-finger robotic gripper intended for lean manufacturing environments. The gripper's modular architecture allows finger geometry to be swapped without re-tooling the entire assembly, reducing changeover time in multi-variant production lines.</p>
-          <p style="margin-top:1rem;">Three candidate materials — Aluminum 6061-T6, Carbon Fiber Reinforced Polymer (CFRP), and Selective Laser Sintered (SLS) PA12 Nylon — are evaluated across structural, thermal, and economic dimensions using FEA simulation and empirical load testing.</p>
+          <p class="kicker" data-th="บทคัดย่อโครงงาน">Project Abstract</p>
+          <h2 data-th="การเพิ่มประสิทธิภาพวัสดุกริปเปอร์,<br/>เพื่อสมรรถนะทางอุตสาหกรรม">Optimizing Gripper Materials for Industrial Performance</h2>
+          <p data-th="โครงงานนี้ศึกษาการเลือกวัสดุสำหรับกริปเปอร์หุ่นยนต์สองนิ้วแบบโมดูลาร์ ที่ออกแบบสำหรับสภาพแวดล้อมการผลิตแบบลีน สถาปัตยกรรมแบบโมดูลาร์ของกริปเปอร์ช่วยให้สามารถสลับรูปทรงของนิ้วจับได้โดยไม่ต้องเปลี่ยนชุดประกอบทั้งหมด ลดเวลาในการเปลี่ยนรุ่นในสายการผลิตที่มีหลายผลิตภัณฑ์">This project investigates material selection for a modular two-finger robotic gripper intended for lean manufacturing environments. The gripper's modular architecture allows finger geometry to be swapped without re-tooling the entire assembly, reducing changeover time in multi-variant production lines.</p>
+          <p style="margin-top:1rem;" data-th="วัสดุที่เป็นตัวเลือกสามชนิด — อะลูมิเนียม 6061-T6, พอลิเมอร์เสริมคาร์บอนไฟเบอร์ (CFRP) และไนลอน PA12 ที่ขึ้นรูปด้วยการหลอมผงด้วยเลเซอร์ (SLS) — ถูกประเมินในด้านโครงสร้าง ความร้อน และเศรษฐศาสตร์ ด้วยการจำลอง FEA และการทดสอบโหลดจริง">Three candidate materials — Aluminum 6061-T6, Carbon Fiber Reinforced Polymer (CFRP), and Selective Laser Sintered (SLS) PA12 Nylon — are evaluated across structural, thermal, and economic dimensions using FEA simulation and empirical load testing.</p>
         </div>
         <div class="info-visual" data-reveal>
           <img src="images/gripper-assembly.png" alt="Modular hybrid gripper assembly render" class="section-img tall" />
@@ -78,40 +85,40 @@
   <section class="section section-alt">
     <div class="container">
       <div class="section-head center" data-reveal>
-        <p class="kicker">Materials</p>
-        <h2>Three Candidates, One Best Fit</h2>
-        <p>Each material offers distinct trade-offs between stiffness, weight, manufacturability, and cost.</p>
+        <p class="kicker" data-th="วัสดุ">Materials</p>
+        <h2 data-th="สามตัวเลือก หนึ่งคำตอบที่ดีที่สุด">Three Candidates, One Best Fit</h2>
+        <p data-th="วัสดุแต่ละชนิดมีจุดได้เปรียบเสียเปรียบที่แตกต่างกันระหว่างความแข็งเกร็ง น้ำหนัก ความสามารถในการผลิต และต้นทุน">Each material offers distinct trade-offs between stiffness, weight, manufacturability, and cost.</p>
       </div>
       <div class="cards-3" style="margin-top:2.5rem;">
         <div class="card" data-reveal>
           <div class="card-icon accent">AL</div>
           <h3>Aluminum 6061-T6</h3>
-          <p>Industry-standard structural aluminum. High strength-to-weight ratio, excellent machinability, good thermal conductivity. Baseline reference for comparison.</p>
+          <p data-th="อะลูมิเนียมโครงสร้างมาตรฐานอุตสาหกรรม อัตราส่วนความแข็งแรงต่อน้ำหนักสูง ขึ้นรูปด้วยเครื่องจักรได้ดีเยี่ยม นำความร้อนได้ดี ใช้เป็นค่าอ้างอิงพื้นฐานในการเปรียบเทียบ">Industry-standard structural aluminum. High strength-to-weight ratio, excellent machinability, good thermal conductivity. Baseline reference for comparison.</p>
           <ul class="prop-list">
-            <li><span>Density</span><span>2.70 g/cm³</span></li>
-            <li><span>Tensile Strength</span><span>310 MPa</span></li>
-            <li><span>Young's Modulus</span><span>69 GPa</span></li>
+            <li><span data-th="ความหนาแน่น">Density</span><span>2.70 g/cm³</span></li>
+            <li><span data-th="ความแข็งแรงดึง">Tensile Strength</span><span>310 MPa</span></li>
+            <li><span data-th="มอดุลัสยัง">Young's Modulus</span><span>69 GPa</span></li>
           </ul>
         </div>
         <div class="card card-featured" data-reveal>
-          <div class="card-badge">Optimal</div>
+          <div class="card-badge" data-th="เหมาะที่สุด">Optimal</div>
           <div class="card-icon">CF</div>
           <h3>Carbon Fiber (CFRP)</h3>
-          <p>Unidirectional carbon fiber composite. Highest specific stiffness of the three. Optimal for applications where weight is the primary constraint and cost is secondary.</p>
+          <p data-th="วัสดุคอมโพสิตคาร์บอนไฟเบอร์แบบทิศทางเดียว มีความแข็งเกร็งจำเพาะสูงที่สุดในสามชนิด เหมาะที่สุดสำหรับงานที่น้ำหนักเป็นข้อจำกัดหลักและต้นทุนเป็นรอง">Unidirectional carbon fiber composite. Highest specific stiffness of the three. Optimal for applications where weight is the primary constraint and cost is secondary.</p>
           <ul class="prop-list">
-            <li><span>Density</span><span>1.55 g/cm³</span></li>
-            <li><span>Tensile Strength</span><span>600+ MPa</span></li>
-            <li><span>Young's Modulus</span><span>70–105 GPa</span></li>
+            <li><span data-th="ความหนาแน่น">Density</span><span>1.55 g/cm³</span></li>
+            <li><span data-th="ความแข็งแรงดึง">Tensile Strength</span><span>600+ MPa</span></li>
+            <li><span data-th="มอดุลัสยัง">Young's Modulus</span><span>70–105 GPa</span></li>
           </ul>
         </div>
         <div class="card" data-reveal>
           <div class="card-icon">PA</div>
           <h3>PA12 Nylon (SLS)</h3>
-          <p>Additive-manufactured polyamide. Enables complex internal geometries impossible with subtractive methods. Low per-unit cost at small batch sizes, best for rapid iteration.</p>
+          <p data-th="พอลิเอไมด์ที่ผลิตด้วยการเติมเนื้อวัสดุ ทำให้สร้างรูปทรงภายในที่ซับซ้อนซึ่งวิธีการตัดเฉือนทำไม่ได้ ต้นทุนต่อชิ้นต่ำเมื่อผลิตจำนวนน้อย เหมาะที่สุดสำหรับการพัฒนาต้นแบบอย่างรวดเร็ว">Additive-manufactured polyamide. Enables complex internal geometries impossible with subtractive methods. Low per-unit cost at small batch sizes, best for rapid iteration.</p>
           <ul class="prop-list">
-            <li><span>Density</span><span>1.01 g/cm³</span></li>
-            <li><span>Tensile Strength</span><span>48 MPa</span></li>
-            <li><span>Young's Modulus</span><span>1.6 GPa</span></li>
+            <li><span data-th="ความหนาแน่น">Density</span><span>1.01 g/cm³</span></li>
+            <li><span data-th="ความแข็งแรงดึง">Tensile Strength</span><span>48 MPa</span></li>
+            <li><span data-th="มอดุลัสยัง">Young's Modulus</span><span>1.6 GPa</span></li>
           </ul>
         </div>
       </div>
@@ -122,19 +129,17 @@
     <div class="container">
       <div class="section-grid-2 reverse">
         <div class="info-visual" data-reveal>
-          <div class="placeholder-img tall">
-            <span class="placeholder-label">FEA Stress<br/>Distribution</span>
-          </div>
+          <img src="images/fea-stress.png" alt="FEA Von Mises stress distribution on a gripper finger" class="section-img tall" />
         </div>
         <div class="section-copy" data-reveal>
-          <p class="kicker">Methodology</p>
-          <h2>Simulation-Validated Comparison</h2>
-          <p>Each material was modeled in SolidWorks under identical boundary conditions: 50 N grip force, distributed across the contact patch of both fingers. Von Mises stress, displacement, and factor of safety were extracted for each variant.</p>
+          <p class="kicker" data-th="ระเบียบวิธี">Methodology</p>
+          <h2 data-th="การเปรียบเทียบที่ตรวจสอบด้วยการจำลอง">Simulation-Validated Comparison</h2>
+          <p data-th="วัสดุแต่ละชนิดถูกจำลองใน SolidWorks ภายใต้เงื่อนไขขอบเขตเดียวกัน: แรงจับ 50 นิวตัน กระจายบนพื้นที่สัมผัสของนิ้วจับทั้งสอง แล้วดึงค่าความเค้น Von Mises การเคลื่อนตัว และค่าความปลอดภัยของแต่ละตัวเลือกออกมา">Each material was modeled in SolidWorks under identical boundary conditions: 50 N grip force, distributed across the contact patch of both fingers. Von Mises stress, displacement, and factor of safety were extracted for each variant.</p>
           <div class="step-list">
-            <div class="step"><span class="step-n">01</span><span>CAD model of gripper finger with modular joint interface</span></div>
-            <div class="step"><span class="step-n">02</span><span>Material property assignment from certified datasheets</span></div>
-            <div class="step"><span class="step-n">03</span><span>Static FEA under grip-force and side-load scenarios</span></div>
-            <div class="step"><span class="step-n">04</span><span>Physical prototype load testing (PA12 and Al 6061)</span></div>
+            <div class="step"><span class="step-n">01</span><span data-th="สร้างแบบจำลอง CAD ของนิ้วจับกริปเปอร์พร้อมจุดต่อโมดูลาร์">CAD model of gripper finger with modular joint interface</span></div>
+            <div class="step"><span class="step-n">02</span><span data-th="กำหนดคุณสมบัติวัสดุจากเอกสารข้อมูลที่ได้รับการรับรอง">Material property assignment from certified datasheets</span></div>
+            <div class="step"><span class="step-n">03</span><span data-th="วิเคราะห์ FEA แบบสถิตภายใต้สถานการณ์แรงจับและแรงด้านข้าง">Static FEA under grip-force and side-load scenarios</span></div>
+            <div class="step"><span class="step-n">04</span><span data-th="ทดสอบโหลดต้นแบบจริง (PA12 และ Al 6061)">Physical prototype load testing (PA12 and Al 6061)</span></div>
           </div>
         </div>
       </div>
@@ -144,48 +149,48 @@
   <section class="section section-alt">
     <div class="container">
       <div class="section-head center" data-reveal>
-        <p class="kicker">Key Results</p>
-        <h2>Material Performance Matrix</h2>
-        <p>Five criteria evaluated via FEA simulation and load testing at 50 N grip force.</p>
+        <p class="kicker" data-th="ผลลัพธ์สำคัญ">Key Results</p>
+        <h2 data-th="ตารางเปรียบเทียบสมรรถนะวัสดุ">Material Performance Matrix</h2>
+        <p data-th="ห้าเกณฑ์ที่ประเมินด้วยการจำลอง FEA และการทดสอบโหลดที่แรงจับ 50 นิวตัน">Five criteria evaluated via FEA simulation and load testing at 50 N grip force.</p>
       </div>
       <div class="matrix-wrap" data-reveal style="margin-top:2rem;">
         <table class="matrix">
           <caption class="sr-only">Performance comparison of three gripper materials. CFRP is the recommended selection.</caption>
           <thead>
             <tr>
-              <th scope="col">Criterion</th>
+              <th scope="col" data-th="เกณฑ์">Criterion</th>
               <th scope="col">Al 6061-T6</th>
-              <th scope="col" class="col-accent">CFRP <span class="col-recommended">Recommended</span></th>
+              <th scope="col" class="col-accent" data-th="CFRP <span class='col-recommended'>แนะนำ</span>">CFRP <span class="col-recommended">Recommended</span></th>
               <th scope="col">PA12 Nylon</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Mass per finger <span class="criterion-dir">↓ lower is better</span></th>
-              <td>High</td><td class="col-accent">Lowest</td><td>Low–Medium</td>
+              <th scope="row" data-th="มวลต่อนิ้วจับ <span class='criterion-dir'>↓ ค่าน้อยดีกว่า</span>">Mass per finger <span class="criterion-dir">↓ lower is better</span></th>
+              <td data-th="สูง">High</td><td class="col-accent" data-th="ต่ำที่สุด">Lowest</td><td data-th="ต่ำ–ปานกลาง">Low–Medium</td>
             </tr>
             <tr>
-              <th scope="row">Peak stress (Von Mises) <span class="criterion-dir">↓ lower is better</span></th>
-              <td>Moderate</td><td class="col-accent">Lowest</td><td>High</td>
+              <th scope="row" data-th="ความเค้นสูงสุด (Von Mises) <span class='criterion-dir'>↓ ค่าน้อยดีกว่า</span>">Peak stress (Von Mises) <span class="criterion-dir">↓ lower is better</span></th>
+              <td data-th="ปานกลาง">Moderate</td><td class="col-accent" data-th="ต่ำที่สุด">Lowest</td><td data-th="สูง">High</td>
             </tr>
             <tr>
-              <th scope="row">Safety factor <span class="criterion-dir">↑ higher is better</span></th>
-              <td>Good</td><td class="col-accent">Excellent</td><td>Inadequate</td>
+              <th scope="row" data-th="ค่าความปลอดภัย <span class='criterion-dir'>↑ ค่ามากดีกว่า</span>">Safety factor <span class="criterion-dir">↑ higher is better</span></th>
+              <td data-th="ดี">Good</td><td class="col-accent" data-th="ดีเยี่ยม">Excellent</td><td data-th="ไม่เพียงพอ">Inadequate</td>
             </tr>
             <tr>
-              <th scope="row">Ease of manufacture</th>
-              <td>Excellent</td><td class="col-accent">Moderate</td><td>Good — SLS only</td>
+              <th scope="row" data-th="ความง่ายในการผลิต">Ease of manufacture</th>
+              <td data-th="ดีเยี่ยม">Excellent</td><td class="col-accent" data-th="ปานกลาง">Moderate</td><td data-th="ดี — เฉพาะ SLS">Good — SLS only</td>
             </tr>
             <tr>
-              <th scope="row">Material cost <span class="criterion-dir">↓ lower is better</span></th>
-              <td>Low</td><td class="col-accent">High</td><td>Medium</td>
+              <th scope="row" data-th="ต้นทุนวัสดุ <span class='criterion-dir'>↓ ค่าน้อยดีกว่า</span>">Material cost <span class="criterion-dir">↓ lower is better</span></th>
+              <td data-th="ต่ำ">Low</td><td class="col-accent" data-th="สูง">High</td><td data-th="ปานกลาง">Medium</td>
             </tr>
           </tbody>
         </table>
-        <p class="matrix-note">CFRP is recommended for weight-critical applications despite higher material cost. Al 6061-T6 is preferred when cost and manufacturability are the primary constraints.</p>
+        <p class="matrix-note" data-th="แนะนำ CFRP สำหรับงานที่น้ำหนักเป็นปัจจัยสำคัญ แม้ต้นทุนวัสดุจะสูงกว่า ส่วนอะลูมิเนียม 6061-T6 เหมาะกว่าเมื่อต้นทุนและความสามารถในการผลิตเป็นข้อจำกัดหลัก">CFRP is recommended for weight-critical applications despite higher material cost. Al 6061-T6 is preferred when cost and manufacturability are the primary constraints.</p>
       </div>
       <div class="center" style="margin-top:2rem;" data-reveal>
-        <a href="development.html" class="btn btn-primary">See Full Analysis</a>
+        <a href="development.html" class="btn btn-primary" data-th="ดูการวิเคราะห์ฉบับเต็ม">See Full Analysis</a>
       </div>
     </div>
   </section>
@@ -193,8 +198,8 @@
   <section class="section">
     <div class="container">
       <div class="section-head center" data-reveal>
-        <p class="kicker">Team</p>
-        <h2>ENG-203 Project Group</h2>
+        <p class="kicker" data-th="ทีมงาน">Team</p>
+        <h2 data-th="กลุ่มโครงงาน ENG-203">ENG-203 Project Group</h2>
       </div>
       <div class="team-strip" data-reveal>
         <div class="team-chip">
@@ -215,7 +220,7 @@
         </div>
       </div>
       <div class="center" style="margin-top:1.5rem;" data-reveal>
-        <a href="about.html" class="btn btn-ghost">About the Team</a>
+        <a href="about.html" class="btn btn-ghost" data-th="เกี่ยวกับทีม">About the Team</a>
       </div>
     </div>
   </section>
@@ -226,18 +231,18 @@
       <div class="footer-inner">
         <div>
           <div class="footer-logo">Modular Hybrid Gripper</div>
-          <div class="footer-sub">ENG-203 · Material Optimization for Lean Automation</div>
+          <div class="footer-sub" data-th="ENG-203 · การเพิ่มประสิทธิภาพวัสดุสำหรับระบบอัตโนมัติแบบลีน">ENG-203 · Material Optimization for Lean Automation</div>
         </div>
         <nav class="footer-nav">
-          <a href="index.html">Home</a>
-          <a href="development.html">Development</a>
-          <a href="data-sources.html">Data Sources</a>
-          <a href="technical-report.html">Technical Report</a>
-          <a href="reflection.html">Reflection</a>
-          <a href="about.html">About</a>
+          <a href="index.html" data-th="หน้าแรก">Home</a>
+          <a href="development.html" data-th="การพัฒนา">Development</a>
+          <a href="data-sources.html" data-th="แหล่งข้อมูล">Data Sources</a>
+          <a href="technical-report.html" data-th="รายงานทางเทคนิค">Technical Report</a>
+          <a href="reflection.html" data-th="การสะท้อนคิด">Reflection</a>
+          <a href="about.html" data-th="เกี่ยวกับเรา">About</a>
         </nav>
       </div>
-      <div class="footer-copy">© 2026 ENG-203 Project Group · Engineering Department</div>
+      <div class="footer-copy" data-th="© 2026 กลุ่มโครงงาน ENG-203 · ภาควิชาวิศวกรรมศาสตร์">© 2026 ENG-203 Project Group · Engineering Department</div>
     </div>
   </footer>
 

@@ -8,7 +8,7 @@
   <meta name="description" content="Design requirements, CAD modelling, FEA simulation, and physical load testing for the modular hybrid gripper across three candidate materials." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -22,12 +22,19 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="development.html">Development</a></li>
-      <li><a href="data-sources.html">Data Sources</a></li>
-      <li><a href="technical-report.html">Technical Report</a></li>
-      <li><a href="reflection.html">Reflection</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" data-th="หน้าแรก">Home</a></li>
+      <li><a href="development.html" data-th="การพัฒนา">Development</a></li>
+      <li><a href="data-sources.html" data-th="แหล่งข้อมูล">Data Sources</a></li>
+      <li><a href="technical-report.html" data-th="รายงานทางเทคนิค">Technical Report</a></li>
+      <li><a href="reflection.html" data-th="การสะท้อนคิด">Reflection</a></li>
+      <li><a href="about.html" data-th="เกี่ยวกับเรา">About</a></li>
+      <li class="nav-lang">
+        <span class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-opt" data-lang="en">EN</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button type="button" class="lang-opt" data-lang="th">TH</button>
+        </span>
+      </li>
     </ul>
   </nav>
 
@@ -36,9 +43,9 @@
   <section class="hero hero-dev">
     <div class="hero-overlay"></div>
     <div class="hero-content" data-reveal>
-      <div class="hero-label">Design, Simulation & Testing</div>
-      <h1>Development &amp; Analysis</h1>
-      <p class="hero-sub">From initial concept through CAD modelling, FEA simulation, and physical load testing — the full development pipeline for the modular hybrid gripper.</p>
+      <div class="hero-label" data-th="การออกแบบ การจำลอง และการทดสอบ">Design, Simulation & Testing</div>
+      <h1 data-th="การพัฒนาและการวิเคราะห์">Development &amp; Analysis</h1>
+      <p class="hero-sub" data-th="ตั้งแต่แนวคิดเริ่มต้น ผ่านการสร้างแบบจำลอง CAD การจำลอง FEA และการทดสอบโหลดจริง — กระบวนการพัฒนาทั้งหมดของกริปเปอร์ไฮบริดแบบโมดูลาร์">From initial concept through CAD modelling, FEA simulation, and physical load testing — the full development pipeline for the modular hybrid gripper.</p>
     </div>
   </section>
 
@@ -47,33 +54,32 @@
     <div class="container">
       <div class="section-grid-2">
         <div class="section-copy" data-reveal>
-          <p class="kicker">Phase 1</p>
-          <h2>Design Requirements</h2>
-          <p>The gripper must handle parts ranging from 10–80 mm diameter, sustain a grip force of up to 50 N, and integrate with a standard UR5-compatible flange. Finger profiles are swappable without replacing the actuator body.</p>
+          <h2 data-th="ข้อกำหนดการออกแบบ">Design Requirements</h2>
+          <p data-th="กริปเปอร์ต้องจับชิ้นงานขนาดเส้นผ่านศูนย์กลาง 10–80 มม. รับแรงจับได้สูงสุด 50 นิวตัน และเข้ากันได้กับหน้าแปลนมาตรฐานแบบ UR5 โปรไฟล์นิ้วจับสามารถสลับได้โดยไม่ต้องเปลี่ยนตัวแอกชูเอเตอร์">The gripper must handle parts ranging from 10–80 mm diameter, sustain a grip force of up to 50 N, and integrate with a standard UR5-compatible flange. Finger profiles are swappable without replacing the actuator body.</p>
           <div class="req-list" style="margin-top:1.5rem;">
             <div class="req-row">
-              <span class="req-label">Grip force</span>
-              <span class="req-val">50 N (max)</span>
+              <span class="req-label" data-th="แรงจับ">Grip force</span>
+              <span class="req-val" data-th="50 นิวตัน (สูงสุด)">50 N (max)</span>
             </div>
             <div class="req-row">
-              <span class="req-label">Stroke</span>
+              <span class="req-label" data-th="ระยะเคลื่อนที่">Stroke</span>
               <span class="req-val">0–80 mm</span>
             </div>
             <div class="req-row">
-              <span class="req-label">Mount</span>
-              <span class="req-val">ISO 9283 / UR5 flange</span>
+              <span class="req-label" data-th="จุดยึด">Mount</span>
+              <span class="req-val" data-th="หน้าแปลน ISO 9283 / UR5">ISO 9283 / UR5 flange</span>
             </div>
             <div class="req-row">
-              <span class="req-label">Safety factor</span>
+              <span class="req-label" data-th="ค่าความปลอดภัย">Safety factor</span>
               <span class="req-val">≥ 2.0</span>
             </div>
             <div class="req-row">
-              <span class="req-label">Mass target</span>
-              <span class="req-val">&lt; 350 g (per finger pair)</span>
+              <span class="req-label" data-th="น้ำหนักเป้าหมาย">Mass target</span>
+              <span class="req-val" data-th="&lt; 350 ก. (ต่อคู่นิ้วจับ)">&lt; 350 g (per finger pair)</span>
             </div>
             <div class="req-row">
-              <span class="req-label">Finger change time</span>
-              <span class="req-val">&lt; 2 min (no tools)</span>
+              <span class="req-label" data-th="เวลาเปลี่ยนนิ้วจับ">Finger change time</span>
+              <span class="req-val" data-th="&lt; 2 นาที (ไม่ใช้เครื่องมือ)">&lt; 2 min (no tools)</span>
             </div>
           </div>
         </div>
@@ -88,9 +94,8 @@
   <section class="section section-alt">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="kicker">Phase 2</p>
-        <h2>CAD Modelling</h2>
-        <p>All components were modelled in SolidWorks 2023. The finger body is parametric — swapping material in the simulation requires only a material-property override, not a new model.</p>
+        <h2 data-th="การสร้างแบบจำลอง CAD">CAD Modelling</h2>
+        <p data-th="ชิ้นส่วนทั้งหมดถูกสร้างแบบจำลองใน SolidWorks 2023 ตัวนิ้วจับเป็นแบบพาราเมตริก — การเปลี่ยนวัสดุในการจำลองทำได้เพียงแค่กำหนดคุณสมบัติวัสดุใหม่ ไม่ต้องสร้างแบบจำลองใหม่">All components were modelled in SolidWorks 2023. The finger body is parametric — swapping material in the simulation requires only a material-property override, not a new model.</p>
       </div>
       <div class="img-trio" style="margin-top:2rem;" data-reveal>
         <img src="images/cad-isometric.png" alt="Isometric CAD render of the gripper" class="section-img" />
@@ -99,16 +104,16 @@
       </div>
       <div class="info-blocks" style="margin-top:2.5rem;">
         <div class="info-block" data-reveal>
-          <h3>Modular Joint Interface</h3>
-          <p>A keyed bayonet-style interface allows each finger to be locked and released with a 90° twist. The interface surface carries shear load through four radial lugs machined into the finger base.</p>
+          <h3 data-th="จุดต่อแบบโมดูลาร์">Modular Joint Interface</h3>
+          <p data-th="จุดต่อแบบบาโยเน็ตที่มีร่องล็อกช่วยให้ล็อกและปลดนิ้วจับแต่ละนิ้วได้ด้วยการบิด 90° พื้นผิวของจุดต่อรับแรงเฉือนผ่านลั่ก (lug) แนวรัศมีสี่จุดที่กลึงไว้ในฐานนิ้วจับ">A keyed bayonet-style interface allows each finger to be locked and released with a 90° twist. The interface surface carries shear load through four radial lugs machined into the finger base.</p>
         </div>
         <div class="info-block" data-reveal>
-          <h3>Actuator Body</h3>
-          <p>The actuator housing remains constant across all three material variants. Finger geometry changes only affect the replaceable finger element, keeping the comparison controlled and the cost of switching low.</p>
+          <h3 data-th="ตัวแอกชูเอเตอร์">Actuator Body</h3>
+          <p data-th="ตัวเรือนแอกชูเอเตอร์คงเดิมในทุกตัวเลือกวัสดุทั้งสาม การเปลี่ยนรูปทรงนิ้วจับกระทบเฉพาะชิ้นนิ้วจับที่ถอดเปลี่ยนได้เท่านั้น ทำให้การเปรียบเทียบมีตัวแปรควบคุมและต้นทุนการเปลี่ยนต่ำ">The actuator housing remains constant across all three material variants. Finger geometry changes only affect the replaceable finger element, keeping the comparison controlled and the cost of switching low.</p>
         </div>
         <div class="info-block" data-reveal>
-          <h3>Contact Geometry</h3>
-          <p>V-groove contact faces distribute load across a larger area than flat-jaw designs. The angle is set at 120° to centre cylindrical parts passively under grip force.</p>
+          <h3 data-th="รูปทรงพื้นผิวสัมผัส">Contact Geometry</h3>
+          <p data-th="พื้นผิวสัมผัสแบบร่องตัววี (V-groove) กระจายแรงบนพื้นที่กว้างกว่าแบบปากแบน มุมร่องตั้งไว้ที่ 120° เพื่อจัดศูนย์ชิ้นงานทรงกระบอกโดยอัตโนมัติภายใต้แรงจับ">V-groove contact faces distribute load across a larger area than flat-jaw designs. The angle is set at 120° to centre cylindrical parts passively under grip force.</p>
         </div>
       </div>
     </div>
@@ -118,15 +123,14 @@
   <section class="section">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="kicker">Phase 3</p>
-        <h2>Material Property Comparison</h2>
+        <h2 data-th="การเปรียบเทียบคุณสมบัติวัสดุ">Material Property Comparison</h2>
       </div>
       <div class="matrix-wrap" style="margin-top:2rem;" data-reveal>
         <table class="matrix">
           <thead>
             <tr>
-              <th>Property</th>
-              <th>Unit</th>
+              <th data-th="คุณสมบัติ">Property</th>
+              <th data-th="หน่วย">Unit</th>
               <th>Al 6061-T6</th>
               <th class="col-accent">CFRP (UD)</th>
               <th>PA12 Nylon (SLS)</th>
@@ -134,53 +138,53 @@
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Density</th>
+              <th scope="row" data-th="ความหนาแน่น">Density</th>
               <td class="mono">g/cm³</td>
               <td>2.70</td>
               <td class="col-accent">1.55</td>
               <td>1.01</td>
             </tr>
             <tr>
-              <th scope="row">Tensile Strength</th>
+              <th scope="row" data-th="ความแข็งแรงดึง">Tensile Strength</th>
               <td class="mono">MPa</td>
               <td>310</td>
               <td class="col-accent">600+</td>
               <td>48</td>
             </tr>
             <tr>
-              <th scope="row">Yield Strength</th>
+              <th scope="row" data-th="ความแข็งแรงคราก">Yield Strength</th>
               <td class="mono">MPa</td>
               <td>276</td>
               <td class="col-accent">—</td>
               <td>43</td>
             </tr>
             <tr>
-              <th scope="row">Young's Modulus</th>
+              <th scope="row" data-th="มอดุลัสยัง">Young's Modulus</th>
               <td class="mono">GPa</td>
               <td>69</td>
               <td class="col-accent">70–105</td>
               <td>1.6</td>
             </tr>
             <tr>
-              <th scope="row">Thermal Expansion</th>
+              <th scope="row" data-th="การขยายตัวทางความร้อน">Thermal Expansion</th>
               <td class="mono">µm/m·°C</td>
               <td>23.6</td>
               <td class="col-accent">0–2</td>
               <td>~100</td>
             </tr>
             <tr>
-              <th scope="row">Machinability</th>
+              <th scope="row" data-th="ความสามารถในการกลึง">Machinability</th>
               <td>—</td>
-              <td>Excellent</td>
-              <td class="col-accent">Difficult</td>
-              <td>SLS only</td>
+              <td data-th="ดีเยี่ยม">Excellent</td>
+              <td class="col-accent" data-th="ยาก">Difficult</td>
+              <td data-th="เฉพาะ SLS">SLS only</td>
             </tr>
             <tr>
-              <th scope="row">Relative Cost</th>
+              <th scope="row" data-th="ต้นทุนเปรียบเทียบ">Relative Cost</th>
               <td>—</td>
-              <td>Low</td>
-              <td class="col-accent">High</td>
-              <td>Medium</td>
+              <td data-th="ต่ำ">Low</td>
+              <td class="col-accent" data-th="สูง">High</td>
+              <td data-th="ปานกลาง">Medium</td>
             </tr>
           </tbody>
         </table>
@@ -192,44 +196,43 @@
   <section class="section section-alt">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="kicker">Phase 4</p>
-        <h2>Microstructure Analysis</h2>
-        <p>Each candidate's mechanical behaviour traces back to its microstructure — how grains, fibres, or sintered particles are arranged and bonded. This governs strength, anisotropy, and how the part ultimately fails.</p>
+        <h2 data-th="การวิเคราะห์โครงสร้างจุลภาค">Microstructure Analysis</h2>
+        <p data-th="พฤติกรรมเชิงกลของวัสดุแต่ละชนิดสืบย้อนไปถึงโครงสร้างจุลภาค — การจัดเรียงและการยึดเหนี่ยวของเกรน เส้นใย หรืออนุภาคซินเตอร์ ซึ่งเป็นตัวกำหนดความแข็งแรง ความไม่เป็นเนื้อเดียวเชิงทิศทาง และรูปแบบการแตกหักในที่สุด">Each candidate's mechanical behaviour traces back to its microstructure — how grains, fibres, or sintered particles are arranged and bonded. This governs strength, anisotropy, and how the part ultimately fails.</p>
       </div>
       <div class="cards-3" style="margin-top:2.5rem;">
         <div class="card" data-reveal>
           <div class="card-icon accent">AL</div>
           <h3>Aluminum 6061-T6</h3>
-          <p>Wrought, precipitation-hardened alloy. The T6 temper precipitates fine, coherent Mg₂Si particles through equiaxed aluminium grains; these pin dislocations and raise yield strength. The structure is largely isotropic, giving uniform, predictable mechanical response.</p>
+          <p data-th="โลหะผสมขึ้นรูปที่เสริมความแข็งแรงด้วยการตกตะกอน การอบชุบ T6 ทำให้เกิดตะกอน Mg₂Si ละเอียดและสอดคล้องกระจายในเกรนอะลูมิเนียมทรงเท่ากัน ตะกอนเหล่านี้ขัดขวางการเคลื่อนของดิสโลเคชันและเพิ่มความแข็งแรงคราก โครงสร้างเป็นเนื้อเดียวเป็นส่วนใหญ่ จึงตอบสนองเชิงกลได้สม่ำเสมอและคาดเดาได้">Wrought, precipitation-hardened alloy. The T6 temper precipitates fine, coherent Mg₂Si particles through equiaxed aluminium grains; these pin dislocations and raise yield strength. The structure is largely isotropic, giving uniform, predictable mechanical response.</p>
           <ul class="prop-list">
-            <li><span>Structure</span><span>Equiaxed grains</span></li>
-            <li><span>Strengthening</span><span>Mg₂Si precipitates</span></li>
-            <li><span>Anisotropy</span><span>Low</span></li>
+            <li><span data-th="โครงสร้าง">Structure</span><span data-th="เกรนทรงเท่ากัน">Equiaxed grains</span></li>
+            <li><span data-th="กลไกเสริมความแข็งแรง">Strengthening</span><span data-th="ตะกอน Mg₂Si">Mg₂Si precipitates</span></li>
+            <li><span data-th="ความไม่เป็นเนื้อเดียว">Anisotropy</span><span data-th="ต่ำ">Low</span></li>
           </ul>
         </div>
         <div class="card card-featured" data-reveal>
-          <div class="card-badge">Optimal</div>
+          <div class="card-badge" data-th="เหมาะที่สุด">Optimal</div>
           <div class="card-icon">CF</div>
           <h3>Carbon Fiber (CFRP)</h3>
-          <p>Continuous carbon fibres bound in a polymer matrix. Load travels mainly along the fibre direction, so stiffness and strength are strongly anisotropic. A high fibre volume fraction (~60%) and good fibre–matrix adhesion are critical to its performance.</p>
+          <p data-th="เส้นใยคาร์บอนต่อเนื่องยึดในเมทริกซ์พอลิเมอร์ แรงถ่ายทอดส่วนใหญ่ไปตามทิศของเส้นใย ความแข็งเกร็งและความแข็งแรงจึงไม่เป็นเนื้อเดียวเชิงทิศทางสูง สัดส่วนปริมาตรเส้นใยที่สูง (~60%) และการยึดเหนี่ยวเส้นใย–เมทริกซ์ที่ดีเป็นปัจจัยสำคัญต่อสมรรถนะ">Continuous carbon fibres bound in a polymer matrix. Load travels mainly along the fibre direction, so stiffness and strength are strongly anisotropic. A high fibre volume fraction (~60%) and good fibre–matrix adhesion are critical to its performance.</p>
           <ul class="prop-list">
-            <li><span>Structure</span><span>Fibre + matrix</span></li>
-            <li><span>Fibre fraction</span><span>~60% vol</span></li>
-            <li><span>Anisotropy</span><span>High (directional)</span></li>
+            <li><span data-th="โครงสร้าง">Structure</span><span data-th="เส้นใย + เมทริกซ์">Fibre + matrix</span></li>
+            <li><span data-th="สัดส่วนเส้นใย">Fibre fraction</span><span data-th="~60% โดยปริมาตร">~60% vol</span></li>
+            <li><span data-th="ความไม่เป็นเนื้อเดียว">Anisotropy</span><span data-th="สูง (เชิงทิศทาง)">High (directional)</span></li>
           </ul>
         </div>
         <div class="card" data-reveal>
           <div class="card-icon">PA</div>
           <h3>PA12 Nylon (SLS)</h3>
-          <p>Semi-crystalline polyamide built by fusing powder layer by layer. Incomplete particle coalescence leaves residual porosity and partially-melted boundaries — the dominant crack-initiation sites and the reason SLS PA12 is weaker and more variable than moulded nylon.</p>
+          <p data-th="พอลิเอไมด์กึ่งผลึกที่สร้างด้วยการหลอมผงทีละชั้น การหลอมรวมของอนุภาคที่ไม่สมบูรณ์ทิ้งความพรุนตกค้างและขอบที่หลอมไม่เต็ม — เป็นจุดเริ่มรอยร้าวหลักและเป็นเหตุที่ SLS PA12 อ่อนแอและแปรปรวนกว่าไนลอนแบบฉีดขึ้นรูป">Semi-crystalline polyamide built by fusing powder layer by layer. Incomplete particle coalescence leaves residual porosity and partially-melted boundaries — the dominant crack-initiation sites and the reason SLS PA12 is weaker and more variable than moulded nylon.</p>
           <ul class="prop-list">
-            <li><span>Structure</span><span>Sintered particles</span></li>
-            <li><span>Porosity</span><span>~3–5%</span></li>
-            <li><span>Anisotropy</span><span>Build-direction</span></li>
+            <li><span data-th="โครงสร้าง">Structure</span><span data-th="อนุภาคซินเตอร์">Sintered particles</span></li>
+            <li><span data-th="ความพรุน">Porosity</span><span>~3–5%</span></li>
+            <li><span data-th="ความไม่เป็นเนื้อเดียว">Anisotropy</span><span data-th="ตามทิศพิมพ์">Build-direction</span></li>
           </ul>
         </div>
       </div>
-      <p class="matrix-note" style="margin-top:1.5rem;">Takeaway: the aluminium's precipitate-strengthened isotropic grains and CFRP's aligned fibres both resist the grip-load stress state well, while PA12's porous sintered structure concentrates stress at particle boundaries — consistent with its low factor of safety.</p>
+      <p class="matrix-note" style="margin-top:1.5rem;" data-th="สรุป: เกรนเนื้อเดียวที่เสริมด้วยตะกอนของอะลูมิเนียมและเส้นใยที่เรียงตัวของ CFRP ต่างต้านสภาวะความเค้นจากแรงจับได้ดี ขณะที่โครงสร้างซินเตอร์ที่มีรูพรุนของ PA12 รวมความเค้นไว้ที่ขอบอนุภาค — สอดคล้องกับค่าความปลอดภัยที่ต่ำ">Takeaway: the aluminium's precipitate-strengthened isotropic grains and CFRP's aligned fibres both resist the grip-load stress state well, while PA12's porous sintered structure concentrates stress at particle boundaries — consistent with its low factor of safety.</p>
     </div>
   </section>
 
@@ -237,31 +240,30 @@
   <section class="section">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="kicker">Phase 5</p>
-        <h2>Material Selection Matrix</h2>
-        <p>A weighted decision matrix scores each material against the criteria that matter for this gripper. Each criterion is scored 1–5 (5 = best) and multiplied by its weight; the highest weighted total wins.</p>
+        <h2 data-th="ตารางการคัดเลือกวัสดุ">Material Selection Matrix</h2>
+        <p data-th="ตารางตัดสินใจแบบถ่วงน้ำหนักให้คะแนนวัสดุแต่ละชนิดตามเกณฑ์ที่สำคัญต่อกริปเปอร์นี้ แต่ละเกณฑ์ให้คะแนน 1–5 (5 = ดีที่สุด) แล้วคูณด้วยน้ำหนัก คะแนนถ่วงน้ำหนักรวมสูงสุดเป็นผู้ชนะ">A weighted decision matrix scores each material against the criteria that matter for this gripper. Each criterion is scored 1–5 (5 = best) and multiplied by its weight; the highest weighted total wins.</p>
       </div>
       <div class="matrix-wrap" style="margin-top:2rem;" data-reveal>
         <table class="matrix">
           <thead>
             <tr>
-              <th>Criterion</th>
-              <th>Weight</th>
+              <th data-th="เกณฑ์">Criterion</th>
+              <th data-th="น้ำหนัก">Weight</th>
               <th>Al 6061-T6</th>
               <th class="col-accent">CFRP</th>
               <th>PA12</th>
             </tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Strength-to-weight</th><td class="mono">30%</td><td>3</td><td class="col-accent">5</td><td>2</td></tr>
-            <tr><th scope="row">Stiffness</th><td class="mono">20%</td><td>4</td><td class="col-accent">5</td><td>1</td></tr>
-            <tr><th scope="row">Factor of safety</th><td class="mono">20%</td><td>4</td><td class="col-accent">5</td><td>1</td></tr>
-            <tr><th scope="row">Manufacturability</th><td class="mono">15%</td><td>5</td><td class="col-accent">2</td><td>4</td></tr>
-            <tr><th scope="row">Cost</th><td class="mono">15%</td><td>4</td><td class="col-accent">2</td><td>3</td></tr>
-            <tr class="matrix-total"><th scope="row">Weighted total</th><td class="mono">100%</td><td>3.85</td><td class="col-accent">4.10</td><td>2.05</td></tr>
+            <tr><th scope="row" data-th="ความแข็งแรงต่อน้ำหนัก">Strength-to-weight</th><td class="mono">30%</td><td>3</td><td class="col-accent">5</td><td>2</td></tr>
+            <tr><th scope="row" data-th="ความแข็งเกร็ง">Stiffness</th><td class="mono">20%</td><td>4</td><td class="col-accent">5</td><td>1</td></tr>
+            <tr><th scope="row" data-th="ค่าความปลอดภัย">Factor of safety</th><td class="mono">20%</td><td>4</td><td class="col-accent">5</td><td>1</td></tr>
+            <tr><th scope="row" data-th="ความสามารถในการผลิต">Manufacturability</th><td class="mono">15%</td><td>5</td><td class="col-accent">2</td><td>4</td></tr>
+            <tr><th scope="row" data-th="ต้นทุน">Cost</th><td class="mono">15%</td><td>4</td><td class="col-accent">2</td><td>3</td></tr>
+            <tr class="matrix-total"><th scope="row" data-th="คะแนนถ่วงน้ำหนักรวม">Weighted total</th><td class="mono">100%</td><td>3.85</td><td class="col-accent">4.10</td><td>2.05</td></tr>
           </tbody>
         </table>
-        <p class="matrix-note">CFRP scores highest (4.10 / 5), driven by its dominant strength-to-weight and stiffness. Aluminium (3.85) is a close, lower-cost second; PA12 (2.05) is unsuitable for structural use. Re-weighting toward cost would narrow the CFRP–aluminium gap.</p>
+        <p class="matrix-note" data-th="CFRP ได้คะแนนสูงสุด (4.10 / 5) จากความแข็งแรงต่อน้ำหนักและความแข็งเกร็งที่โดดเด่น อะลูมิเนียม (3.85) ตามมาเป็นอันดับสองอย่างใกล้เคียงและต้นทุนต่ำกว่า ส่วน PA12 (2.05) ไม่เหมาะกับงานโครงสร้าง การปรับน้ำหนักไปทางต้นทุนจะลดช่องว่างระหว่าง CFRP กับอะลูมิเนียม">CFRP scores highest (4.10 / 5), driven by its dominant strength-to-weight and stiffness. Aluminium (3.85) is a close, lower-cost second; PA12 (2.05) is unsuitable for structural use. Re-weighting toward cost would narrow the CFRP–aluminium gap.</p>
       </div>
     </div>
   </section>
@@ -270,50 +272,49 @@
   <section class="section section-alt">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="kicker">Phase 6</p>
-        <h2>Failure Mode &amp; Effect Analysis</h2>
-        <p>FMEA identifies how the gripper could fail, the consequence of each failure, and its risk priority. Severity (S), Occurrence (O), and Detection (D) are each rated 1–10; Risk Priority Number (RPN) = S × O × D.</p>
+        <h2 data-th="การวิเคราะห์รูปแบบความล้มเหลวและผลกระทบ (FMEA)">Failure Mode &amp; Effect Analysis</h2>
+        <p data-th="FMEA ระบุว่ากริปเปอร์อาจล้มเหลวอย่างไร ผลของแต่ละความล้มเหลว และลำดับความเสี่ยง ความรุนแรง (S) โอกาสเกิด (O) และการตรวจพบ (D) ให้คะแนน 1–10 ค่าลำดับความเสี่ยง (RPN) = S × O × D">FMEA identifies how the gripper could fail, the consequence of each failure, and its risk priority. Severity (S), Occurrence (O), and Detection (D) are each rated 1–10; Risk Priority Number (RPN) = S × O × D.</p>
       </div>
       <div class="matrix-wrap" style="margin-top:2rem;" data-reveal>
         <table class="matrix fmea">
           <thead>
             <tr>
-              <th>Failure Mode</th><th>Effect</th><th>Cause</th>
-              <th>S</th><th>O</th><th>D</th><th>RPN</th><th>Mitigation</th>
+              <th data-th="รูปแบบความล้มเหลว">Failure Mode</th><th data-th="ผลกระทบ">Effect</th><th data-th="สาเหตุ">Cause</th>
+              <th>S</th><th>O</th><th>D</th><th>RPN</th><th data-th="การป้องกัน/แก้ไข">Mitigation</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Finger fracture at lug root</th>
-              <td>Loss of grip, dropped workpiece</td>
-              <td>Stress concentration; under-strength material (PA12)</td>
+              <th scope="row" data-th="นิ้วจับแตกที่โคนลั่ก">Finger fracture at lug root</th>
+              <td data-th="สูญเสียการจับ ทำชิ้นงานหล่น">Loss of grip, dropped workpiece</td>
+              <td data-th="ความเค้นรวมศูนย์ วัสดุแข็งแรงไม่พอ (PA12)">Stress concentration; under-strength material (PA12)</td>
               <td>9</td><td>4</td><td>3</td><td>108</td>
-              <td>Add fillet radius; specify CFRP / Al for production</td>
+              <td data-th="เพิ่มรัศมีฟิลเล็ต กำหนดใช้ CFRP / Al สำหรับการผลิต">Add fillet radius; specify CFRP / Al for production</td>
             </tr>
             <tr>
-              <th scope="row">Pivot pin shear</th>
-              <td>Linkage collapse, gripper inoperable</td>
-              <td>Overload beyond rated grip force</td>
+              <th scope="row" data-th="สลักหมุนเฉือนขาด">Pivot pin shear</th>
+              <td data-th="กลไกข้อต่อพังทลาย กริปเปอร์ใช้งานไม่ได้">Linkage collapse, gripper inoperable</td>
+              <td data-th="โหลดเกินกว่าแรงจับที่กำหนด">Overload beyond rated grip force</td>
               <td>8</td><td>3</td><td>4</td><td>96</td>
-              <td>Stainless pins sized to FoS ≥ 2; force limiter</td>
+              <td data-th="ใช้สลักสเตนเลสขนาดตามค่าความปลอดภัย ≥ 2 พร้อมตัวจำกัดแรง">Stainless pins sized to FoS ≥ 2; force limiter</td>
             </tr>
             <tr>
-              <th scope="row">Grip-pad wear / slip</th>
-              <td>Reduced friction, part mispositioning</td>
-              <td>Abrasive wear of nylon contact pad</td>
+              <th scope="row" data-th="แผ่นจับสึก / ลื่น">Grip-pad wear / slip</th>
+              <td data-th="แรงเสียดทานลดลง วางตำแหน่งชิ้นงานผิด">Reduced friction, part mispositioning</td>
+              <td data-th="การสึกหรอจากการขัดสีของแผ่นจับไนลอน">Abrasive wear of nylon contact pad</td>
               <td>5</td><td>6</td><td>5</td><td>150</td>
-              <td>Replaceable pads; periodic inspection interval</td>
+              <td data-th="ใช้แผ่นจับแบบเปลี่ยนได้ พร้อมรอบการตรวจสอบเป็นระยะ">Replaceable pads; periodic inspection interval</td>
             </tr>
             <tr>
-              <th scope="row">Bayonet interface loosening</th>
-              <td>Finger detaches during operation</td>
-              <td>Vibration; detent not fully engaged</td>
+              <th scope="row" data-th="จุดต่อบาโยเน็ตคลายตัว">Bayonet interface loosening</th>
+              <td data-th="นิ้วจับหลุดระหว่างทำงาน">Finger detaches during operation</td>
+              <td data-th="การสั่นสะเทือน เดเทนต์ไม่ล็อกเต็มที่">Vibration; detent not fully engaged</td>
               <td>7</td><td>3</td><td>4</td><td>84</td>
-              <td>Spring-loaded detent; assembly check on changeover</td>
+              <td data-th="ใช้เดเทนต์แบบสปริง พร้อมตรวจการประกอบเมื่อเปลี่ยนนิ้วจับ">Spring-loaded detent; assembly check on changeover</td>
             </tr>
           </tbody>
         </table>
-        <p class="matrix-note">Highest risk is grip-pad wear (RPN 150) — frequent but low-severity — handled by making the pads a replaceable consumable. Finger fracture carries the highest severity (9) and is mitigated through material choice and a generous lug-root fillet.</p>
+        <p class="matrix-note" data-th="ความเสี่ยงสูงสุดคือการสึกของแผ่นจับ (RPN 150) — เกิดบ่อยแต่ความรุนแรงต่ำ — จัดการด้วยการทำให้แผ่นจับเป็นชิ้นส่วนเปลี่ยนได้ ส่วนการแตกของนิ้วจับมีความรุนแรงสูงสุด (9) แก้ไขด้วยการเลือกวัสดุและฟิลเล็ตที่โคนลั่กที่กว้างเพียงพอ">Highest risk is grip-pad wear (RPN 150) — frequent but low-severity — handled by making the pads a replaceable consumable. Finger fracture carries the highest severity (9) and is mitigated through material choice and a generous lug-root fillet.</p>
       </div>
     </div>
   </section>
@@ -322,35 +323,34 @@
   <section class="section">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="kicker">Phase 7</p>
-        <h2>Finite Element Analysis</h2>
-        <p>Static structural FEA was run in SolidWorks Simulation. Boundary conditions were identical for all three material variants to isolate the effect of material properties.</p>
+        <h2 data-th="การวิเคราะห์ไฟไนต์เอลิเมนต์ (FEA)">Finite Element Analysis</h2>
+        <p data-th="วิเคราะห์ FEA เชิงโครงสร้างแบบสถิตใน SolidWorks Simulation เงื่อนไขขอบเขตเหมือนกันทั้งสามตัวเลือกวัสดุ เพื่อแยกผลของคุณสมบัติวัสดุออกมา">Static structural FEA was run in SolidWorks Simulation. Boundary conditions were identical for all three material variants to isolate the effect of material properties.</p>
       </div>
       <div class="section-grid-2" style="margin-top:2rem;">
         <div class="info-visual" data-reveal>
           <div class="placeholder-img tall">
-            <span class="placeholder-label">Von Mises Stress<br/>— Al 6061-T6</span>
+            <span class="placeholder-label" data-th="ความเค้น Von Mises<br/>— Al 6061-T6">Von Mises Stress<br/>— Al 6061-T6</span>
           </div>
         </div>
         <div class="section-copy" data-reveal>
-          <h3>Boundary Conditions</h3>
-          <p>The finger base (bayonet interface) was fixed. A 50 N distributed load was applied across the V-groove contact faces at the fingertip. A secondary 15 N side-load was applied orthogonal to the grip axis to simulate workpiece slip.</p>
+          <h3 data-th="เงื่อนไขขอบเขต">Boundary Conditions</h3>
+          <p data-th="ฐานนิ้วจับ (จุดต่อบาโยเน็ต) ถูกยึดตรึง ใส่โหลดกระจาย 50 นิวตันบนพื้นผิวสัมผัสร่องตัววีที่ปลายนิ้วจับ และใส่โหลดด้านข้างรอง 15 นิวตันตั้งฉากกับแกนจับ เพื่อจำลองการลื่นของชิ้นงาน">The finger base (bayonet interface) was fixed. A 50 N distributed load was applied across the V-groove contact faces at the fingertip. A secondary 15 N side-load was applied orthogonal to the grip axis to simulate workpiece slip.</p>
           <div class="req-list" style="margin-top:1.5rem;">
             <div class="req-row">
-              <span class="req-label">Primary load</span>
-              <span class="req-val">50 N (grip)</span>
+              <span class="req-label" data-th="โหลดหลัก">Primary load</span>
+              <span class="req-val" data-th="50 นิวตัน (แรงจับ)">50 N (grip)</span>
             </div>
             <div class="req-row">
-              <span class="req-label">Secondary load</span>
-              <span class="req-val">15 N (side)</span>
+              <span class="req-label" data-th="โหลดรอง">Secondary load</span>
+              <span class="req-val" data-th="15 นิวตัน (ด้านข้าง)">15 N (side)</span>
             </div>
             <div class="req-row">
-              <span class="req-label">Fixture</span>
-              <span class="req-val">Fixed at bayonet base</span>
+              <span class="req-label" data-th="จุดยึด">Fixture</span>
+              <span class="req-val" data-th="ยึดที่ฐานบาโยเน็ต">Fixed at bayonet base</span>
             </div>
             <div class="req-row">
-              <span class="req-label">Mesh type</span>
-              <span class="req-val">Solid, curvature-based</span>
+              <span class="req-label" data-th="ชนิดเมช">Mesh type</span>
+              <span class="req-val" data-th="แบบตัน อิงความโค้ง">Solid, curvature-based</span>
             </div>
           </div>
         </div>
@@ -360,59 +360,54 @@
       <div class="info-blocks" style="margin-top:2.5rem;">
         <div class="result-block" data-reveal>
           <div class="result-label">Al 6061-T6</div>
-          <div class="placeholder-img" style="height:180px;"><span class="placeholder-label">Stress Plot</span></div>
+          <div class="placeholder-img" style="height:180px;"><span class="placeholder-label" data-th="กราฟความเค้น">Stress Plot</span></div>
           <div class="result-stats">
-            <div class="req-row"><span class="req-label">Max stress</span><span class="req-val">98 MPa</span></div>
-            <div class="req-row"><span class="req-label">Max displacement</span><span class="req-val">0.41 mm</span></div>
-            <div class="req-row"><span class="req-label">Factor of safety</span><span class="req-val">2.8</span></div>
+            <div class="req-row"><span class="req-label" data-th="ความเค้นสูงสุด">Max stress</span><span class="req-val">98 MPa</span></div>
+            <div class="req-row"><span class="req-label" data-th="การเคลื่อนตัวสูงสุด">Max displacement</span><span class="req-val">0.41 mm</span></div>
+            <div class="req-row"><span class="req-label" data-th="ค่าความปลอดภัย">Factor of safety</span><span class="req-val">2.8</span></div>
           </div>
         </div>
         <div class="result-block result-block--featured" data-reveal>
-          <div class="result-label accent-text">CFRP <span class="card-badge" style="position:relative;top:0;right:0;margin-left:8px;">Best</span></div>
-          <div class="placeholder-img" style="height:180px;"><span class="placeholder-label">Stress Plot</span></div>
+          <div class="result-label accent-text" data-th="CFRP <span class='card-badge' style='position:relative;top:0;right:0;margin-left:8px;'>ดีที่สุด</span>">CFRP <span class="card-badge" style="position:relative;top:0;right:0;margin-left:8px;">Best</span></div>
+          <div class="placeholder-img" style="height:180px;"><span class="placeholder-label" data-th="กราฟความเค้น">Stress Plot</span></div>
           <div class="result-stats">
-            <div class="req-row"><span class="req-label">Max stress</span><span class="req-val">95 MPa</span></div>
-            <div class="req-row"><span class="req-label">Max displacement</span><span class="req-val">0.32 mm</span></div>
-            <div class="req-row"><span class="req-label">Factor of safety</span><span class="req-val">6.3</span></div>
+            <div class="req-row"><span class="req-label" data-th="ความเค้นสูงสุด">Max stress</span><span class="req-val">95 MPa</span></div>
+            <div class="req-row"><span class="req-label" data-th="การเคลื่อนตัวสูงสุด">Max displacement</span><span class="req-val">0.32 mm</span></div>
+            <div class="req-row"><span class="req-label" data-th="ค่าความปลอดภัย">Factor of safety</span><span class="req-val">6.3</span></div>
           </div>
         </div>
         <div class="result-block" data-reveal>
           <div class="result-label">PA12 Nylon</div>
-          <div class="placeholder-img" style="height:180px;"><span class="placeholder-label">Stress Plot</span></div>
+          <div class="placeholder-img" style="height:180px;"><span class="placeholder-label" data-th="กราฟความเค้น">Stress Plot</span></div>
           <div class="result-stats">
-            <div class="req-row"><span class="req-label">Max stress</span><span class="req-val">102 MPa</span></div>
-            <div class="req-row"><span class="req-label">Max displacement</span><span class="req-val">17.8 mm</span></div>
-            <div class="req-row"><span class="req-label">Factor of safety</span><span class="req-val">0.5</span></div>
+            <div class="req-row"><span class="req-label" data-th="ความเค้นสูงสุด">Max stress</span><span class="req-val">102 MPa</span></div>
+            <div class="req-row"><span class="req-label" data-th="การเคลื่อนตัวสูงสุด">Max displacement</span><span class="req-val">17.8 mm</span></div>
+            <div class="req-row"><span class="req-label" data-th="ค่าความปลอดภัย">Factor of safety</span><span class="req-val">0.5</span></div>
           </div>
         </div>
       </div>
-      <p class="matrix-note" style="margin-top:1.5rem;">Values are first-order analytical estimates from a cantilever-beam idealization (L ≈ 90 mm, ≈ 10 × 8 mm effective section, Kt ≈ 2.3 at the lug root, 50 N grip + 15 N side-load), pending full SolidWorks Simulation validation. PA12's predicted peak stress exceeds its 48 MPa tensile strength, so it yields below the 50 N requirement — suitable for prototyping only.</p>
+      <p class="matrix-note" style="margin-top:1.5rem;" data-th="ค่าเหล่านี้เป็นการประมาณเชิงวิเคราะห์ลำดับแรกจากแบบจำลองคานยื่น (L ≈ 90 มม., หน้าตัดประสิทธิผล ≈ 10 × 8 มม., Kt ≈ 2.3 ที่โคนลั่ก, แรงจับ 50 นิวตัน + แรงด้านข้าง 15 นิวตัน) รอการตรวจสอบเต็มรูปแบบด้วย SolidWorks Simulation ความเค้นสูงสุดที่ทำนายของ PA12 เกินความแข็งแรงดึง 48 MPa จึงครากต่ำกว่าข้อกำหนด 50 นิวตัน — เหมาะกับการทำต้นแบบเท่านั้น">Values are first-order analytical estimates from a cantilever-beam idealization (L ≈ 90 mm, ≈ 10 × 8 mm effective section, Kt ≈ 2.3 at the lug root, 50 N grip + 15 N side-load), pending full SolidWorks Simulation validation. PA12's predicted peak stress exceeds its 48 MPa tensile strength, so it yields below the 50 N requirement — suitable for prototyping only.</p>
     </div>
   </section>
 
   <!-- 8. Fatigue & Wear -->
   <section class="section section-alt">
     <div class="container">
-      <div class="section-grid-2">
-        <div class="section-copy" data-reveal>
-          <p class="kicker">Phase 8</p>
-          <h2>Fatigue &amp; Wear</h2>
-          <p>A gripper finger sees cyclic grip-and-release loading — often millions of cycles per service year — so fatigue endurance, not just static strength, governs service life. Wear at the contact face is the other life-limiting factor.</p>
-          <p style="margin-top:1rem;">Aluminium 6061-T6 is non-ferrous and has no true fatigue endurance limit, so its strength is quoted at a finite life (~5×10⁸ cycles). CFRP has excellent fatigue resistance along the fibre direction. PA12's porous sintered structure makes it the weakest under cyclic load.</p>
-        </div>
-        <div class="info-visual" data-reveal>
-          <div class="matrix-wrap">
-            <table class="matrix">
-              <thead><tr><th>Material</th><th>Fatigue strength</th><th>Wear resistance</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">Al 6061-T6</th><td>~96 MPa @ 5×10⁸ cyc</td><td>Good</td></tr>
-                <tr><th scope="row" class="col-accent">CFRP</th><td class="col-accent">High (directional)</td><td class="col-accent">Excellent</td></tr>
-                <tr><th scope="row">PA12 Nylon</th><td>Low</td><td>Moderate (self-lubricating)</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="matrix-note">The V-groove pads abrade against gripped parts, so the design makes them a replaceable consumable — finger service life is set by fatigue of the structural body, not pad wear.</p>
-        </div>
+      <div class="section-head" data-reveal>
+        <h2 data-th="ความล้าและการสึกหรอ">Fatigue &amp; Wear</h2>
+        <p data-th="นิ้วจับกริปเปอร์รับโหลดจับ-ปล่อยเป็นวัฏจักร — มักหลายล้านรอบต่อปีการใช้งาน — ดังนั้นความทนต่อความล้า ไม่ใช่แค่ความแข็งแรงสถิต จึงเป็นตัวกำหนดอายุการใช้งาน การสึกหรอที่พื้นผิวสัมผัสเป็นอีกปัจจัยที่จำกัดอายุ">A gripper finger sees cyclic grip-and-release loading — often millions of cycles per service year — so fatigue endurance, not just static strength, governs service life. Wear at the contact face is the other life-limiting factor.</p>
+        <p style="margin-top:1rem;" data-th="อะลูมิเนียม 6061-T6 เป็นโลหะที่ไม่มีเหล็กและไม่มีขีดจำกัดความทนต่อความล้าที่แท้จริง จึงระบุความแข็งแรงที่อายุจำกัด (~5×10⁸ รอบ) CFRP ทนต่อความล้าได้ดีเยี่ยมตามทิศของเส้นใย ส่วนโครงสร้างซินเตอร์ที่มีรูพรุนของ PA12 ทำให้อ่อนแอที่สุดภายใต้โหลดเป็นวัฏจักร">Aluminium 6061-T6 is non-ferrous and has no true fatigue endurance limit, so its strength is quoted at a finite life (~5×10⁸ cycles). CFRP has excellent fatigue resistance along the fibre direction. PA12's porous sintered structure makes it the weakest under cyclic load.</p>
+      </div>
+      <div class="matrix-wrap" style="margin-top:2rem;" data-reveal>
+        <table class="matrix">
+          <thead><tr><th data-th="วัสดุ">Material</th><th data-th="ความแข็งแรงล้า">Fatigue strength</th><th data-th="ความต้านทานการสึกหรอ">Wear resistance</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Al 6061-T6</th><td data-th="~96 MPa @ 5×10⁸ รอบ">~96 MPa @ 5×10⁸ cyc</td><td data-th="ดี">Good</td></tr>
+            <tr><th scope="row" class="col-accent">CFRP</th><td class="col-accent" data-th="สูง (เชิงทิศทาง)">High (directional)</td><td class="col-accent" data-th="ดีเยี่ยม">Excellent</td></tr>
+            <tr><th scope="row">PA12 Nylon</th><td data-th="ต่ำ">Low</td><td data-th="ปานกลาง (หล่อลื่นตัวเอง)">Moderate (self-lubricating)</td></tr>
+          </tbody>
+        </table>
+        <p class="matrix-note" data-th="แผ่นจับร่องตัววีขัดสีกับชิ้นงานที่จับ การออกแบบจึงทำให้เป็นชิ้นส่วนเปลี่ยนได้ — อายุการใช้งานของนิ้วจับกำหนดด้วยความล้าของตัวโครงสร้าง ไม่ใช่การสึกของแผ่นจับ">The V-groove pads abrade against gripped parts, so the design makes them a replaceable consumable — finger service life is set by fatigue of the structural body, not pad wear.</p>
       </div>
     </div>
   </section>
@@ -422,32 +417,31 @@
     <div class="container">
       <div class="section-grid-2">
         <div class="section-copy" data-reveal>
-          <p class="kicker">Phase 9</p>
-          <h2>Physical Load Testing</h2>
-          <p>Prototypes in Al 6061-T6 and SLS PA12 were manufactured for destructive and non-destructive load testing. CFRP prototyping was cost-prohibitive at this scale; simulation results are used for that variant.</p>
-          <p style="margin-top:1rem;">A calibrated load cell measured actual grip force at the contact face while a dial gauge recorded displacement at the fingertip. The aluminium prototype was tested non-destructively in 10 N increments across the full 0–60 N range; the PA12 prototype — predicted to yield below the 50 N target — was loaded to failure to establish its actual limit.</p>
+          <h2 data-th="การทดสอบโหลดจริง">Physical Load Testing</h2>
+          <p data-th="ต้นแบบที่ทำจาก Al 6061-T6 และ SLS PA12 ถูกผลิตขึ้นเพื่อทดสอบโหลดแบบทำลายและไม่ทำลาย ส่วน CFRP มีต้นทุนการทำต้นแบบสูงเกินไปในระดับนี้ จึงใช้ผลการจำลองสำหรับตัวเลือกนั้น">Prototypes in Al 6061-T6 and SLS PA12 were manufactured for destructive and non-destructive load testing. CFRP prototyping was cost-prohibitive at this scale; simulation results are used for that variant.</p>
+          <p style="margin-top:1rem;" data-th="โหลดเซลล์ที่สอบเทียบแล้ววัดแรงจับจริงที่พื้นผิวสัมผัส ขณะที่ไดอัลเกจบันทึกการเคลื่อนตัวที่ปลายนิ้วจับ ต้นแบบอะลูมิเนียมถูกทดสอบแบบไม่ทำลายโดยเพิ่มทีละ 10 นิวตันตลอดช่วง 0–60 นิวตัน ส่วนต้นแบบ PA12 — ที่ทำนายว่าจะครากต่ำกว่าเป้าหมาย 50 นิวตัน — ถูกโหลดจนพังเพื่อหาขีดจำกัดจริง">A calibrated load cell measured actual grip force at the contact face while a dial gauge recorded displacement at the fingertip. The aluminium prototype was tested non-destructively in 10 N increments across the full 0–60 N range; the PA12 prototype — predicted to yield below the 50 N target — was loaded to failure to establish its actual limit.</p>
           <div class="req-list" style="margin-top:1.5rem;">
             <div class="req-row">
-              <span class="req-label">Test rig</span>
-              <span class="req-val">Benchtop load frame</span>
+              <span class="req-label" data-th="ชุดทดสอบ">Test rig</span>
+              <span class="req-val" data-th="โครงทดสอบตั้งโต๊ะ">Benchtop load frame</span>
             </div>
             <div class="req-row">
-              <span class="req-label">Sensor</span>
-              <span class="req-val">Load cell + dial gauge</span>
+              <span class="req-label" data-th="เซนเซอร์">Sensor</span>
+              <span class="req-val" data-th="โหลดเซลล์ + ไดอัลเกจ">Load cell + dial gauge</span>
             </div>
             <div class="req-row">
-              <span class="req-label">Load steps</span>
-              <span class="req-val">0–60 N @ 10 N increments</span>
+              <span class="req-label" data-th="ขั้นการโหลด">Load steps</span>
+              <span class="req-val" data-th="0–60 นิวตัน เพิ่มทีละ 10 นิวตัน">0–60 N @ 10 N increments</span>
             </div>
             <div class="req-row">
-              <span class="req-label">Repeats</span>
-              <span class="req-val">3 per condition</span>
+              <span class="req-label" data-th="จำนวนซ้ำ">Repeats</span>
+              <span class="req-val" data-th="3 ครั้งต่อเงื่อนไข">3 per condition</span>
             </div>
           </div>
         </div>
         <div class="info-visual" data-reveal>
           <div class="placeholder-img tall">
-            <span class="placeholder-label">Load Test<br/>Setup Photo</span>
+            <span class="placeholder-label" data-th="ภาพการติดตั้ง<br/>การทดสอบโหลด">Load Test<br/>Setup Photo</span>
           </div>
         </div>
       </div>
@@ -458,58 +452,57 @@
   <section class="section section-alt">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="kicker">Phase 10</p>
-        <h2>Business Case &amp; LEAN</h2>
-        <p>Material choice is ultimately an economic decision. This section compares per-unit cost, maps the modular design to the seven LEAN wastes, and estimates return on investment.</p>
+        <h2 data-th="กรณีศึกษาทางธุรกิจและ LEAN">Business Case &amp; LEAN</h2>
+        <p data-th="การเลือกวัสดุท้ายที่สุดเป็นการตัดสินใจเชิงเศรษฐศาสตร์ ส่วนนี้เปรียบเทียบต้นทุนต่อหน่วย เชื่อมโยงการออกแบบโมดูลาร์กับความสูญเปล่า 7 ประการของ LEAN และประเมินผลตอบแทนการลงทุน">Material choice is ultimately an economic decision. This section compares per-unit cost, maps the modular design to the seven LEAN wastes, and estimates return on investment.</p>
       </div>
 
       <div class="matrix-wrap" style="margin-top:2rem;" data-reveal>
         <table class="matrix">
           <thead>
-            <tr><th>Cost item (per finger, 10-unit batch)</th><th>Al 6061-T6</th><th class="col-accent">CFRP</th><th>PA12 (SLS)</th></tr>
+            <tr><th data-th="รายการต้นทุน (ต่อนิ้วจับ, ล็อต 10 ชิ้น)">Cost item (per finger, 10-unit batch)</th><th>Al 6061-T6</th><th class="col-accent">CFRP</th><th>PA12 (SLS)</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Material</th><td>฿180</td><td class="col-accent">฿1,200</td><td>฿120</td></tr>
-            <tr><th scope="row">Fabrication</th><td>฿650 (CNC)</td><td class="col-accent">฿2,400 (layup + finish)</td><td>฿380 (print)</td></tr>
-            <tr class="matrix-total"><th scope="row">Total per finger</th><td>฿830</td><td class="col-accent">฿3,600</td><td>฿500</td></tr>
+            <tr><th scope="row" data-th="วัสดุ">Material</th><td>฿180</td><td class="col-accent">฿1,200</td><td>฿120</td></tr>
+            <tr><th scope="row" data-th="การผลิต">Fabrication</th><td data-th="฿650 (CNC)">฿650 (CNC)</td><td class="col-accent" data-th="฿2,400 (เลย์อัป + ตกแต่ง)">฿2,400 (layup + finish)</td><td data-th="฿380 (พิมพ์)">฿380 (print)</td></tr>
+            <tr class="matrix-total"><th scope="row" data-th="รวมต่อนิ้วจับ">Total per finger</th><td>฿830</td><td class="col-accent">฿3,600</td><td>฿500</td></tr>
           </tbody>
         </table>
-        <p class="matrix-note">Illustrative costs at a 10-unit batch. Aluminium is the cost-rational structural choice; CFRP's ~4× premium is justified only where weight is critical. PA12 is cheapest but non-structural — prototyping only.</p>
+        <p class="matrix-note" data-th="ต้นทุนเชิงประกอบที่ล็อต 10 ชิ้น อะลูมิเนียมเป็นตัวเลือกโครงสร้างที่สมเหตุสมผลด้านต้นทุน ส่วนราคาที่สูงกว่าราว 4 เท่าของ CFRP คุ้มเฉพาะเมื่อน้ำหนักเป็นปัจจัยสำคัญ PA12 ถูกที่สุดแต่ไม่ใช่งานโครงสร้าง — เหมาะกับการทำต้นแบบเท่านั้น">Illustrative costs at a 10-unit batch. Aluminium is the cost-rational structural choice; CFRP's ~4× premium is justified only where weight is critical. PA12 is cheapest but non-structural — prototyping only.</p>
       </div>
 
       <div class="section-head" data-reveal style="margin-top:3rem;">
-        <h3>Attacking the 7 LEAN Wastes</h3>
+        <h3 data-th="การจัดการความสูญเปล่า 7 ประการของ LEAN">Attacking the 7 LEAN Wastes</h3>
       </div>
       <div class="matrix-wrap" style="margin-top:1rem;" data-reveal>
         <table class="matrix">
-          <thead><tr><th>LEAN Waste</th><th>How the modular gripper reduces it</th></tr></thead>
+          <thead><tr><th data-th="ความสูญเปล่า LEAN">LEAN Waste</th><th data-th="กริปเปอร์โมดูลาร์ช่วยลดอย่างไร">How the modular gripper reduces it</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Defects</th><td>V-groove self-centring reduces mis-picks and scrap.</td></tr>
-            <tr><th scope="row">Waiting</th><td>Tool-free finger swap (&lt; 2 min) cuts changeover downtime.</td></tr>
-            <tr><th scope="row">Overproduction</th><td>Fast changeover makes small, on-demand batches viable.</td></tr>
-            <tr><th scope="row">Transport</th><td>One gripper serves many parts — fewer fixture moves.</td></tr>
-            <tr><th scope="row">Inventory</th><td>One actuator body + a few finger SKUs replaces many dedicated grippers.</td></tr>
-            <tr><th scope="row">Motion</th><td>Passive centring removes re-grip and re-alignment motions.</td></tr>
-            <tr><th scope="row">Over-processing</th><td>One parametric finger model avoids redundant re-tooling.</td></tr>
+            <tr><th scope="row" data-th="ของเสีย">Defects</th><td data-th="การจัดศูนย์อัตโนมัติของร่องตัววีลดการหยิบพลาดและของเสีย">V-groove self-centring reduces mis-picks and scrap.</td></tr>
+            <tr><th scope="row" data-th="การรอคอย">Waiting</th><td data-th="การเปลี่ยนนิ้วจับโดยไม่ใช้เครื่องมือ (&lt; 2 นาที) ลดเวลาหยุดเครื่องตอนเปลี่ยนรุ่น">Tool-free finger swap (&lt; 2 min) cuts changeover downtime.</td></tr>
+            <tr><th scope="row" data-th="การผลิตเกิน">Overproduction</th><td data-th="การเปลี่ยนรุ่นเร็วทำให้ผลิตล็อตเล็กตามต้องการได้คุ้มค่า">Fast changeover makes small, on-demand batches viable.</td></tr>
+            <tr><th scope="row" data-th="การขนส่ง">Transport</th><td data-th="กริปเปอร์ตัวเดียวรองรับหลายชิ้นงาน — ลดการเคลื่อนย้ายฟิกซ์เจอร์">One gripper serves many parts — fewer fixture moves.</td></tr>
+            <tr><th scope="row" data-th="สินค้าคงคลัง">Inventory</th><td data-th="ตัวแอกชูเอเตอร์เดียว + นิ้วจับไม่กี่แบบ แทนกริปเปอร์เฉพาะทางจำนวนมาก">One actuator body + a few finger SKUs replaces many dedicated grippers.</td></tr>
+            <tr><th scope="row" data-th="การเคลื่อนไหว">Motion</th><td data-th="การจัดศูนย์แบบพาสซีฟตัดการจับซ้ำและการปรับแนวออกไป">Passive centring removes re-grip and re-alignment motions.</td></tr>
+            <tr><th scope="row" data-th="การทำงานเกินจำเป็น">Over-processing</th><td data-th="แบบจำลองนิ้วจับพาราเมตริกเดียวเลี่ยงการทำเครื่องมือซ้ำซ้อน">One parametric finger model avoids redundant re-tooling.</td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="info-blocks" style="margin-top:3rem;">
         <div class="info-block" data-reveal>
-          <h3>Energy saving</h3>
-          <p>Lighter fingers lower actuator load and cycle energy — an estimated <strong>฿12,000 / year per robot</strong>.</p>
+          <h3 data-th="ประหยัดพลังงาน">Energy saving</h3>
+          <p data-th="นิ้วจับที่เบากว่าลดโหลดแอกชูเอเตอร์และพลังงานต่อรอบ — ประมาณ <strong>฿12,000 / ปี ต่อหุ่นยนต์หนึ่งตัว</strong>">Lighter fingers lower actuator load and cycle energy — an estimated <strong>฿12,000 / year per robot</strong>.</p>
         </div>
         <div class="info-block" data-reveal>
-          <h3>Defect reduction</h3>
-          <p>Self-centring grip and fewer mis-picks cut rework and scrap by an estimated <strong>฿150,000 / month</strong> line-wide.</p>
+          <h3 data-th="ลดของเสีย">Defect reduction</h3>
+          <p data-th="การจับแบบจัดศูนย์และการหยิบพลาดที่น้อยลงช่วยลดงานแก้ไขและของเสียทั้งสายราว <strong>฿150,000 / เดือน</strong>">Self-centring grip and fewer mis-picks cut rework and scrap by an estimated <strong>฿150,000 / month</strong> line-wide.</p>
         </div>
         <div class="info-block" data-reveal>
-          <h3>Downtime saving</h3>
-          <p>Faster changeover and replaceable pads reduce maintenance downtime by an estimated <strong>฿25,000 / maintenance cycle</strong>.</p>
+          <h3 data-th="ลดเวลาหยุดเครื่อง">Downtime saving</h3>
+          <p data-th="การเปลี่ยนรุ่นที่เร็วขึ้นและแผ่นจับที่เปลี่ยนได้ช่วยลดเวลาหยุดเพื่อบำรุงรักษาราว <strong>฿25,000 / รอบบำรุงรักษา</strong>">Faster changeover and replaceable pads reduce maintenance downtime by an estimated <strong>฿25,000 / maintenance cycle</strong>.</p>
         </div>
       </div>
-      <p class="matrix-note" style="margin-top:1.5rem;">Against the modular gripper tooling investment, the combined savings give an estimated payback of <strong>~3.5 months</strong>. Figures are illustrative estimates for the business case, pending plant-specific data.</p>
+      <p class="matrix-note" style="margin-top:1.5rem;" data-th="เมื่อเทียบกับเงินลงทุนเครื่องมือกริปเปอร์โมดูลาร์ เงินที่ประหยัดได้รวมกันให้ระยะคืนทุนประมาณ <strong>~3.5 เดือน</strong> ตัวเลขเป็นการประมาณเชิงประกอบสำหรับกรณีศึกษาทางธุรกิจ รอข้อมูลเฉพาะของโรงงาน">Against the modular gripper tooling investment, the combined savings give an estimated payback of <strong>~3.5 months</strong>. Figures are illustrative estimates for the business case, pending plant-specific data.</p>
     </div>
   </section>
 
@@ -517,21 +510,20 @@
   <section class="section">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="kicker">Phase 11</p>
-        <h2>Discussion &amp; Recommendation</h2>
+        <h2 data-th="การอภิปรายและข้อเสนอแนะ">Discussion &amp; Recommendation</h2>
       </div>
       <div class="info-blocks" style="margin-top:2rem;">
         <div class="info-block" data-reveal>
-          <h3>CFRP — Best Structural Performance</h3>
-          <p>Carbon fibre delivers the highest factor of safety and lowest displacement under load. Its low density reduces tool-change inertia. The trade-off is material and fabrication cost, plus anisotropic behaviour that requires careful fibre orientation control.</p>
+          <h3 data-th="CFRP — สมรรถนะโครงสร้างดีที่สุด">CFRP — Best Structural Performance</h3>
+          <p data-th="คาร์บอนไฟเบอร์ให้ค่าความปลอดภัยสูงสุดและการเคลื่อนตัวต่ำสุดภายใต้โหลด ความหนาแน่นต่ำช่วยลดความเฉื่อยในการเปลี่ยนนิ้วจับ ข้อแลกเปลี่ยนคือต้นทุนวัสดุและการผลิต รวมถึงพฤติกรรมไม่เป็นเนื้อเดียวเชิงทิศทางที่ต้องควบคุมการวางแนวเส้นใยอย่างระมัดระวัง">Carbon fibre delivers the highest factor of safety and lowest displacement under load. Its low density reduces tool-change inertia. The trade-off is material and fabrication cost, plus anisotropic behaviour that requires careful fibre orientation control.</p>
         </div>
         <div class="info-block" data-reveal>
-          <h3>Al 6061-T6 — Best All-Round Value</h3>
-          <p>Aluminium meets all structural requirements with a comfortable safety margin and is easily CNC-machined in-house. For production quantities above ~20 units, it is the most economically rational choice.</p>
+          <h3 data-th="Al 6061-T6 — คุ้มค่ารอบด้านที่สุด">Al 6061-T6 — Best All-Round Value</h3>
+          <p data-th="อะลูมิเนียมผ่านข้อกำหนดเชิงโครงสร้างทั้งหมดด้วยส่วนเผื่อความปลอดภัยที่สบาย ๆ และกลึง CNC ภายในองค์กรได้ง่าย สำหรับปริมาณผลิตเกินราว 20 ชิ้น ถือเป็นตัวเลือกที่สมเหตุสมผลด้านเศรษฐศาสตร์ที่สุด">Aluminium meets all structural requirements with a comfortable safety margin and is easily CNC-machined in-house. For production quantities above ~20 units, it is the most economically rational choice.</p>
         </div>
         <div class="info-block" data-reveal>
-          <h3>PA12 Nylon — Best for Rapid Iteration</h3>
-          <p>SLS nylon enables geometry changes overnight without tooling cost, making it ideal for early-stage prototyping. It does not meet the structural requirements for sustained 50 N operation and should not be used in production.</p>
+          <h3 data-th="PA12 Nylon — เหมาะกับการพัฒนาต้นแบบเร็วที่สุด">PA12 Nylon — Best for Rapid Iteration</h3>
+          <p data-th="ไนลอน SLS ช่วยให้เปลี่ยนรูปทรงได้ในชั่วข้ามคืนโดยไม่มีต้นทุนเครื่องมือ จึงเหมาะกับการทำต้นแบบช่วงต้น แต่ไม่ผ่านข้อกำหนดเชิงโครงสร้างสำหรับการทำงานต่อเนื่องที่ 50 นิวตัน และไม่ควรใช้ในการผลิตจริง">SLS nylon enables geometry changes overnight without tooling cost, making it ideal for early-stage prototyping. It does not meet the structural requirements for sustained 50 N operation and should not be used in production.</p>
         </div>
       </div>
     </div>
@@ -544,22 +536,21 @@
       <div class="footer-inner">
         <div>
           <div class="footer-logo">Modular Hybrid Gripper</div>
-          <div class="footer-sub">ENG-203 · Material Optimization for Lean Automation</div>
+          <div class="footer-sub" data-th="ENG-203 · การเพิ่มประสิทธิภาพวัสดุสำหรับระบบอัตโนมัติแบบลีน">ENG-203 · Material Optimization for Lean Automation</div>
         </div>
         <nav class="footer-nav">
-          <a href="index.html">Home</a>
-          <a href="development.html">Development</a>
-          <a href="data-sources.html">Data Sources</a>
-          <a href="technical-report.html">Technical Report</a>
-          <a href="reflection.html">Reflection</a>
-          <a href="about.html">About</a>
+          <a href="index.html" data-th="หน้าแรก">Home</a>
+          <a href="development.html" data-th="การพัฒนา">Development</a>
+          <a href="data-sources.html" data-th="แหล่งข้อมูล">Data Sources</a>
+          <a href="technical-report.html" data-th="รายงานทางเทคนิค">Technical Report</a>
+          <a href="reflection.html" data-th="การสะท้อนคิด">Reflection</a>
+          <a href="about.html" data-th="เกี่ยวกับเรา">About</a>
         </nav>
       </div>
-      <div class="footer-copy">© 2026 ENG-203 Project Group · Engineering Department</div>
+      <div class="footer-copy" data-th="© 2026 กลุ่มโครงงาน ENG-203 · ภาควิชาวิศวกรรมศาสตร์">© 2026 ENG-203 Project Group · Engineering Department</div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
 </html>
-

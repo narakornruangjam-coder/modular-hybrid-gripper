@@ -1,5 +1,35 @@
+// Language toggle (EN <-> TH). Elements carry a data-th attribute holding the
+// Thai version; the original English is captured into data-en on first apply.
+function applyLang(lang) {
+  document.querySelectorAll('[data-th]').forEach(function (el) {
+    if (el.getAttribute('data-en') === null) {
+      el.setAttribute('data-en', el.innerHTML);
+    }
+    el.innerHTML = (lang === 'th') ? el.getAttribute('data-th') : el.getAttribute('data-en');
+  });
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('.lang-opt').forEach(function (opt) {
+    var on = opt.getAttribute('data-lang') === lang;
+    opt.classList.toggle('active', on);
+    opt.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+}
+
+function getLang() {
+  try { return localStorage.getItem('lang') || 'en'; } catch (e) { return 'en'; }
+}
+
 // Mobile nav toggle
 document.addEventListener('DOMContentLoaded', function () {
+  // Apply the saved language and wire the toggle button
+  applyLang(getLang());
+  document.querySelectorAll('.lang-opt').forEach(function (opt) {
+    opt.addEventListener('click', function () {
+      applyLang(opt.getAttribute('data-lang'));
+    });
+  });
+
   var btn = document.querySelector('.nav-menu-btn');
   var links = document.querySelector('.nav-links');
   if (btn && links) {

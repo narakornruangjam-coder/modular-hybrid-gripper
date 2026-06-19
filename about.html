@@ -8,7 +8,7 @@
   <meta name="description" content="The four-student ENG-203 team behind the Modular Hybrid Gripper project and their contributions." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -22,12 +22,19 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="development.html">Development</a></li>
-      <li><a href="data-sources.html">Data Sources</a></li>
-      <li><a href="technical-report.html">Technical Report</a></li>
-      <li><a href="reflection.html">Reflection</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" data-th="หน้าแรก">Home</a></li>
+      <li><a href="development.html" data-th="การพัฒนา">Development</a></li>
+      <li><a href="data-sources.html" data-th="แหล่งข้อมูล">Data Sources</a></li>
+      <li><a href="technical-report.html" data-th="รายงานทางเทคนิค">Technical Report</a></li>
+      <li><a href="reflection.html" data-th="การสะท้อนคิด">Reflection</a></li>
+      <li><a href="about.html" data-th="เกี่ยวกับเรา">About</a></li>
+      <li class="nav-lang">
+        <span class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-opt" data-lang="en">EN</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button type="button" class="lang-opt" data-lang="th">TH</button>
+        </span>
+      </li>
     </ul>
   </nav>
 
@@ -36,9 +43,9 @@
   <section class="hero hero-about">
     <div class="hero-overlay"></div>
     <div class="hero-content" data-reveal>
-      <div class="hero-label">ENG-203 Project Group</div>
-      <h1>About the Team</h1>
-      <p class="hero-sub">Four engineering students investigating material optimization for robotic gripper systems as part of the ENG-203 course project.</p>
+      <div class="hero-label" data-th="กลุ่มโครงงาน ENG-203">ENG-203 Project Group</div>
+      <h1 data-th="เกี่ยวกับทีม">About the Team</h1>
+      <p class="hero-sub" data-th="นักศึกษาวิศวกรรมสี่คนศึกษาการเพิ่มประสิทธิภาพวัสดุสำหรับระบบกริปเปอร์หุ่นยนต์ เป็นส่วนหนึ่งของโครงงานรายวิชา ENG-203">Four engineering students investigating material optimization for robotic gripper systems as part of the ENG-203 course project.</p>
     </div>
   </section>
 
@@ -46,8 +53,8 @@
   <section class="section">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="kicker">Members</p>
-        <h2>The Team</h2>
+        <p class="kicker" data-th="สมาชิก">Members</p>
+        <h2 data-th="ทีมงาน">The Team</h2>
       </div>
       <div class="team-grid" style="margin-top:2.5rem;">
 
@@ -55,9 +62,9 @@
           <div class="team-card-avatar">NR</div>
           <div class="team-card-body">
             <h3>Narakorn Ruangjam</h3>
-            <div class="team-card-id">Student ID: 2411220227</div>
-            <div class="team-card-role">Microstructure &amp; Mechanical Properties</div>
-            <p>Led material characterization — comparing the microstructure and mechanical properties (tensile strength, yield, modulus, density) of Aluminum 6061-T6, CFRP, and PA12 Nylon. Built the material property comparison table that anchors the selection decision.</p>
+            <div class="team-card-id" data-th="รหัสนักศึกษา: 2411220227">Student ID: 2411220227</div>
+            <div class="team-card-role" data-th="โครงสร้างจุลภาคและสมบัติเชิงกล">Microstructure &amp; Mechanical Properties</div>
+            <p data-th="นำการวิเคราะห์ลักษณะวัสดุ — เปรียบเทียบโครงสร้างจุลภาคและสมบัติเชิงกล (ความแข็งแรงดึง ความแข็งแรงคราก มอดุลัส ความหนาแน่น) ของ Aluminum 6061-T6, CFRP และ PA12 Nylon สร้างตารางเปรียบเทียบสมบัติวัสดุที่เป็นหลักของการตัดสินใจคัดเลือก">Led material characterization — comparing the microstructure and mechanical properties (tensile strength, yield, modulus, density) of Aluminum 6061-T6, CFRP, and PA12 Nylon. Built the material property comparison table that anchors the selection decision.</p>
           </div>
         </div>
 
@@ -65,9 +72,9 @@
           <div class="team-card-avatar">PB</div>
           <div class="team-card-body">
             <h3>Pawit Bunchokchaigrit</h3>
-            <div class="team-card-id">Student ID: 2411220243</div>
-            <div class="team-card-role">FMEA &amp; Modular Mechanism Design</div>
-            <p>Designed the modular bayonet finger interface and ran the Failure Mode and Effects Analysis (FMEA) — identifying primary failure modes at the pivot joints and lug roots, then feeding mitigation requirements back into the mechanism design.</p>
+            <div class="team-card-id" data-th="รหัสนักศึกษา: 2411220243">Student ID: 2411220243</div>
+            <div class="team-card-role" data-th="FMEA และการออกแบบกลไกโมดูลาร์">FMEA &amp; Modular Mechanism Design</div>
+            <p data-th="ออกแบบจุดต่อนิ้วจับบาโยเน็ตแบบโมดูลาร์และทำการวิเคราะห์รูปแบบความล้มเหลวและผลกระทบ (FMEA) — ระบุรูปแบบความล้มเหลวหลักที่ข้อต่อหมุนและโคนลั่ก แล้วป้อนข้อกำหนดการแก้ไขกลับเข้าสู่การออกแบบกลไก">Designed the modular bayonet finger interface and ran the Failure Mode and Effects Analysis (FMEA) — identifying primary failure modes at the pivot joints and lug roots, then feeding mitigation requirements back into the mechanism design.</p>
           </div>
         </div>
 
@@ -75,9 +82,9 @@
           <div class="team-card-avatar">RM</div>
           <div class="team-card-body">
             <h3>Rujinarong Meeda</h3>
-            <div class="team-card-id">Student ID: 2411290014</div>
-            <div class="team-card-role">FEA Simulation &amp; Structural Validation</div>
-            <p>Built the SolidWorks Simulation models and ran static structural FEA across all three materials under identical 50 N grip and 15 N side loads — extracting Von Mises stress, displacement, and factor of safety to validate the design.</p>
+            <div class="team-card-id" data-th="รหัสนักศึกษา: 2411290014">Student ID: 2411290014</div>
+            <div class="team-card-role" data-th="การจำลอง FEA และการตรวจสอบเชิงโครงสร้าง">FEA Simulation &amp; Structural Validation</div>
+            <p data-th="สร้างแบบจำลอง SolidWorks Simulation และทำ FEA เชิงโครงสร้างแบบสถิตในวัสดุทั้งสามชนิดภายใต้โหลดจับ 50 นิวตันและโหลดด้านข้าง 15 นิวตันเท่ากัน — ดึงค่าความเค้น Von Mises การเคลื่อนตัว และค่าความปลอดภัยเพื่อตรวจสอบการออกแบบ">Built the SolidWorks Simulation models and ran static structural FEA across all three materials under identical 50 N grip and 15 N side loads — extracting Von Mises stress, displacement, and factor of safety to validate the design.</p>
           </div>
         </div>
 
@@ -85,9 +92,9 @@
           <div class="team-card-avatar">TK</div>
           <div class="team-card-body">
             <h3>Theeraput Khanthee</h3>
-            <div class="team-card-id">Student ID: 2511220135</div>
-            <div class="team-card-role">LEAN Analysis &amp; Business Case</div>
-            <p>Led the lean manufacturing analysis and business case — quantifying the changeover-time savings enabled by the modular design and building the cost and ROI argument behind the final material recommendation.</p>
+            <div class="team-card-id" data-th="รหัสนักศึกษา: 2511220135">Student ID: 2511220135</div>
+            <div class="team-card-role" data-th="การวิเคราะห์ LEAN และกรณีศึกษาธุรกิจ">LEAN Analysis &amp; Business Case</div>
+            <p data-th="นำการวิเคราะห์การผลิตแบบลีนและกรณีศึกษาทางธุรกิจ — วัดปริมาณเวลาที่ประหยัดได้จากการเปลี่ยนรุ่นด้วยการออกแบบโมดูลาร์ และสร้างข้อโต้แย้งด้านต้นทุนและ ROI เบื้องหลังข้อเสนอแนะวัสดุสุดท้าย">Led the lean manufacturing analysis and business case — quantifying the changeover-time savings enabled by the modular design and building the cost and ROI argument behind the final material recommendation.</p>
           </div>
         </div>
 
@@ -100,16 +107,16 @@
     <div class="container">
       <div class="section-grid-2">
         <div class="section-copy" data-reveal>
-          <p class="kicker">Course Context</p>
+          <p class="kicker" data-th="บริบทรายวิชา">Course Context</p>
           <h2>ENG-203</h2>
-          <p>This project was completed as part of ENG-203 at the Engineering Department. The course focuses on engineering design, materials selection, and lean manufacturing principles applied to real-world automation challenges.</p>
-          <p style="margin-top:1rem;">The gripper project was chosen to bridge mechanical design, material science, and manufacturing process knowledge within a single integrated deliverable.</p>
+          <p data-th="โครงงานนี้จัดทำขึ้นเป็นส่วนหนึ่งของรายวิชา ENG-203 ในภาควิชาวิศวกรรมศาสตร์ รายวิชานี้เน้นการออกแบบทางวิศวกรรม การคัดเลือกวัสดุ และหลักการผลิตแบบลีนที่ประยุกต์กับโจทย์ระบบอัตโนมัติในโลกจริง">This project was completed as part of ENG-203 at the Engineering Department. The course focuses on engineering design, materials selection, and lean manufacturing principles applied to real-world automation challenges.</p>
+          <p style="margin-top:1rem;" data-th="เลือกโครงงานกริปเปอร์เพื่อเชื่อมการออกแบบเชิงกล วัสดุศาสตร์ และความรู้กระบวนการผลิตไว้ในผลงานบูรณาการชิ้นเดียว">The gripper project was chosen to bridge mechanical design, material science, and manufacturing process knowledge within a single integrated deliverable.</p>
         </div>
         <div class="section-copy" data-reveal>
-          <p class="kicker">Project Scope</p>
-          <h2>What We Built</h2>
-          <p>A modular two-finger gripper designed for lean automation. The modularity allows finger profiles to be swapped without dismantling the actuator assembly, reducing changeover time in multi-variant production lines.</p>
-          <p style="margin-top:1rem;">Three materials — Aluminum 6061-T6, CFRP, and SLS PA12 Nylon — were evaluated through FEA simulation and physical load testing to identify the optimal candidate for each use-case scenario.</p>
+          <p class="kicker" data-th="ขอบเขตโครงงาน">Project Scope</p>
+          <h2 data-th="สิ่งที่เราสร้าง">What We Built</h2>
+          <p data-th="กริปเปอร์สองนิ้วแบบโมดูลาร์ที่ออกแบบสำหรับระบบอัตโนมัติแบบลีน ความเป็นโมดูลาร์ช่วยให้สลับโปรไฟล์นิ้วจับได้โดยไม่ต้องถอดชุดแอกชูเอเตอร์ ลดเวลาเปลี่ยนรุ่นในสายการผลิตหลายผลิตภัณฑ์">A modular two-finger gripper designed for lean automation. The modularity allows finger profiles to be swapped without dismantling the actuator assembly, reducing changeover time in multi-variant production lines.</p>
+          <p style="margin-top:1rem;" data-th="วัสดุสามชนิด — Aluminum 6061-T6, CFRP และ SLS PA12 Nylon — ถูกประเมินผ่านการจำลอง FEA และการทดสอบโหลดจริงเพื่อหาตัวเลือกที่เหมาะสมที่สุดสำหรับแต่ละสถานการณ์การใช้งาน">Three materials — Aluminum 6061-T6, CFRP, and SLS PA12 Nylon — were evaluated through FEA simulation and physical load testing to identify the optimal candidate for each use-case scenario.</p>
         </div>
       </div>
     </div>
@@ -122,22 +129,21 @@
       <div class="footer-inner">
         <div>
           <div class="footer-logo">Modular Hybrid Gripper</div>
-          <div class="footer-sub">ENG-203 · Material Optimization for Lean Automation</div>
+          <div class="footer-sub" data-th="ENG-203 · การเพิ่มประสิทธิภาพวัสดุสำหรับระบบอัตโนมัติแบบลีน">ENG-203 · Material Optimization for Lean Automation</div>
         </div>
         <nav class="footer-nav">
-          <a href="index.html">Home</a>
-          <a href="development.html">Development</a>
-          <a href="data-sources.html">Data Sources</a>
-          <a href="technical-report.html">Technical Report</a>
-          <a href="reflection.html">Reflection</a>
-          <a href="about.html">About</a>
+          <a href="index.html" data-th="หน้าแรก">Home</a>
+          <a href="development.html" data-th="การพัฒนา">Development</a>
+          <a href="data-sources.html" data-th="แหล่งข้อมูล">Data Sources</a>
+          <a href="technical-report.html" data-th="รายงานทางเทคนิค">Technical Report</a>
+          <a href="reflection.html" data-th="การสะท้อนคิด">Reflection</a>
+          <a href="about.html" data-th="เกี่ยวกับเรา">About</a>
         </nav>
       </div>
-      <div class="footer-copy">© 2026 ENG-203 Project Group · Engineering Department</div>
+      <div class="footer-copy" data-th="© 2026 กลุ่มโครงงาน ENG-203 · ภาควิชาวิศวกรรมศาสตร์">© 2026 ENG-203 Project Group · Engineering Department</div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
 </html>
-

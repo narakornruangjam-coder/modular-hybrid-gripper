@@ -8,7 +8,7 @@
   <meta name="description" content="Material datasheets, design standards, simulation tools, and academic references behind the Modular Hybrid Gripper project." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -22,12 +22,19 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="development.html">Development</a></li>
-      <li><a href="data-sources.html">Data Sources</a></li>
-      <li><a href="technical-report.html">Technical Report</a></li>
-      <li><a href="reflection.html">Reflection</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" data-th="หน้าแรก">Home</a></li>
+      <li><a href="development.html" data-th="การพัฒนา">Development</a></li>
+      <li><a href="data-sources.html" data-th="แหล่งข้อมูล">Data Sources</a></li>
+      <li><a href="technical-report.html" data-th="รายงานทางเทคนิค">Technical Report</a></li>
+      <li><a href="reflection.html" data-th="การสะท้อนคิด">Reflection</a></li>
+      <li><a href="about.html" data-th="เกี่ยวกับเรา">About</a></li>
+      <li class="nav-lang">
+        <span class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-opt" data-lang="en">EN</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button type="button" class="lang-opt" data-lang="th">TH</button>
+        </span>
+      </li>
     </ul>
   </nav>
 
@@ -36,9 +43,9 @@
   <section class="hero hero-data">
     <div class="hero-overlay"></div>
     <div class="hero-content" data-reveal>
-      <div class="hero-label">References &amp; Data Sources</div>
-      <h1>Data Sources</h1>
-      <p class="hero-sub">All material property values, simulation parameters, and design standards used in this project are cited below.</p>
+      <div class="hero-label" data-th="เอกสารอ้างอิงและแหล่งข้อมูล">References &amp; Data Sources</div>
+      <h1 data-th="แหล่งข้อมูล">Data Sources</h1>
+      <p class="hero-sub" data-th="ค่าคุณสมบัติวัสดุ พารามิเตอร์การจำลอง และมาตรฐานการออกแบบทั้งหมดที่ใช้ในโครงงานนี้ถูกอ้างอิงไว้ด้านล่าง">All material property values, simulation parameters, and design standards used in this project are cited below.</p>
     </div>
   </section>
 
@@ -46,14 +53,14 @@
   <section class="section">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="kicker">Material Properties</p>
-        <h2>Certified Datasheets</h2>
-        <p>All property values were sourced from manufacturer datasheets or peer-reviewed standards. Values used in FEA match the datasheet conditions (T6 temper for aluminium, 0° fibre direction for CFRP, sintered density for PA12).</p>
+        <p class="kicker" data-th="คุณสมบัติวัสดุ">Material Properties</p>
+        <h2 data-th="เอกสารข้อมูลที่ได้รับการรับรอง">Certified Datasheets</h2>
+        <p data-th="ค่าคุณสมบัติทั้งหมดมาจากเอกสารข้อมูลของผู้ผลิตหรือมาตรฐานที่ผ่านการตรวจทาน ค่าที่ใช้ใน FEA ตรงกับเงื่อนไขในเอกสารข้อมูล (อบชุบ T6 สำหรับอะลูมิเนียม ทิศเส้นใย 0° สำหรับ CFRP และความหนาแน่นซินเตอร์สำหรับ PA12)">All property values were sourced from manufacturer datasheets or peer-reviewed standards. Values used in FEA match the datasheet conditions (T6 temper for aluminium, 0° fibre direction for CFRP, sintered density for PA12).</p>
       </div>
       <div class="ref-list" style="margin-top:2rem;" data-reveal>
         <div class="ref-item">
           <div class="ref-meta">
-            <span class="ref-tag">Aluminum</span>
+            <span class="ref-tag" data-th="อะลูมิเนียม">Aluminum</span>
             <span class="ref-id mono">DS-AL-001</span>
           </div>
           <div class="ref-body">
@@ -93,8 +100,8 @@
     <div class="container">
       <div class="section-grid-2">
         <div class="section-copy" data-reveal>
-          <p class="kicker">Standards</p>
-          <h2>Design Standards Applied</h2>
+          <p class="kicker" data-th="มาตรฐาน">Standards</p>
+          <h2 data-th="มาตรฐานการออกแบบที่ใช้">Design Standards Applied</h2>
           <div class="ref-list" style="margin-top:1.5rem;">
             <div class="ref-item compact">
               <div class="ref-meta"><span class="ref-tag">ISO</span><span class="ref-id mono">ISO 9283</span></div>
@@ -117,28 +124,28 @@
           </div>
         </div>
         <div class="section-copy" data-reveal>
-          <p class="kicker">Software &amp; Tools</p>
-          <h2>Simulation Environment</h2>
+          <p class="kicker" data-th="ซอฟต์แวร์และเครื่องมือ">Software &amp; Tools</p>
+          <h2 data-th="สภาพแวดล้อมการจำลอง">Simulation Environment</h2>
           <div class="ref-list" style="margin-top:1.5rem;">
             <div class="ref-item compact">
               <div class="ref-meta"><span class="ref-tag">CAD</span></div>
               <div class="ref-body">
                 <div class="ref-title">SolidWorks 2023 SP3</div>
-                <div class="ref-note">3D parametric modelling; part and assembly environment</div>
+                <div class="ref-note" data-th="การสร้างแบบจำลองพาราเมตริก 3 มิติ สภาพแวดล้อมชิ้นส่วนและการประกอบ">3D parametric modelling; part and assembly environment</div>
               </div>
             </div>
             <div class="ref-item compact">
               <div class="ref-meta"><span class="ref-tag">FEA</span></div>
               <div class="ref-body">
                 <div class="ref-title">SolidWorks Simulation (Static Structural)</div>
-                <div class="ref-note">Von Mises stress, displacement, factor of safety</div>
+                <div class="ref-note" data-th="ความเค้น Von Mises การเคลื่อนตัว ค่าความปลอดภัย">Von Mises stress, displacement, factor of safety</div>
               </div>
             </div>
             <div class="ref-item compact">
-              <div class="ref-meta"><span class="ref-tag">Test</span></div>
+              <div class="ref-meta"><span class="ref-tag" data-th="ทดสอบ">Test</span></div>
               <div class="ref-body">
-                <div class="ref-title">Benchtop Load Frame + Calibrated Load Cell</div>
-                <div class="ref-note">Physical load testing of Al 6061 and PA12 prototypes</div>
+                <div class="ref-title" data-th="โครงทดสอบตั้งโต๊ะ + โหลดเซลล์สอบเทียบ">Benchtop Load Frame + Calibrated Load Cell</div>
+                <div class="ref-note" data-th="การทดสอบโหลดจริงของต้นแบบ Al 6061 และ PA12">Physical load testing of Al 6061 and PA12 prototypes</div>
               </div>
             </div>
           </div>
@@ -151,13 +158,13 @@
   <section class="section">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="kicker">Literature</p>
-        <h2>Academic References</h2>
+        <p class="kicker" data-th="วรรณกรรม">Literature</p>
+        <h2 data-th="เอกสารอ้างอิงทางวิชาการ">Academic References</h2>
       </div>
       <div class="ref-list" style="margin-top:2rem;" data-reveal>
         <div class="ref-item">
           <div class="ref-meta">
-            <span class="ref-tag">Journal</span>
+            <span class="ref-tag" data-th="วารสาร">Journal</span>
             <span class="ref-id mono">[1]</span>
           </div>
           <div class="ref-body">
@@ -167,7 +174,7 @@
         </div>
         <div class="ref-item">
           <div class="ref-meta">
-            <span class="ref-tag">Journal</span>
+            <span class="ref-tag" data-th="วารสาร">Journal</span>
             <span class="ref-id mono">[2]</span>
           </div>
           <div class="ref-body">
@@ -177,7 +184,7 @@
         </div>
         <div class="ref-item">
           <div class="ref-meta">
-            <span class="ref-tag">Textbook</span>
+            <span class="ref-tag" data-th="ตำรา">Textbook</span>
             <span class="ref-id mono">[3]</span>
           </div>
           <div class="ref-body">
@@ -196,22 +203,21 @@
       <div class="footer-inner">
         <div>
           <div class="footer-logo">Modular Hybrid Gripper</div>
-          <div class="footer-sub">ENG-203 · Material Optimization for Lean Automation</div>
+          <div class="footer-sub" data-th="ENG-203 · การเพิ่มประสิทธิภาพวัสดุสำหรับระบบอัตโนมัติแบบลีน">ENG-203 · Material Optimization for Lean Automation</div>
         </div>
         <nav class="footer-nav">
-          <a href="index.html">Home</a>
-          <a href="development.html">Development</a>
-          <a href="data-sources.html">Data Sources</a>
-          <a href="technical-report.html">Technical Report</a>
-          <a href="reflection.html">Reflection</a>
-          <a href="about.html">About</a>
+          <a href="index.html" data-th="หน้าแรก">Home</a>
+          <a href="development.html" data-th="การพัฒนา">Development</a>
+          <a href="data-sources.html" data-th="แหล่งข้อมูล">Data Sources</a>
+          <a href="technical-report.html" data-th="รายงานทางเทคนิค">Technical Report</a>
+          <a href="reflection.html" data-th="การสะท้อนคิด">Reflection</a>
+          <a href="about.html" data-th="เกี่ยวกับเรา">About</a>
         </nav>
       </div>
-      <div class="footer-copy">© 2026 ENG-203 Project Group · Engineering Department</div>
+      <div class="footer-copy" data-th="© 2026 กลุ่มโครงงาน ENG-203 · ภาควิชาวิศวกรรมศาสตร์">© 2026 ENG-203 Project Group · Engineering Department</div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
 </html>
-

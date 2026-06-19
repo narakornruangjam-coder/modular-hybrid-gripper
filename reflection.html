@@ -8,7 +8,7 @@
   <meta name="description" content="Individual learning reflections from the four ENG-203 team members on the Modular Hybrid Gripper project and the five AI-era soft skills." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -22,12 +22,19 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="development.html">Development</a></li>
-      <li><a href="data-sources.html">Data Sources</a></li>
-      <li><a href="technical-report.html">Technical Report</a></li>
-      <li><a href="reflection.html">Reflection</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" data-th="หน้าแรก">Home</a></li>
+      <li><a href="development.html" data-th="การพัฒนา">Development</a></li>
+      <li><a href="data-sources.html" data-th="แหล่งข้อมูล">Data Sources</a></li>
+      <li><a href="technical-report.html" data-th="รายงานทางเทคนิค">Technical Report</a></li>
+      <li><a href="reflection.html" data-th="การสะท้อนคิด">Reflection</a></li>
+      <li><a href="about.html" data-th="เกี่ยวกับเรา">About</a></li>
+      <li class="nav-lang">
+        <span class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-opt" data-lang="en">EN</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button type="button" class="lang-opt" data-lang="th">TH</button>
+        </span>
+      </li>
     </ul>
   </nav>
 
@@ -36,9 +43,9 @@
   <section class="hero hero-about">
     <div class="hero-overlay"></div>
     <div class="hero-content" data-reveal>
-      <div class="hero-label">Metacognition &amp; Soft Skills</div>
-      <h1>Reflection</h1>
-      <p class="hero-sub">Each team member reflects on what they learned through the project — what changed in how they think, and which of the five AI-era soft skills the work developed.</p>
+      <div class="hero-label" data-th="อภิปัญญาและทักษะอ่อน">Metacognition &amp; Soft Skills</div>
+      <h1 data-th="การสะท้อนคิด">Reflection</h1>
+      <p class="hero-sub" data-th="สมาชิกแต่ละคนสะท้อนสิ่งที่เรียนรู้ผ่านโครงงาน — อะไรเปลี่ยนไปในวิธีคิด และทักษะอ่อนในยุค AI ข้อใดในห้าข้อที่งานนี้พัฒนาขึ้น">Each team member reflects on what they learned through the project — what changed in how they think, and which of the five AI-era soft skills the work developed.</p>
     </div>
   </section>
 
@@ -51,14 +58,14 @@
           <div class="team-card-avatar">NR</div>
           <div>
             <h3>Narakorn Ruangjam</h3>
-            <div class="team-card-role">Microstructure &amp; Mechanical Properties</div>
+            <div class="team-card-role" data-th="โครงสร้างจุลภาคและสมบัติเชิงกล">Microstructure &amp; Mechanical Properties</div>
           </div>
         </div>
-        <p>Before this project I treated material properties as numbers in a table. Working on the microstructure analysis taught me <em>why</em> those numbers exist — that Aluminium 6061-T6's strength comes from fine Mg₂Si precipitates, and that PA12's porosity is what makes it fail early. I learned to read a datasheet as a story about structure, not just a list of values.</p>
-        <p>The hardest part was connecting microstructure back to the FEA results the team produced. Reconciling the "why" (microstructure) with the "what" (stress numbers) forced me to keep questioning my own assumptions until the whole picture was consistent.</p>
+        <p data-th="ก่อนทำโครงงานนี้ ผมมองสมบัติวัสดุเป็นเพียงตัวเลขในตาราง การทำงานวิเคราะห์โครงสร้างจุลภาคสอนผมว่า<em>ทำไม</em>ตัวเลขเหล่านั้นจึงมีอยู่ — ความแข็งแรงของ Aluminium 6061-T6 มาจากตะกอน Mg₂Si ละเอียด และความพรุนของ PA12 คือสิ่งที่ทำให้มันล้มเหลวเร็ว ผมเรียนรู้ที่จะอ่านเอกสารข้อมูลเป็นเรื่องราวของโครงสร้าง ไม่ใช่แค่รายการของค่า">Before this project I treated material properties as numbers in a table. Working on the microstructure analysis taught me <em>why</em> those numbers exist — that Aluminium 6061-T6's strength comes from fine Mg₂Si precipitates, and that PA12's porosity is what makes it fail early. I learned to read a datasheet as a story about structure, not just a list of values.</p>
+        <p data-th="ส่วนที่ยากที่สุดคือการเชื่อมโยงโครงสร้างจุลภาคกลับไปยังผล FEA ที่ทีมสร้างขึ้น การประสาน “เหตุผล” (โครงสร้างจุลภาค) กับ “ผลลัพธ์” (ตัวเลขความเค้น) บังคับให้ผมตั้งคำถามกับสมมติฐานของตัวเองไปเรื่อย ๆ จนภาพรวมทั้งหมดสอดคล้องกัน">The hardest part was connecting microstructure back to the FEA results the team produced. Reconciling the "why" (microstructure) with the "what" (stress numbers) forced me to keep questioning my own assumptions until the whole picture was consistent.</p>
         <div class="skill-tags">
-          <span class="ref-tag">Critical &amp; Analytical Thinking</span>
-          <span class="ref-tag">Metacognitive Skills</span>
+          <span class="ref-tag" data-th="การคิดเชิงวิพากษ์และวิเคราะห์">Critical &amp; Analytical Thinking</span>
+          <span class="ref-tag" data-th="ทักษะอภิปัญญา">Metacognitive Skills</span>
         </div>
       </div>
 
@@ -67,14 +74,14 @@
           <div class="team-card-avatar">PB</div>
           <div>
             <h3>Pawit Bunchokchaigrit</h3>
-            <div class="team-card-role">FMEA &amp; Modular Mechanism Design</div>
+            <div class="team-card-role" data-th="FMEA และการออกแบบกลไกโมดูลาร์">FMEA &amp; Modular Mechanism Design</div>
           </div>
         </div>
-        <p>Designing the modular bayonet interface and running the FMEA changed how I approach design — from "will it work?" to "how will it fail?". Listing failure modes and scoring their risk made me add the lug-root fillet and the detent deliberately, instead of by habit.</p>
-        <p>I had to revise the mechanism several times as new failure modes surfaced. Staying flexible and letting go of my first design, rather than defending it, was the real lesson of this project.</p>
+        <p data-th="การออกแบบจุดต่อบาโยเน็ตแบบโมดูลาร์และการทำ FMEA เปลี่ยนวิธีที่ผมเข้าหาการออกแบบ — จาก “มันจะทำงานไหม?” เป็น “มันจะล้มเหลวอย่างไร?” การไล่เรียงรูปแบบความล้มเหลวและให้คะแนนความเสี่ยงทำให้ผมเพิ่มฟิลเล็ตที่โคนลั่กและเดเทนต์อย่างตั้งใจ แทนที่จะทำตามความเคยชิน">Designing the modular bayonet interface and running the FMEA changed how I approach design — from "will it work?" to "how will it fail?". Listing failure modes and scoring their risk made me add the lug-root fillet and the detent deliberately, instead of by habit.</p>
+        <p data-th="ผมต้องแก้ไขกลไกหลายครั้งเมื่อมีรูปแบบความล้มเหลวใหม่ ๆ ปรากฏ การคงความยืดหยุ่นและปล่อยวางแบบแรกของตัวเอง แทนที่จะปกป้องมัน คือบทเรียนที่แท้จริงของโครงงานนี้">I had to revise the mechanism several times as new failure modes surfaced. Staying flexible and letting go of my first design, rather than defending it, was the real lesson of this project.</p>
         <div class="skill-tags">
-          <span class="ref-tag">Critical &amp; Analytical Thinking</span>
-          <span class="ref-tag">Resilience, Flexibility &amp; Agility</span>
+          <span class="ref-tag" data-th="การคิดเชิงวิพากษ์และวิเคราะห์">Critical &amp; Analytical Thinking</span>
+          <span class="ref-tag" data-th="ความยืดหยุ่น การปรับตัว และความคล่องตัว">Resilience, Flexibility &amp; Agility</span>
         </div>
       </div>
 
@@ -83,14 +90,14 @@
           <div class="team-card-avatar">RM</div>
           <div>
             <h3>Rujinarong Meeda</h3>
-            <div class="team-card-role">FEA Simulation &amp; Structural Validation</div>
+            <div class="team-card-role" data-th="การจำลอง FEA และการตรวจสอบเชิงโครงสร้าง">FEA Simulation &amp; Structural Validation</div>
           </div>
         </div>
-        <p>Building the FEA models taught me that a simulation is only as good as its boundary conditions. Setting up identical loads and fixtures across three materials so the comparison would be fair turned out to be harder than running the solver itself.</p>
-        <p>When my early results looked wrong, I learned to debug my own setup rather than trust the first plot — checking mesh quality, fixtures, and units step by step. That habit of distrusting a clean-looking answer until I understand it is what I'll carry forward.</p>
+        <p data-th="การสร้างแบบจำลอง FEA สอนผมว่าการจำลองจะดีได้เท่ากับเงื่อนไขขอบเขตของมันเท่านั้น การตั้งค่าโหลดและจุดยึดให้เหมือนกันในวัสดุทั้งสามเพื่อให้การเปรียบเทียบยุติธรรม กลับยากกว่าการรันโซลเวอร์เสียอีก">Building the FEA models taught me that a simulation is only as good as its boundary conditions. Setting up identical loads and fixtures across three materials so the comparison would be fair turned out to be harder than running the solver itself.</p>
+        <p data-th="เมื่อผลลัพธ์ช่วงแรกดูผิด ผมเรียนรู้ที่จะตรวจหาข้อผิดพลาดในการตั้งค่าของตัวเอง แทนที่จะเชื่อกราฟแรก — ตรวจคุณภาพเมช จุดยึด และหน่วยทีละขั้น นิสัยการไม่เชื่อคำตอบที่ดูสะอาดจนกว่าจะเข้าใจมัน คือสิ่งที่ผมจะนำติดตัวไป">When my early results looked wrong, I learned to debug my own setup rather than trust the first plot — checking mesh quality, fixtures, and units step by step. That habit of distrusting a clean-looking answer until I understand it is what I'll carry forward.</p>
         <div class="skill-tags">
-          <span class="ref-tag">Critical &amp; Analytical Thinking</span>
-          <span class="ref-tag">Metacognitive Skills</span>
+          <span class="ref-tag" data-th="การคิดเชิงวิพากษ์และวิเคราะห์">Critical &amp; Analytical Thinking</span>
+          <span class="ref-tag" data-th="ทักษะอภิปัญญา">Metacognitive Skills</span>
         </div>
       </div>
 
@@ -99,14 +106,14 @@
           <div class="team-card-avatar">TK</div>
           <div>
             <h3>Theeraput Khanthee</h3>
-            <div class="team-card-role">LEAN Analysis &amp; Business Case</div>
+            <div class="team-card-role" data-th="การวิเคราะห์ LEAN และกรณีศึกษาธุรกิจ">LEAN Analysis &amp; Business Case</div>
           </div>
         </div>
-        <p>Translating an engineering design into a business case made me see the gripper through the eyes of a factory manager. Mapping the modular design to the seven LEAN wastes connected mechanical features directly to money saved on the line.</p>
-        <p>Thinking about ROI and how to pitch the design pushed me to be creative about <em>value</em>, not just function — and to imagine the real customer who would actually buy and rely on it.</p>
+        <p data-th="การแปลงงานออกแบบทางวิศวกรรมเป็นกรณีศึกษาทางธุรกิจทำให้ผมมองกริปเปอร์ผ่านสายตาของผู้จัดการโรงงาน การเชื่อมโยงการออกแบบโมดูลาร์กับความสูญเปล่า 7 ประการของ LEAN เชื่อมคุณลักษณะเชิงกลเข้ากับเงินที่ประหยัดได้บนสายการผลิตโดยตรง">Translating an engineering design into a business case made me see the gripper through the eyes of a factory manager. Mapping the modular design to the seven LEAN wastes connected mechanical features directly to money saved on the line.</p>
+        <p data-th="การคิดเรื่อง ROI และวิธีนำเสนอการออกแบบผลักดันให้ผมสร้างสรรค์เรื่อง<em>คุณค่า</em> ไม่ใช่แค่การใช้งาน — และจินตนาการถึงลูกค้าจริงที่จะซื้อและพึ่งพามัน">Thinking about ROI and how to pitch the design pushed me to be creative about <em>value</em>, not just function — and to imagine the real customer who would actually buy and rely on it.</p>
         <div class="skill-tags">
-          <span class="ref-tag">Creativity, Originality &amp; Entrepreneurship</span>
-          <span class="ref-tag">Empathy &amp; Human Touch</span>
+          <span class="ref-tag" data-th="ความคิดสร้างสรรค์ ความริเริ่ม และการเป็นผู้ประกอบการ">Creativity, Originality &amp; Entrepreneurship</span>
+          <span class="ref-tag" data-th="ความเห็นอกเห็นใจและสัมผัสความเป็นมนุษย์">Empathy &amp; Human Touch</span>
         </div>
       </div>
 
@@ -120,18 +127,18 @@
       <div class="footer-inner">
         <div>
           <div class="footer-logo">Modular Hybrid Gripper</div>
-          <div class="footer-sub">ENG-203 · Material Optimization for Lean Automation</div>
+          <div class="footer-sub" data-th="ENG-203 · การเพิ่มประสิทธิภาพวัสดุสำหรับระบบอัตโนมัติแบบลีน">ENG-203 · Material Optimization for Lean Automation</div>
         </div>
         <nav class="footer-nav">
-          <a href="index.html">Home</a>
-          <a href="development.html">Development</a>
-          <a href="data-sources.html">Data Sources</a>
-          <a href="technical-report.html">Technical Report</a>
-          <a href="reflection.html">Reflection</a>
-          <a href="about.html">About</a>
+          <a href="index.html" data-th="หน้าแรก">Home</a>
+          <a href="development.html" data-th="การพัฒนา">Development</a>
+          <a href="data-sources.html" data-th="แหล่งข้อมูล">Data Sources</a>
+          <a href="technical-report.html" data-th="รายงานทางเทคนิค">Technical Report</a>
+          <a href="reflection.html" data-th="การสะท้อนคิด">Reflection</a>
+          <a href="about.html" data-th="เกี่ยวกับเรา">About</a>
         </nav>
       </div>
-      <div class="footer-copy">© 2026 ENG-203 Project Group · Engineering Department</div>
+      <div class="footer-copy" data-th="© 2026 กลุ่มโครงงาน ENG-203 · ภาควิชาวิศวกรรมศาสตร์">© 2026 ENG-203 Project Group · Engineering Department</div>
     </div>
   </footer>
 
