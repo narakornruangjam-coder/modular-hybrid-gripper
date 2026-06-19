@@ -1,150 +1,286 @@
-# Modular Hybrid Gripper — AI Image Generation Prompts
+# Modular Hybrid Gripper — AI Image Generation Prompts (v2)
 
 **Project:** ENG-203 Modular Hybrid Gripper System
 **Generator:** Nano Banana (Gemini)
-**Usage:** Attach the reference render `gripper-assembly.png` with every prompt to keep geometry consistent. No baked-in text in any image.
-**Style key:** Photoreal = light-gray studio CAD render · Blueprint = white line-art on navy grid · FEA = rainbow jet stress contour on charcoal · Lab photo = realistic test-rig photography.
+**Goal:** A varied, professional image set — not 14 near-identical renders. Every prompt is built from a rich text description plus a swappable **Camera Block**, so you can change angle, zoom, lens, and lighting per generation.
 
 ---
 
-## Reference Object (the design language all prompts must match)
+## How to use this file
 
-Two-finger robotic gripper with a symmetric 4-bar carbon-fiber (CFRP) linkage (glossy black twill weave, stainless steel shoulder-bolt pivot pins), white textured PA12 nylon grip pads at the fingertips, a polished aluminum cylindrical actuator body with a central vertical push-rod, a bolted circular flange, and an L-shaped bracket base with bolt holes. Seamless light-gray studio background, soft diffuse lighting, subtle contact shadow.
+1. **Reference image is OPTIONAL and LOOSE.** You only have a sample model render. Do **not** ask the AI to copy it exactly — that's what made everything look the same. Either:
+   - attach nothing and let the **written description** drive the image, or
+   - attach your sample render with the line *"use only as loose design inspiration for the general shape — do not copy it; follow the written description and camera direction."*
+2. **Each prompt = Description + Camera Block + Negative.** To get a different look, **only change the Camera Block** (angle / distance / lens / lighting). Keep the Description identical so the gripper stays recognizable across shots.
+3. **Generate 3–4 variants per slot** using the "Try these" camera options, then pick the best. Mixing angles and zoom across the 14 images is what makes the set look professionally shot rather than batch-rendered.
+4. **No baked-in text.** AI text comes out garbled. Keep every image text-free; the website supplies all labels and captions.
+
+---
+
+## Master Description (the gripper — paste the relevant parts into prompts)
+
+> A compact two-finger industrial robotic gripper. Symmetric four-bar linkage fingers made of glossy black carbon-fiber (CFRP) with a visible twill weave, joined by polished stainless-steel shoulder-bolt pivot pins. Matte white textured PA12 nylon V-groove grip pads at the fingertips. A polished anodized-aluminum cylindrical actuator body with a central vertical push-rod, a bolted circular mounting flange, and an L-shaped bracket base with bolt holes. Precision-machined, clean industrial design language.
+
+---
+
+## 🎥 Camera & Variant Control Library
+
+Swap any of these into a prompt's **Camera Block** to re-shoot the same object differently.
+
+**ANGLE**
+- `front orthographic` — straight-on elevation (technical, flat)
+- `hero 3/4` — front-right, slightly above eye level (most flattering product angle)
+- `low hero` — camera below, looking up (dramatic, makes it look powerful)
+- `top-down` — plan view from directly above
+- `rear 3/4` — back-right view (shows actuator + flange)
+- `macro detail` — tight on one feature (fingertip pad, pivot pin, weave)
+
+**DISTANCE / ZOOM**
+- `extreme close-up` — fills frame with one detail, heavy background blur
+- `close-up` — a single finger or the actuator head
+- `medium` — whole gripper fills ~80% of frame (default product shot)
+- `wide` — gripper small in frame with environment/context around it
+- `establishing` — full scene (rig, bench, lab) with the gripper as focal point
+
+**LENS / DEPTH**
+- `100mm macro, f/2.8` — compressed, dreamy shallow depth of field (detail shots)
+- `85mm, f/4` — portrait compression, subject crisp, background soft (hero shots)
+- `50mm, f/8` — natural perspective, mostly sharp (catalog/technical)
+- `35mm, f/5.6` — mild environmental, a little context, slight wideness
+- `24mm, f/11` — wide, everything sharp, slight dramatic perspective (establishing)
+
+**LIGHTING / MOOD**
+- `soft studio` — large softbox, even, shadow-light, clean catalog feel
+- `dramatic key+rim` — one hard key light + a rim/edge light on a dark set (premium hero)
+- `bright daylight` — natural window light, realistic, neutral (documentary/lab)
+- `low-key technical` — dark background, focused accent light (scientific / FEA)
+- `top diffuse` — soft overhead, minimal shadow (blueprint/exploded clarity)
+
+---
+
+# THE 14 IMAGES
+
+Each slot below gives the **recommended** camera setup plus **"Try these"** alternates so you can vary angle and zoom.
+
+---
+
+## 0. Hero Gripper Render — `gripper-assembly.png` · 3:4 portrait · Photoreal
+
+```
+A compact two-finger industrial robotic gripper [paste Master Description].
+
+Style: premium studio product photograph, KeyShot / SolidWorks Visualize quality, seamless graphite-to-light-gray gradient backdrop, crisp reflections on the polished aluminum and glossy carbon-fiber weave, realistic soft contact shadow. Hyper-detailed, sharp focus, industrial design catalog look.
+
+CAMERA BLOCK: hero 3/4 angle · medium distance · 85mm, f/4 · dramatic key+rim lighting on a dark-to-light set.
+
+Negative: no text, no logos, no watermark, no annotations, no people, not cartoon, no plastic-toy look.
+Aspect ratio 3:4, portrait.
+```
+**Try these:** `low hero · medium · 50mm` for a powerful look · `macro detail on fingertip · extreme close-up · 100mm macro` for the weave + pad texture.
 
 ---
 
 ## 1. Design Spec Diagram — `design-spec.png` · 3:4 portrait · Blueprint
 
 ```
-Using the robotic gripper in the attached image as the exact reference object, render it as a clean ENGINEERING BLUEPRINT technical drawing.
+An engineering BLUEPRINT technical drawing of a two-finger robotic gripper [paste Master Description, but render as line-art only].
 
-Style: precise orthographic front elevation, thin crisp white line-art on a deep navy-blue background (#0a1a3a) with a faint fine technical grid. Mechanical drafting / CAD drawing-sheet aesthetic. Show the two-finger carbon-fiber 4-bar linkage, the white nylon grip pads, the cylindrical aluminum actuator body with central push-rod, and the bolted L-bracket base — all as outlined linework with visible pivot-joint center marks and bolt-hole circles. Add faint thin leader lines and section detail circles as a drafting motif.
+Style: precise orthographic front elevation, thin crisp white line-art on a deep navy-blue background (#0a1a3a) with a faint fine drafting grid. CAD drawing-sheet aesthetic. Show the carbon-fiber four-bar linkage, the nylon V-groove pads, the cylindrical actuator with central push-rod, and the bolted L-bracket — all as clean outlined linework with pivot-joint center marks, bolt-hole circles, thin leader lines, and two small section-detail circles as a drafting motif.
 
-Composition: centered, generous margins, symmetric.
-ABSOLUTELY NO text, numbers, dimension labels, title block, or watermarks — pure linework only.
+CAMERA BLOCK: front orthographic · medium · flat technical projection (no perspective) · top diffuse even lighting.
+
+Negative: ABSOLUTELY no text, numbers, dimensions, title block, or watermark — pure linework only. No color fills.
 Aspect ratio 3:4, portrait.
 ```
+**Try these:** add a faint ghosted second view (side elevation) in the corner for a real drawing-sheet feel · `top-down` for a plan-view variant.
 
-## 2. Isometric View — `cad-isometric.png` · 4:3 landscape · Photoreal
+---
+
+## 2. Isometric Product View — `cad-isometric.png` · 4:3 landscape · Photoreal
 
 ```
-Using the robotic gripper in the attached image as the exact reference object (same carbon-fiber linkage arms, same white textured PA12 grip pads, same polished aluminum base and bolted flange), render a photorealistic 3/4 ISOMETRIC product view.
+A photorealistic 3/4 product render of a two-finger industrial robotic gripper [paste Master Description].
 
-Style: high-end studio CAD render (KeyShot / SolidWorks Visualize quality), seamless light-gray studio background (#e9e9e9), soft diffuse lighting, subtle realistic contact shadow, gentle reflections on the polished aluminum and glossy carbon-fiber twill weave. Sharp focus, clean industrial product photography look.
+Style: high-end studio CAD render (KeyShot quality), seamless light-gray studio background (#e9e9e9), soft diffuse lighting, subtle realistic contact shadow, gentle reflections on polished aluminum and glossy carbon-fiber twill. Sharp focus, clean industrial product photography.
 
-Camera: elevated three-quarter isometric angle showing depth of the linkage mechanism. Centered.
-No text, no logos, no annotations.
+CAMERA BLOCK: hero 3/4 (elevated, showing linkage depth) · medium · 50mm, f/8 · soft studio lighting.
+
+Negative: no text, no logos, no annotations, no people.
 Aspect ratio 4:3, landscape.
 ```
+**Try these:** `rear 3/4` to feature the actuator + flange · `low hero · wide · 35mm` for a more dynamic, spacious composition.
 
-## 3. Exploded View — `cad-exploded.png` · 4:3 landscape · Photoreal
+---
+
+## 3. Exploded Assembly View — `cad-exploded.png` · 4:3 landscape · Photoreal
 
 ```
-Using the robotic gripper in the attached image as the exact reference object, render a photorealistic EXPLODED ASSEMBLY VIEW.
+A photorealistic EXPLODED ASSEMBLY render of a two-finger robotic gripper [paste Master Description].
 
-Separate the components vertically and along their assembly axes with even spacing, as in a professional exploded technical render: the two white PA12 nylon grip pads, the carbon-fiber linkage link plates, the stainless steel shoulder-bolt pivot pins, the central push-rod shaft, the cylindrical aluminum actuator body, the bolted flange, and the L-bracket base — each floating apart in correct stacking order along thin faint assembly guide lines.
+Separate the components along their assembly axes with even spacing, professional exploded-view style: the two white PA12 V-groove pads, the carbon-fiber link plates, the stainless shoulder-bolt pivot pins, the central push-rod, the cylindrical aluminum actuator body, the bolted flange, and the L-bracket base — each floating apart in correct stacking order along thin faint assembly guide lines.
 
-Style: high-end studio CAD render (KeyShot quality), seamless light-gray studio background (#e9e9e9), soft diffuse lighting, soft shadows, glossy carbon-fiber twill and polished aluminum reflections. Sharp focus.
-No text, no part numbers, no annotations.
+CAMERA BLOCK: hero 3/4 · wide (so all floating parts fit with breathing room) · 50mm, f/8 · top diffuse + soft fill (even light on every part).
+
+Negative: no text, no part numbers, no annotations, no clutter.
 Aspect ratio 4:3, landscape.
 ```
+**Try these:** `front orthographic · wide` for a cleaner technical explosion · vertical explosion axis vs diagonal for a different rhythm.
+
+---
 
 ## 4. Cross-section — `cad-crosssection.png` · 4:3 landscape · Blueprint
 
 ```
-Using the robotic gripper in the attached image as the exact reference object, render a BLUEPRINT CROSS-SECTION (cutaway) technical drawing.
+A BLUEPRINT CROSS-SECTION (cutaway) technical drawing of a two-finger robotic gripper [paste Master Description as line-art].
 
-Style: precise orthographic section view, thin crisp white line-art on a deep navy-blue background (#0a1a3a) with a faint fine technical grid. Slice the gripper through its vertical center plane to reveal the internal push-rod, the actuator body bore, the linkage pivot pins, and the bolt holes. Use standard 45-degree section hatching on all cut solid faces. Mechanical drafting aesthetic with thin center lines.
+Style: precise orthographic section view, thin crisp white line-art on deep navy-blue (#0a1a3a) with a faint drafting grid. Slice through the vertical center plane to reveal the internal push-rod, the actuator bore, the linkage pivot pins, and bolt holes. Standard 45° section hatching on all cut solid faces, thin center lines through shafts.
 
-Composition: centered, symmetric, generous margins.
-ABSOLUTELY NO text, numbers, dimension labels, or title block — pure linework and hatching only.
+CAMERA BLOCK: front orthographic section · medium · flat technical projection · top diffuse.
+
+Negative: ABSOLUTELY no text, numbers, dimensions, or title block — pure linework and hatching only.
+Aspect ratio 4:3, landscape.
+```
+**Try these:** `macro detail` section zoomed on the actuator bore + push-rod for a focused cutaway · half-section (one half solid, one half cut) for variety.
+
+---
+
+## FEA SET (5–10) — make each one DISTINCT
+
+> ⚠️ These were the copy-paste offenders. Fix: give **each material a different camera angle + zoom + a different stress story + a different deformation amount.** That's what makes a real simulation gallery — engineers screenshot from different views.
+
+**Shared FEA style (paste into each):**
+```
+Finite element analysis (FEA) von Mises stress simulation of a carbon-fiber robotic gripper finger and four-bar linkage. Smooth rainbow jet stress contour mapped onto the surface (deep blue = low stress → cyan → green → yellow → orange → red = peak stress). Fine triangular FEA mesh wireframe visible across the surface. Realistic ANSYS / SolidWorks Simulation aesthetic, dark charcoal background (#1a1a22), soft low-key technical lighting, subtle ambient occlusion in the recesses for depth.
+Negative: no text, no numbers, no readable legend, no UI panels, no watermark.
+```
+
+### 5. Main FEA Stress (Home hero) — `fea-stress.png` · 3:4 portrait
+```
+[Shared FEA style.] Whole finger + linkage assembly under grip load. Stress concentrations glow yellow-orange-red sharply at the pivot pin holes and the lug root; the rest cools to green and blue. Very slight exaggerated elastic bend in the finger to show it is loaded.
+CAMERA BLOCK: hero 3/4 · medium · 85mm, f/4 · low-key technical with a soft rim on the contour.
+Aspect ratio 3:4, portrait.
+```
+**Try these:** `macro detail on the red pivot hotspot · extreme close-up · 100mm` for a dramatic stress-concentration shot.
+
+### 6. Von Mises — Al 6061 (large) — `fea-al6061.png` · 3:4 portrait
+```
+[Shared FEA style.] Aluminum 6061-T6 part: MODERATE stress — mostly green-to-yellow body with small focused red hotspots only at the pivot bolt holes. Stiff, minimal deformation (almost no visible bend).
+CAMERA BLOCK: front orthographic-ish 3/4 · medium · 50mm, f/8 · low-key technical, even.
+Aspect ratio 3:4, portrait.
+```
+**Try these:** `low hero` looking up the finger for a different framing than #5.
+
+### 7. Stress Plot — Aluminum — `fea-stress-al.png` · 4:3 landscape
+```
+[Shared FEA style.] Single isolated gripper finger, Aluminum 6061: mostly blue-green, low overall stress, only a few tiny hotspots. Rigid — no visible deflection.
+CAMERA BLOCK: side profile (finger horizontal) · close-up · 85mm, f/4 · low-key technical.
 Aspect ratio 4:3, landscape.
 ```
 
-## 5. Main FEA Stress — `fea-stress.png` · 3:4 portrait · FEA
-
+### 8. Stress Plot — CFRP — `fea-stress-cfrp.png` · 4:3 landscape
 ```
-Using the robotic gripper in the attached image as the exact reference geometry, render a FINITE ELEMENT ANALYSIS (FEA) von Mises stress simulation result.
+[Shared FEA style.] Single isolated gripper finger, CFRP: almost entirely deep blue, the lowest stress of all three, minimal hotspots — clearly the best performer. Essentially zero deflection (very stiff).
+CAMERA BLOCK: hero 3/4 (slightly different angle than the Al shot) · close-up · 85mm, f/4 · low-key technical with a faint cool rim.
+Aspect ratio 4:3, landscape.
+```
 
-Show the carbon-fiber gripper finger/linkage with a smooth rainbow stress contour color map applied to its surface (deep blue = low stress, cyan/green = medium, yellow/orange/red = high stress concentrations at the pivot joints and load points). Visible fine triangular FEA mesh wireframe overlay on the surface. Dark charcoal background (#1a1a22), subtle soft lighting, scientific simulation-software aesthetic (ANSYS / SolidWorks Simulation look).
+### 9. Stress Plot — PA12 Nylon — `fea-stress-pa12.png` · 4:3 landscape
+```
+[Shared FEA style.] Single isolated gripper finger, PA12 nylon: large orange-red high-stress zones spreading from the joints and lug root — clearly the worst performer. Show a noticeably EXAGGERATED bend/deflection in the finger (it flexes a lot under load) to tell the failure story visually.
+CAMERA BLOCK: low hero (emphasize the bend) · close-up · 50mm, f/5.6 · low-key technical.
+Aspect ratio 4:3, landscape.
+```
 
-No text, no numbers, no color legend bar, no annotations.
+### 10. FEA — All Three Materials — `fea-all-materials.png` · 16:9 landscape
+```
+[Shared FEA style.] THREE identical gripper fingers in one frame, left-to-right comparison: LEFT mostly green-yellow with small bend (Aluminum), CENTER almost fully deep blue and perfectly straight (CFRP, best), RIGHT heavy orange-red with an exaggerated bend (PA12, worst). Even spacing, identical camera on each, consistent lighting so only the stress colors and deflection differ.
+CAMERA BLOCK: front orthographic (flat, so the three compare fairly) · wide · 50mm, f/11 (all sharp) · low-key technical.
+Aspect ratio 16:9, landscape.
+```
+
+---
+
+## LAB / TEST PHOTOS — two variants each (pick per slot)
+
+> You asked for both **candid-real** and **clean-studio**. Generate both, choose whichever sells the "we actually built and tested it" story best for that page.
+
+### 11. Load Test Setup (Development) — `load-test.png` · 3:4 portrait · Lab photo
+
+**Variant A — candid real lab:**
+```
+A real engineering university LAB PHOTO: a two-finger carbon-fiber robotic gripper [paste Master Description] mounted vertically in a benchtop universal load-testing frame, its V-groove pads gripping a small machined metal test cylinder, a load cell and thin steel fixtures above it. Authentic student materials-lab setting — slightly cluttered workbench, a caliper and hex keys nearby, cable runs, neutral institutional lighting. Shot on a phone/DSLR, mild realistic imperfections, believable not staged.
+CAMERA BLOCK: hero 3/4 at bench eye-level · medium · 35mm, f/2.8 (shallow, gripper sharp, background soft) · bright daylight from a window.
+Negative: no text, no readouts, no logos, not over-polished, no rendered/CGI look.
 Aspect ratio 3:4, portrait.
 ```
-
-## 6. Von Mises — Al 6061 (large) — `fea-al6061.png` · 3:4 portrait · FEA
-
+**Variant B — clean studio:**
 ```
-FEA von Mises stress contour render of the gripper from the attached reference, rainbow jet colormap on the meshed surface, charcoal background (#1a1a22), scientific simulation look. Show MODERATE stress levels (mostly green-to-yellow, small red hotspots only at pivot bolt holes) representing a stiff aluminum part.
-No text, no legend, no annotations. Aspect ratio 3:4, portrait.
+A polished studio PRODUCT photo of the same gripper mounted in a benchtop load-testing rig gripping a metal test cylinder, load-cell fixtures above. Clean dark seamless background, professional three-point lighting, crisp reflections, magazine-quality.
+CAMERA BLOCK: hero 3/4 · medium · 85mm, f/4 · dramatic key+rim.
+Negative: no text, no readouts, no logos, no people.
+Aspect ratio 3:4, portrait.
 ```
+**Try these:** `macro detail · extreme close-up · 100mm` on the pads gripping the cylinder (works great for both variants).
 
-## 7. Stress Plot — Aluminum — `fea-stress-al.png` · 4:3 landscape · FEA
+### 12. Load Test Setup (Report, wide) — `load-test-setup.png` · 16:9 landscape · Lab photo
 
+**Variant A — candid real lab:**
 ```
-Using the attached gripper as reference geometry, render a single FEA von Mises stress contour plot of one gripper finger. Rainbow jet colormap on a fine triangular mesh, dark charcoal background (#1a1a22), centered, scientific simulation aesthetic. No text, no legend, no annotations. Aspect ratio 4:3, landscape.
-Stress level: Aluminum 6061 → mostly blue-green, low stress, very few small hotspots.
+Wide real LAB PHOTO of the gripper [paste Master Description] mounted in a benchtop load frame gripping a metal test object, load-cell fixtures, in an authentic university materials-testing lab — workbench, test equipment, a laptop showing a graph (screen blurred/unreadable), institutional lighting. Documentary, believable, shot on DSLR.
+CAMERA BLOCK: establishing eye-level · wide · 24mm, f/5.6 (context sharp) · bright daylight.
+Negative: no readable text/screens, no logos, no CGI look.
+Aspect ratio 16:9, landscape.
 ```
-
-## 8. Stress Plot — CFRP — `fea-stress-cfrp.png` · 4:3 landscape · FEA
-
+**Variant B — clean studio:**
 ```
-Using the attached gripper as reference geometry, render a single FEA von Mises stress contour plot of one gripper finger. Rainbow jet colormap on a fine triangular mesh, dark charcoal background (#1a1a22), centered, scientific simulation aesthetic. No text, no legend, no annotations. Aspect ratio 4:3, landscape.
-Stress level: CFRP → almost entirely deep blue, lowest stress, minimal hotspots (best performer).
-```
-
-## 9. Stress Plot — PA12 Nylon — `fea-stress-pa12.png` · 4:3 landscape · FEA
-
-```
-Using the attached gripper as reference geometry, render a single FEA von Mises stress contour plot of one gripper finger. Rainbow jet colormap on a fine triangular mesh, dark charcoal background (#1a1a22), centered, scientific simulation aesthetic. No text, no legend, no annotations. Aspect ratio 4:3, landscape.
-Stress level: PA12 Nylon → lots of orange-red, high stress, large hot zones near joints (worst performer).
+Wide clean studio shot of the full load-test setup — gripper in the load frame gripping a test object, fixtures and load cell — on a seamless dark backdrop, professional even lighting, premium engineering-catalog look.
+CAMERA BLOCK: establishing 3/4 · wide · 35mm, f/8 · soft studio + rim.
+Negative: no text, no readouts, no people.
+Aspect ratio 16:9, landscape.
 ```
 
-## 10. FEA — All Three Materials — `fea-all-materials.png` · 16:9 landscape · FEA
+---
+
+## 13. CAD Assembly — Section View (Report) — `cad-section-view.png` · 16:9 landscape · Blueprint
 
 ```
-Using the attached gripper as reference geometry, render THREE identical gripper fingers side by side in one frame, each with a von Mises FEA stress contour (rainbow jet colormap on meshed surface). Left finger mostly blue-green (low stress), center finger almost fully deep blue (lowest stress), right finger orange-red (high stress) — a clear left-to-right comparison. Dark charcoal background (#1a1a22), even spacing, scientific simulation aesthetic.
-No text, no labels, no legend. Aspect ratio 16:9, landscape.
-```
+A BLUEPRINT half-section assembly drawing of a two-finger robotic gripper [paste Master Description as line-art], landscape.
 
-## 11. Load Test Setup (large) — `load-test.png` · 3:4 portrait · Lab photo
+Style: thin crisp white line-art on deep navy-blue (#0a1a3a) with a faint drafting grid. Front elevation with the RIGHT HALF cut away to reveal the internal push-rod, actuator bore, and pivot pins; 45° section hatching on cut faces; thin center lines through shafts and bolt holes. Mechanical drafting aesthetic.
 
-```
-Using the robotic gripper in the attached image as the exact reference object, render a photorealistic engineering LAB TEST PHOTO: the gripper mounted vertically in a benchtop universal testing rig / load frame, its two fingers gripping a small metal test cylinder, thin steel test fixtures and a load cell above it. Realistic mechanical-engineering laboratory setting, neutral workbench, soft daylight, shallow depth of field, sharp focus on the gripper. Industrial product photography quality.
-No text, no logos, no readouts. Aspect ratio 3:4, portrait.
-```
+CAMERA BLOCK: front orthographic half-section · wide · flat technical projection · top diffuse.
 
-## 12. Load Test Setup (report) — `load-test-setup.png` · 16:9 landscape · Lab photo
-
+Negative: ABSOLUTELY no text, numbers, dimensions, or title block — pure linework and hatching.
+Aspect ratio 16:9, landscape.
 ```
-Photorealistic lab test photo of the gripper from the attached reference mounted in a benchtop load-testing rig, gripping a metal test object, with load-cell fixtures. Realistic engineering lab, soft lighting, shallow depth of field. Wider framing showing the full test setup.
-No text, no readouts. Aspect ratio 16:9, landscape.
-```
-
-## 13. CAD Assembly — Section View — `cad-section-view.png` · 16:9 landscape · Blueprint
-
-```
-Using the robotic gripper in the attached image as the exact reference object, render a BLUEPRINT half-section assembly drawing in landscape. Thin crisp white line-art on deep navy-blue background (#0a1a3a) with a faint technical grid. Front elevation with the right half cut away to reveal the internal push-rod, actuator bore, and pivot pins; 45-degree section hatching on all cut faces; thin center lines through the shafts and bolt holes. Mechanical drafting aesthetic.
-ABSOLUTELY NO text, numbers, dimensions, or title block — pure linework and hatching. Aspect ratio 16:9, landscape.
-```
+**Try these:** `hero 3/4 section` (sectioned isometric) for a more three-dimensional cutaway feel.
 
 ---
 
 ## Filename + Slot Reference Table
 
-| # | Filename | Page slot | Type | Aspect |
-|---|----------|-----------|------|--------|
-| 0 | gripper-assembly.png | index.html — Gripper Assembly Render | Photoreal | 3:4 |
-| 1 | design-spec.png | development.html — Design Spec Diagram | Blueprint | 3:4 |
-| 2 | cad-isometric.png | development.html — Isometric View | Photoreal | 4:3 |
-| 3 | cad-exploded.png | development.html — Exploded View | Photoreal | 4:3 |
-| 4 | cad-crosssection.png | development.html — Cross-section | Blueprint | 4:3 |
-| 5 | fea-stress.png | index.html — FEA Stress Distribution | FEA | 3:4 |
-| 6 | fea-al6061.png | development.html — Von Mises Stress (Al 6061-T6) | FEA | 3:4 |
-| 7 | fea-stress-al.png | development.html — Stress Plot (Al 6061-T6) | FEA | 4:3 |
-| 8 | fea-stress-cfrp.png | development.html — Stress Plot (CFRP) | FEA | 4:3 |
-| 9 | fea-stress-pa12.png | development.html — Stress Plot (PA12 Nylon) | FEA | 4:3 |
-| 10 | fea-all-materials.png | technical-report.html — FEA Results (All Three) | FEA | 16:9 |
-| 11 | load-test.png | development.html — Load Test Setup Photo | Lab photo | 3:4 |
-| 12 | load-test-setup.png | technical-report.html — Load Test Setup Photo | Lab photo | 16:9 |
-| 13 | cad-section-view.png | technical-report.html — CAD Assembly Section View | Blueprint | 16:9 |
+| # | Filename | Page slot | Type | Aspect | Recommended camera |
+|---|----------|-----------|------|--------|--------------------|
+| 0 | gripper-assembly.png | index.html — hero render | Photoreal | 3:4 | hero 3/4 · 85mm |
+| 1 | design-spec.png | development.html — design spec | Blueprint | 3:4 | front ortho |
+| 2 | cad-isometric.png | development.html — isometric | Photoreal | 4:3 | hero 3/4 · 50mm |
+| 3 | cad-exploded.png | development.html — exploded | Photoreal | 4:3 | hero 3/4 wide |
+| 4 | cad-crosssection.png | development.html — cross-section | Blueprint | 4:3 | front ortho section |
+| 5 | fea-stress.png | index.html — FEA stress | FEA | 3:4 | hero 3/4 · 85mm |
+| 6 | fea-al6061.png | development.html — Von Mises Al | FEA | 3:4 | 3/4 · 50mm |
+| 7 | fea-stress-al.png | development.html — stress plot Al | FEA | 4:3 | side profile close |
+| 8 | fea-stress-cfrp.png | development.html — stress plot CFRP | FEA | 4:3 | hero 3/4 close |
+| 9 | fea-stress-pa12.png | development.html — stress plot PA12 | FEA | 4:3 | low hero close |
+| 10 | fea-all-materials.png | technical-report.html — FEA all three | FEA | 16:9 | front ortho wide |
+| 11 | load-test.png | development.html — load test photo | Lab photo | 3:4 | hero 3/4 · 35mm (A/B) |
+| 12 | load-test-setup.png | technical-report.html — load test wide | Lab photo | 16:9 | establishing · 24mm (A/B) |
+| 13 | cad-section-view.png | technical-report.html — section view | Blueprint | 16:9 | front ortho half-section |
+
+---
+
+## Quick workflow
+
+1. Pick a slot → copy its prompt → paste the Master Description where marked.
+2. Generate. If it looks generic, **change only the Camera Block** using the Library and the "Try these" hints, then regenerate.
+3. Aim for a mix across the final 14: some hero 3/4, some macro close-ups, some wide establishing shots — variety reads as "professionally photographed."
+4. Save with the exact filename from the table into `images/`. (Reminder: `*.png` is git-ignored — these need `git add -f images/<name>.png` when committing.)
