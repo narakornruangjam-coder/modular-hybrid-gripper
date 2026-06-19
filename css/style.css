@@ -51,7 +51,7 @@ h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
 h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); color: var(--text); }
 h3 { font-size: 1.2rem; color: var(--text); }
 .kicker { font-size: 0.78rem; text-transform: uppercase; color: var(--text-3); font-family: var(--mono); }
-p  { color: var(--text-2); max-width: 70ch; }
+p  { color: var(--text-2); }
 
 /* ── Navbar ────────────────────────────────────────────────── */
 /* Apple-style frosted top bar: slim, centered links, logo pinned left */
@@ -207,6 +207,13 @@ p  { color: var(--text-2); max-width: 70ch; }
 /* Extra gap between kicker and heading on the Thai page only */
 html[lang="th"] .section-head .kicker,
 html[lang="th"] .section-copy .kicker { margin-bottom: 16px; }
+
+/* Prevent Thai syllable breaks mid-word */
+html[lang="th"] p, html[lang="th"] h2, html[lang="th"] h3 {
+  word-break: keep-all;
+  line-break: strict;
+  overflow-wrap: break-word;
+}
 
 /* ── Scroll reveal ─────────────────────────────────────────── */
 /* Reveal is an enhancement: content is visible by default, hidden only when JS
@@ -414,7 +421,7 @@ html[lang="th"] .section-copy .kicker { margin-bottom: 16px; }
 /* ── Footer ────────────────────────────────────────────────── */
 .footer {
   background: var(--bg-2); border-top: 1px solid var(--border);
-  padding: 40px 0 24px;
+  padding: 24px 0 24px;
 }
 .footer-inner {
   display: flex; justify-content: space-between; align-items: flex-start;
