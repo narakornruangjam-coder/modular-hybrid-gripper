@@ -66,17 +66,27 @@ Each slot below gives the **recommended** camera setup plus **"Try these"** alte
 
 ## 0. Hero Gripper Render — `gripper-assembly.png` · 3:4 portrait · Photoreal
 
+> This is the site's hero shot **and** the loose design reference for every other prompt — so it deserves the richest treatment. The current `gripper-assembly.png` is already generated; the variants below are **re-shoot options** if you want a stronger hero. Keep the Description + Style identical and swap only the **Camera Block** to compare looks, then keep your favorite.
+
+**Base prompt (paste, then drop in one Camera Block from below):**
 ```
 A compact two-finger industrial robotic gripper [paste Master Description].
 
-Style: premium studio product photograph, KeyShot / SolidWorks Visualize quality, seamless graphite-to-light-gray gradient backdrop, crisp reflections on the polished aluminum and glossy carbon-fiber weave, realistic soft contact shadow. Hyper-detailed, sharp focus, industrial design catalog look.
+Style: premium studio product photograph, KeyShot / SolidWorks Visualize quality, seamless graphite-to-light-gray gradient backdrop, crisp reflections on the polished aluminum and glossy carbon-fiber twill weave, realistic soft contact shadow, fine surface micro-detail (machined edges, anodized sheen, weave texture, brushed pivot pins). Hyper-detailed, tack-sharp focus, high-end industrial design catalog look.
 
-CAMERA BLOCK: hero 3/4 angle · medium distance · 85mm, f/4 · dramatic key+rim lighting on a dark-to-light set.
+CAMERA BLOCK: << insert one option below >>
 
-Negative: no text, no logos, no watermark, no annotations, no people, not cartoon, no plastic-toy look.
+Negative: no text, no logos, no watermark, no annotations, no people, not cartoon, no plastic-toy look, no warped geometry.
 Aspect ratio 3:4, portrait.
 ```
-**Try these:** `low hero · medium · 50mm` for a powerful look · `macro detail on fingertip · extreme close-up · 100mm macro` for the weave + pad texture.
+
+**Camera Block variants — generate all four, pick the best hero:**
+- **0-A · Signature hero (recommended):** `hero 3/4, slightly above eye level · medium · 85mm, f/4 · dramatic key+rim lighting on a dark-to-light set` — the classic flattering product angle.
+- **0-B · Powerful low hero:** `low hero, camera below looking up · medium · 50mm, f/5.6 · single hard key + soft fill, deep contact shadow` — makes it look strong and premium.
+- **0-C · Detail / texture:** `macro detail on the fingertip pad + nearest pivot · extreme close-up · 100mm macro, f/2.8 · soft studio with a grazing edge light` — shows the carbon weave and V-groove pad texture; great as a secondary accent image.
+- **0-D · Clean catalog:** `hero 3/4 · medium · 50mm, f/8 · soft studio, even` — neutral, well-lit, no drama (use if 0-A feels too moody).
+
+**Tip:** for a cohesive site, match the hero's lighting mood to the FEA shots (low-key) or keep it brighter than the rest so it pops — your call.
 
 ---
 
