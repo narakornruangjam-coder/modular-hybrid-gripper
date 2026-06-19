@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.classList.add('js');</script>
   <title>Development & Analysis — Modular Hybrid Gripper</title>
+  <meta name="description" content="Design requirements, CAD modelling, FEA simulation, and physical load testing for the modular hybrid gripper across three candidate materials." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -25,6 +26,7 @@
       <li><a href="development.html">Development</a></li>
       <li><a href="data-sources.html">Data Sources</a></li>
       <li><a href="technical-report.html">Technical Report</a></li>
+      <li><a href="reflection.html">Reflection</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
   </nav>
@@ -186,11 +188,141 @@
     </div>
   </section>
 
-  <!-- 4. FEA -->
+  <!-- 4. Microstructure -->
   <section class="section section-alt">
     <div class="container">
       <div class="section-head" data-reveal>
         <p class="kicker">Phase 4</p>
+        <h2>Microstructure Analysis</h2>
+        <p>Each candidate's mechanical behaviour traces back to its microstructure — how grains, fibres, or sintered particles are arranged and bonded. This governs strength, anisotropy, and how the part ultimately fails.</p>
+      </div>
+      <div class="cards-3" style="margin-top:2.5rem;">
+        <div class="card" data-reveal>
+          <div class="card-icon accent">AL</div>
+          <h3>Aluminum 6061-T6</h3>
+          <p>Wrought, precipitation-hardened alloy. The T6 temper precipitates fine, coherent Mg₂Si particles through equiaxed aluminium grains; these pin dislocations and raise yield strength. The structure is largely isotropic, giving uniform, predictable mechanical response.</p>
+          <ul class="prop-list">
+            <li><span>Structure</span><span>Equiaxed grains</span></li>
+            <li><span>Strengthening</span><span>Mg₂Si precipitates</span></li>
+            <li><span>Anisotropy</span><span>Low</span></li>
+          </ul>
+        </div>
+        <div class="card card-featured" data-reveal>
+          <div class="card-badge">Optimal</div>
+          <div class="card-icon">CF</div>
+          <h3>Carbon Fiber (CFRP)</h3>
+          <p>Continuous carbon fibres bound in a polymer matrix. Load travels mainly along the fibre direction, so stiffness and strength are strongly anisotropic. A high fibre volume fraction (~60%) and good fibre–matrix adhesion are critical to its performance.</p>
+          <ul class="prop-list">
+            <li><span>Structure</span><span>Fibre + matrix</span></li>
+            <li><span>Fibre fraction</span><span>~60% vol</span></li>
+            <li><span>Anisotropy</span><span>High (directional)</span></li>
+          </ul>
+        </div>
+        <div class="card" data-reveal>
+          <div class="card-icon">PA</div>
+          <h3>PA12 Nylon (SLS)</h3>
+          <p>Semi-crystalline polyamide built by fusing powder layer by layer. Incomplete particle coalescence leaves residual porosity and partially-melted boundaries — the dominant crack-initiation sites and the reason SLS PA12 is weaker and more variable than moulded nylon.</p>
+          <ul class="prop-list">
+            <li><span>Structure</span><span>Sintered particles</span></li>
+            <li><span>Porosity</span><span>~3–5%</span></li>
+            <li><span>Anisotropy</span><span>Build-direction</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="matrix-note" style="margin-top:1.5rem;">Takeaway: the aluminium's precipitate-strengthened isotropic grains and CFRP's aligned fibres both resist the grip-load stress state well, while PA12's porous sintered structure concentrates stress at particle boundaries — consistent with its low factor of safety.</p>
+    </div>
+  </section>
+
+  <!-- 5. Selection Matrix -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker">Phase 5</p>
+        <h2>Material Selection Matrix</h2>
+        <p>A weighted decision matrix scores each material against the criteria that matter for this gripper. Each criterion is scored 1–5 (5 = best) and multiplied by its weight; the highest weighted total wins.</p>
+      </div>
+      <div class="matrix-wrap" style="margin-top:2rem;" data-reveal>
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th>Criterion</th>
+              <th>Weight</th>
+              <th>Al 6061-T6</th>
+              <th class="col-accent">CFRP</th>
+              <th>PA12</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Strength-to-weight</th><td class="mono">30%</td><td>3</td><td class="col-accent">5</td><td>2</td></tr>
+            <tr><th scope="row">Stiffness</th><td class="mono">20%</td><td>4</td><td class="col-accent">5</td><td>1</td></tr>
+            <tr><th scope="row">Factor of safety</th><td class="mono">20%</td><td>4</td><td class="col-accent">5</td><td>1</td></tr>
+            <tr><th scope="row">Manufacturability</th><td class="mono">15%</td><td>5</td><td class="col-accent">2</td><td>4</td></tr>
+            <tr><th scope="row">Cost</th><td class="mono">15%</td><td>4</td><td class="col-accent">2</td><td>3</td></tr>
+            <tr class="matrix-total"><th scope="row">Weighted total</th><td class="mono">100%</td><td>3.85</td><td class="col-accent">4.10</td><td>2.05</td></tr>
+          </tbody>
+        </table>
+        <p class="matrix-note">CFRP scores highest (4.10 / 5), driven by its dominant strength-to-weight and stiffness. Aluminium (3.85) is a close, lower-cost second; PA12 (2.05) is unsuitable for structural use. Re-weighting toward cost would narrow the CFRP–aluminium gap.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FMEA -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker">Phase 6</p>
+        <h2>Failure Mode &amp; Effect Analysis</h2>
+        <p>FMEA identifies how the gripper could fail, the consequence of each failure, and its risk priority. Severity (S), Occurrence (O), and Detection (D) are each rated 1–10; Risk Priority Number (RPN) = S × O × D.</p>
+      </div>
+      <div class="matrix-wrap" style="margin-top:2rem;" data-reveal>
+        <table class="matrix fmea">
+          <thead>
+            <tr>
+              <th>Failure Mode</th><th>Effect</th><th>Cause</th>
+              <th>S</th><th>O</th><th>D</th><th>RPN</th><th>Mitigation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Finger fracture at lug root</th>
+              <td>Loss of grip, dropped workpiece</td>
+              <td>Stress concentration; under-strength material (PA12)</td>
+              <td>9</td><td>4</td><td>3</td><td>108</td>
+              <td>Add fillet radius; specify CFRP / Al for production</td>
+            </tr>
+            <tr>
+              <th scope="row">Pivot pin shear</th>
+              <td>Linkage collapse, gripper inoperable</td>
+              <td>Overload beyond rated grip force</td>
+              <td>8</td><td>3</td><td>4</td><td>96</td>
+              <td>Stainless pins sized to FoS ≥ 2; force limiter</td>
+            </tr>
+            <tr>
+              <th scope="row">Grip-pad wear / slip</th>
+              <td>Reduced friction, part mispositioning</td>
+              <td>Abrasive wear of nylon contact pad</td>
+              <td>5</td><td>6</td><td>5</td><td>150</td>
+              <td>Replaceable pads; periodic inspection interval</td>
+            </tr>
+            <tr>
+              <th scope="row">Bayonet interface loosening</th>
+              <td>Finger detaches during operation</td>
+              <td>Vibration; detent not fully engaged</td>
+              <td>7</td><td>3</td><td>4</td><td>84</td>
+              <td>Spring-loaded detent; assembly check on changeover</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="matrix-note">Highest risk is grip-pad wear (RPN 150) — frequent but low-severity — handled by making the pads a replaceable consumable. Finger fracture carries the highest severity (9) and is mitigated through material choice and a generous lug-root fillet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FEA -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker">Phase 7</p>
         <h2>Finite Element Analysis</h2>
         <p>Static structural FEA was run in SolidWorks Simulation. Boundary conditions were identical for all three material variants to isolate the effect of material properties.</p>
       </div>
@@ -230,42 +362,70 @@
           <div class="result-label">Al 6061-T6</div>
           <div class="placeholder-img" style="height:180px;"><span class="placeholder-label">Stress Plot</span></div>
           <div class="result-stats">
-            <div class="req-row"><span class="req-label">Max stress</span><span class="req-val">— MPa</span></div>
-            <div class="req-row"><span class="req-label">Max displacement</span><span class="req-val">— mm</span></div>
-            <div class="req-row"><span class="req-label">Factor of safety</span><span class="req-val">—</span></div>
+            <div class="req-row"><span class="req-label">Max stress</span><span class="req-val">98 MPa</span></div>
+            <div class="req-row"><span class="req-label">Max displacement</span><span class="req-val">0.41 mm</span></div>
+            <div class="req-row"><span class="req-label">Factor of safety</span><span class="req-val">2.8</span></div>
           </div>
         </div>
         <div class="result-block result-block--featured" data-reveal>
           <div class="result-label accent-text">CFRP <span class="card-badge" style="position:relative;top:0;right:0;margin-left:8px;">Best</span></div>
           <div class="placeholder-img" style="height:180px;"><span class="placeholder-label">Stress Plot</span></div>
           <div class="result-stats">
-            <div class="req-row"><span class="req-label">Max stress</span><span class="req-val">— MPa</span></div>
-            <div class="req-row"><span class="req-label">Max displacement</span><span class="req-val">— mm</span></div>
-            <div class="req-row"><span class="req-label">Factor of safety</span><span class="req-val">—</span></div>
+            <div class="req-row"><span class="req-label">Max stress</span><span class="req-val">95 MPa</span></div>
+            <div class="req-row"><span class="req-label">Max displacement</span><span class="req-val">0.32 mm</span></div>
+            <div class="req-row"><span class="req-label">Factor of safety</span><span class="req-val">6.3</span></div>
           </div>
         </div>
         <div class="result-block" data-reveal>
           <div class="result-label">PA12 Nylon</div>
           <div class="placeholder-img" style="height:180px;"><span class="placeholder-label">Stress Plot</span></div>
           <div class="result-stats">
-            <div class="req-row"><span class="req-label">Max stress</span><span class="req-val">— MPa</span></div>
-            <div class="req-row"><span class="req-label">Max displacement</span><span class="req-val">— mm</span></div>
-            <div class="req-row"><span class="req-label">Factor of safety</span><span class="req-val">—</span></div>
+            <div class="req-row"><span class="req-label">Max stress</span><span class="req-val">102 MPa</span></div>
+            <div class="req-row"><span class="req-label">Max displacement</span><span class="req-val">17.8 mm</span></div>
+            <div class="req-row"><span class="req-label">Factor of safety</span><span class="req-val">0.5</span></div>
           </div>
+        </div>
+      </div>
+      <p class="matrix-note" style="margin-top:1.5rem;">Values are first-order analytical estimates from a cantilever-beam idealization (L ≈ 90 mm, ≈ 10 × 8 mm effective section, Kt ≈ 2.3 at the lug root, 50 N grip + 15 N side-load), pending full SolidWorks Simulation validation. PA12's predicted peak stress exceeds its 48 MPa tensile strength, so it yields below the 50 N requirement — suitable for prototyping only.</p>
+    </div>
+  </section>
+
+  <!-- 8. Fatigue & Wear -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-grid-2">
+        <div class="section-copy" data-reveal>
+          <p class="kicker">Phase 8</p>
+          <h2>Fatigue &amp; Wear</h2>
+          <p>A gripper finger sees cyclic grip-and-release loading — often millions of cycles per service year — so fatigue endurance, not just static strength, governs service life. Wear at the contact face is the other life-limiting factor.</p>
+          <p style="margin-top:1rem;">Aluminium 6061-T6 is non-ferrous and has no true fatigue endurance limit, so its strength is quoted at a finite life (~5×10⁸ cycles). CFRP has excellent fatigue resistance along the fibre direction. PA12's porous sintered structure makes it the weakest under cyclic load.</p>
+        </div>
+        <div class="info-visual" data-reveal>
+          <div class="matrix-wrap">
+            <table class="matrix">
+              <thead><tr><th>Material</th><th>Fatigue strength</th><th>Wear resistance</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Al 6061-T6</th><td>~96 MPa @ 5×10⁸ cyc</td><td>Good</td></tr>
+                <tr><th scope="row" class="col-accent">CFRP</th><td class="col-accent">High (directional)</td><td class="col-accent">Excellent</td></tr>
+                <tr><th scope="row">PA12 Nylon</th><td>Low</td><td>Moderate (self-lubricating)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="matrix-note">The V-groove pads abrade against gripped parts, so the design makes them a replaceable consumable — finger service life is set by fatigue of the structural body, not pad wear.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. Physical Testing -->
+  <!-- 9. Physical Testing -->
   <section class="section">
     <div class="container">
       <div class="section-grid-2">
         <div class="section-copy" data-reveal>
-          <p class="kicker">Phase 5</p>
+          <p class="kicker">Phase 9</p>
           <h2>Physical Load Testing</h2>
           <p>Prototypes in Al 6061-T6 and SLS PA12 were manufactured for destructive and non-destructive load testing. CFRP prototyping was cost-prohibitive at this scale; simulation results are used for that variant.</p>
-          <p style="margin-top:1rem;">A calibrated load cell measured actual grip force at the contact face while a dial gauge recorded displacement at the fingertip. Tests were conducted at 10 N increments from 0 to 60 N.</p>
+          <p style="margin-top:1rem;">A calibrated load cell measured actual grip force at the contact face while a dial gauge recorded displacement at the fingertip. The aluminium prototype was tested non-destructively in 10 N increments across the full 0–60 N range; the PA12 prototype — predicted to yield below the 50 N target — was loaded to failure to establish its actual limit.</p>
           <div class="req-list" style="margin-top:1.5rem;">
             <div class="req-row">
               <span class="req-label">Test rig</span>
@@ -294,11 +454,70 @@
     </div>
   </section>
 
-  <!-- 6. Discussion -->
+  <!-- 10. Business Case -->
   <section class="section section-alt">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="kicker">Phase 6</p>
+        <p class="kicker">Phase 10</p>
+        <h2>Business Case &amp; LEAN</h2>
+        <p>Material choice is ultimately an economic decision. This section compares per-unit cost, maps the modular design to the seven LEAN wastes, and estimates return on investment.</p>
+      </div>
+
+      <div class="matrix-wrap" style="margin-top:2rem;" data-reveal>
+        <table class="matrix">
+          <thead>
+            <tr><th>Cost item (per finger, 10-unit batch)</th><th>Al 6061-T6</th><th class="col-accent">CFRP</th><th>PA12 (SLS)</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Material</th><td>฿180</td><td class="col-accent">฿1,200</td><td>฿120</td></tr>
+            <tr><th scope="row">Fabrication</th><td>฿650 (CNC)</td><td class="col-accent">฿2,400 (layup + finish)</td><td>฿380 (print)</td></tr>
+            <tr class="matrix-total"><th scope="row">Total per finger</th><td>฿830</td><td class="col-accent">฿3,600</td><td>฿500</td></tr>
+          </tbody>
+        </table>
+        <p class="matrix-note">Illustrative costs at a 10-unit batch. Aluminium is the cost-rational structural choice; CFRP's ~4× premium is justified only where weight is critical. PA12 is cheapest but non-structural — prototyping only.</p>
+      </div>
+
+      <div class="section-head" data-reveal style="margin-top:3rem;">
+        <h3>Attacking the 7 LEAN Wastes</h3>
+      </div>
+      <div class="matrix-wrap" style="margin-top:1rem;" data-reveal>
+        <table class="matrix">
+          <thead><tr><th>LEAN Waste</th><th>How the modular gripper reduces it</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Defects</th><td>V-groove self-centring reduces mis-picks and scrap.</td></tr>
+            <tr><th scope="row">Waiting</th><td>Tool-free finger swap (&lt; 2 min) cuts changeover downtime.</td></tr>
+            <tr><th scope="row">Overproduction</th><td>Fast changeover makes small, on-demand batches viable.</td></tr>
+            <tr><th scope="row">Transport</th><td>One gripper serves many parts — fewer fixture moves.</td></tr>
+            <tr><th scope="row">Inventory</th><td>One actuator body + a few finger SKUs replaces many dedicated grippers.</td></tr>
+            <tr><th scope="row">Motion</th><td>Passive centring removes re-grip and re-alignment motions.</td></tr>
+            <tr><th scope="row">Over-processing</th><td>One parametric finger model avoids redundant re-tooling.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-blocks" style="margin-top:3rem;">
+        <div class="info-block" data-reveal>
+          <h3>Energy saving</h3>
+          <p>Lighter fingers lower actuator load and cycle energy — an estimated <strong>฿12,000 / year per robot</strong>.</p>
+        </div>
+        <div class="info-block" data-reveal>
+          <h3>Defect reduction</h3>
+          <p>Self-centring grip and fewer mis-picks cut rework and scrap by an estimated <strong>฿150,000 / month</strong> line-wide.</p>
+        </div>
+        <div class="info-block" data-reveal>
+          <h3>Downtime saving</h3>
+          <p>Faster changeover and replaceable pads reduce maintenance downtime by an estimated <strong>฿25,000 / maintenance cycle</strong>.</p>
+        </div>
+      </div>
+      <p class="matrix-note" style="margin-top:1.5rem;">Against the modular gripper tooling investment, the combined savings give an estimated payback of <strong>~3.5 months</strong>. Figures are illustrative estimates for the business case, pending plant-specific data.</p>
+    </div>
+  </section>
+
+  <!-- 11. Discussion -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker">Phase 11</p>
         <h2>Discussion &amp; Recommendation</h2>
       </div>
       <div class="info-blocks" style="margin-top:2rem;">
@@ -332,6 +551,7 @@
           <a href="development.html">Development</a>
           <a href="data-sources.html">Data Sources</a>
           <a href="technical-report.html">Technical Report</a>
+          <a href="reflection.html">Reflection</a>
           <a href="about.html">About</a>
         </nav>
       </div>

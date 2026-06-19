@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.classList.add('js');</script>
+  <title>Reflection — Modular Hybrid Gripper</title>
+  <meta name="description" content="Individual learning reflections from the four ENG-203 team members on the Modular Hybrid Gripper project and the five AI-era soft skills." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-badge">ENG-203</span>
+      Modular Hybrid Gripper
+    </a>
+    <button class="nav-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="development.html">Development</a></li>
+      <li><a href="data-sources.html">Data Sources</a></li>
+      <li><a href="technical-report.html">Technical Report</a></li>
+      <li><a href="reflection.html">Reflection</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main>
+  <!-- Hero -->
+  <section class="hero hero-about">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-reveal>
+      <div class="hero-label">Metacognition &amp; Soft Skills</div>
+      <h1>Reflection</h1>
+      <p class="hero-sub">Each team member reflects on what they learned through the project — what changed in how they think, and which of the five AI-era soft skills the work developed.</p>
+    </div>
+  </section>
+
+  <!-- Reflections -->
+  <section class="section">
+    <div class="container container-narrow">
+
+      <div class="reflect-entry" data-reveal>
+        <div class="reflect-head">
+          <div class="team-card-avatar">NR</div>
+          <div>
+            <h3>Narakorn Ruangjam</h3>
+            <div class="team-card-role">Microstructure &amp; Mechanical Properties</div>
+          </div>
+        </div>
+        <p>Before this project I treated material properties as numbers in a table. Working on the microstructure analysis taught me <em>why</em> those numbers exist — that Aluminium 6061-T6's strength comes from fine Mg₂Si precipitates, and that PA12's porosity is what makes it fail early. I learned to read a datasheet as a story about structure, not just a list of values.</p>
+        <p>The hardest part was connecting microstructure back to the FEA results the team produced. Reconciling the "why" (microstructure) with the "what" (stress numbers) forced me to keep questioning my own assumptions until the whole picture was consistent.</p>
+        <div class="skill-tags">
+          <span class="ref-tag">Critical &amp; Analytical Thinking</span>
+          <span class="ref-tag">Metacognitive Skills</span>
+        </div>
+      </div>
+
+      <div class="reflect-entry" data-reveal>
+        <div class="reflect-head">
+          <div class="team-card-avatar">PB</div>
+          <div>
+            <h3>Pawit Bunchokchaigrit</h3>
+            <div class="team-card-role">FMEA &amp; Modular Mechanism Design</div>
+          </div>
+        </div>
+        <p>Designing the modular bayonet interface and running the FMEA changed how I approach design — from "will it work?" to "how will it fail?". Listing failure modes and scoring their risk made me add the lug-root fillet and the detent deliberately, instead of by habit.</p>
+        <p>I had to revise the mechanism several times as new failure modes surfaced. Staying flexible and letting go of my first design, rather than defending it, was the real lesson of this project.</p>
+        <div class="skill-tags">
+          <span class="ref-tag">Critical &amp; Analytical Thinking</span>
+          <span class="ref-tag">Resilience, Flexibility &amp; Agility</span>
+        </div>
+      </div>
+
+      <div class="reflect-entry" data-reveal>
+        <div class="reflect-head">
+          <div class="team-card-avatar">RM</div>
+          <div>
+            <h3>Rujinarong Meeda</h3>
+            <div class="team-card-role">FEA Simulation &amp; Structural Validation</div>
+          </div>
+        </div>
+        <p>Building the FEA models taught me that a simulation is only as good as its boundary conditions. Setting up identical loads and fixtures across three materials so the comparison would be fair turned out to be harder than running the solver itself.</p>
+        <p>When my early results looked wrong, I learned to debug my own setup rather than trust the first plot — checking mesh quality, fixtures, and units step by step. That habit of distrusting a clean-looking answer until I understand it is what I'll carry forward.</p>
+        <div class="skill-tags">
+          <span class="ref-tag">Critical &amp; Analytical Thinking</span>
+          <span class="ref-tag">Metacognitive Skills</span>
+        </div>
+      </div>
+
+      <div class="reflect-entry" data-reveal>
+        <div class="reflect-head">
+          <div class="team-card-avatar">TK</div>
+          <div>
+            <h3>Theeraput Khanthee</h3>
+            <div class="team-card-role">LEAN Analysis &amp; Business Case</div>
+          </div>
+        </div>
+        <p>Translating an engineering design into a business case made me see the gripper through the eyes of a factory manager. Mapping the modular design to the seven LEAN wastes connected mechanical features directly to money saved on the line.</p>
+        <p>Thinking about ROI and how to pitch the design pushed me to be creative about <em>value</em>, not just function — and to imagine the real customer who would actually buy and rely on it.</p>
+        <div class="skill-tags">
+          <span class="ref-tag">Creativity, Originality &amp; Entrepreneurship</span>
+          <span class="ref-tag">Empathy &amp; Human Touch</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">Modular Hybrid Gripper</div>
+          <div class="footer-sub">ENG-203 · Material Optimization for Lean Automation</div>
+        </div>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="development.html">Development</a>
+          <a href="data-sources.html">Data Sources</a>
+          <a href="technical-report.html">Technical Report</a>
+          <a href="reflection.html">Reflection</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+      <div class="footer-copy">© 2026 ENG-203 Project Group · Engineering Department</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
