@@ -251,6 +251,54 @@ Aspect ratio 16:9, landscape.
 
 ---
 
+## 14. Microstructure — Aluminum 6061-T6 — `microstructure-al.png` · 4:3 landscape · Scientific
+
+> **Generator: DALL-E (ChatGPT)**
+> Individual microstructure image for the Al 6061-T6 card in the Microstructure Analysis section.
+
+```
+A close-up optical micrograph of Aluminum 6061-T6 alloy microstructure on a near-black background (#0a0a0f). Equiaxed aluminium grains as polygonal cells with slightly varying silver-grey tones, fine dark Mg₂Si precipitate particles scattered uniformly inside the grains, grain boundaries as thin dark lines. Monochromatic silver-grey palette, sharp and high-contrast scientific microscopy look. Subtle electric-blue (#2997FF) ambient edge glow. Dark-science aesthetic, dramatic low-key technical lighting, photorealistic high detail.
+
+Negative: no text, no labels, no scale bars, no measurement markings, no watermarks, no white background.
+Aspect ratio 4:3, landscape.
+```
+
+**Save as:** `images/microstructure-al.png` — commit with `git add -f images/microstructure-al.png`
+
+---
+
+## 15. Microstructure — CFRP — `microstructure-cfrp.png` · 4:3 landscape · Scientific
+
+> **Generator: DALL-E (ChatGPT)**
+> Individual microstructure image for the CFRP card.
+
+```
+A scanning electron micrograph (SEM) cross-section of carbon fibre reinforced polymer (CFRP) on a near-black background (#0a0a0f). Dense array of circular carbon fibre cross-sections — small dark circles with bright-rimmed edges — embedded in a smooth dark epoxy polymer matrix, arranged in a tight near-hexagonal pattern at approximately 60% fibre volume fraction. High contrast: bright fibre edges against dark matrix. Subtle electric-blue (#2997FF) ambient edge glow. Dark-science aesthetic, dramatic low-key technical lighting, photorealistic SEM microscopy detail.
+
+Negative: no text, no labels, no scale bars, no measurement markings, no watermarks, no white background.
+Aspect ratio 4:3, landscape.
+```
+
+**Save as:** `images/microstructure-cfrp.png` — commit with `git add -f images/microstructure-cfrp.png`
+
+---
+
+## 16. Microstructure — PA12 Nylon (SLS) — `microstructure-pa12.png` · 4:3 landscape · Scientific
+
+> **Generator: DALL-E (ChatGPT)**
+> Individual microstructure image for the PA12 Nylon card.
+
+```
+A scanning electron micrograph (SEM) of SLS-sintered PA12 nylon microstructure on a near-black background (#0a0a0f). Irregular rounded polymer particles fused together with visible inter-particle gaps and porosity, partially-melted particle boundaries, rough heterogeneous surface texture. Dark warm-grey tones emphasising the porous sintered structure. Subtle electric-blue (#2997FF) ambient edge glow. Dark-science aesthetic, dramatic low-key technical lighting, photorealistic SEM microscopy detail.
+
+Negative: no text, no labels, no scale bars, no measurement markings, no watermarks, no white background.
+Aspect ratio 4:3, landscape.
+```
+
+**Save as:** `images/microstructure-pa12.png` — commit with `git add -f images/microstructure-pa12.png`
+
+---
+
 ## 13. CAD Assembly — Section View (Report) — `cad-section-view.png` · 16:9 landscape · Blueprint
 
 ```
@@ -285,6 +333,9 @@ Aspect ratio 16:9, landscape.
 | 11 | load-test.png | development.html — load test photo | Lab photo | 3:4 | hero 3/4 · 35mm (A/B) |
 | 12 | load-test-setup.png | technical-report.html — load test wide | Lab photo | 16:9 | establishing · 24mm (A/B) |
 | 13 | cad-section-view.png | technical-report.html — section view | Blueprint | 16:9 | front ortho half-section |
+| 14 | microstructure-al.png | development.html — microstructure card (Al) | Scientific | 4:3 | optical micrograph dark-science |
+| 15 | microstructure-cfrp.png | development.html — microstructure card (CFRP) | Scientific | 4:3 | SEM cross-section dark-science |
+| 16 | microstructure-pa12.png | development.html — microstructure card (PA12) | Scientific | 4:3 | SEM sintered dark-science |
 
 ---
 
