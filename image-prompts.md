@@ -180,27 +180,6 @@ Aspect ratio 3:4, portrait.
 ```
 **Try these:** `low hero` looking up the finger for a different framing than #5.
 
-### 7. Stress Plot — Aluminum — `fea-stress-al.png` · 4:3 landscape
-```
-[Shared FEA style.] Single isolated gripper finger, Aluminum 6061: mostly blue-green, low overall stress, only a few tiny hotspots. Rigid — no visible deflection.
-CAMERA BLOCK: side profile (finger horizontal) · close-up · 85mm, f/4 · low-key technical.
-Aspect ratio 4:3, landscape.
-```
-
-### 8. Stress Plot — CFRP — `fea-stress-cfrp.png` · 4:3 landscape
-```
-[Shared FEA style.] Single isolated gripper finger, CFRP: almost entirely deep blue, the lowest stress of all three, minimal hotspots — clearly the best performer. Essentially zero deflection (very stiff).
-CAMERA BLOCK: hero 3/4 (slightly different angle than the Al shot) · close-up · 85mm, f/4 · low-key technical with a faint cool rim.
-Aspect ratio 4:3, landscape.
-```
-
-### 9. Stress Plot — PA12 Nylon — `fea-stress-pa12.png` · 4:3 landscape
-```
-[Shared FEA style.] Single isolated gripper finger, PA12 nylon: large orange-red high-stress zones spreading from the joints and lug root — clearly the worst performer. Show a noticeably EXAGGERATED bend/deflection in the finger (it flexes a lot under load) to tell the failure story visually.
-CAMERA BLOCK: low hero (emphasize the bend) · close-up · 50mm, f/5.6 · low-key technical.
-Aspect ratio 4:3, landscape.
-```
-
 ### 10. FEA — All Three Materials — `fea-all-materials.png` · 16:9 landscape
 ```
 [Shared FEA style.] THREE identical gripper fingers in one frame, left-to-right comparison: LEFT mostly green-yellow with small bend (Aluminum), CENTER almost fully deep blue and perfectly straight (CFRP, best), RIGHT heavy orange-red with an exaggerated bend (PA12, worst). Even spacing, identical camera on each, consistent lighting so only the stress colors and deflection differ.
@@ -326,9 +305,6 @@ Aspect ratio 16:9, landscape.
 | 4 | cad-crosssection.png | development.html — cross-section | Blueprint | 4:3 | front ortho section |
 | 5 | fea-stress.png | index.html — FEA stress | FEA | 3:4 | hero 3/4 · 85mm |
 | 6 | fea-al6061.png | development.html — Von Mises Al | FEA | 3:4 | 3/4 · 50mm |
-| 7 | fea-stress-al.png | development.html — stress plot Al | FEA | 4:3 | side profile close |
-| 8 | fea-stress-cfrp.png | development.html — stress plot CFRP | FEA | 4:3 | hero 3/4 close |
-| 9 | fea-stress-pa12.png | development.html — stress plot PA12 | FEA | 4:3 | low hero close |
 | 10 | fea-all-materials.png | technical-report.html — FEA all three | FEA | 16:9 | front ortho wide |
 | 11 | load-test.png | development.html — load test photo | Lab photo | 3:4 | hero 3/4 · 35mm (A/B) |
 | 12 | load-test-setup.png | technical-report.html — load test wide | Lab photo | 16:9 | establishing · 24mm (A/B) |
