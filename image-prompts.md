@@ -172,13 +172,43 @@ Aspect ratio 3:4, portrait.
 ```
 **Try these:** `macro detail on the red pivot hotspot · extreme close-up · 100mm` for a dramatic stress-concentration shot.
 
-### 6. Von Mises — Al 6061 (large) — `fea-al6061.png` · 3:4 portrait
+### 6. Von Mises — Al 6061-T6 — `fea-al6061.png` · 3:4 portrait
+
+> **Generator: DALL-E (ChatGPT) — self-contained prompt, no paste needed**
+
 ```
-[Shared FEA style.] Aluminum 6061-T6 part: MODERATE stress — mostly green-to-yellow body with small focused red hotspots only at the pivot bolt holes. Stiff, minimal deformation (almost no visible bend).
-CAMERA BLOCK: front orthographic-ish 3/4 · medium · 50mm, f/8 · low-key technical, even.
+A photorealistic finite element analysis (FEA) visualization of a modular robotic gripper finger made from Aluminum 6061-T6, showing Von Mises stress contour mapping on a dark charcoal-navy background (#1a1a22).
+
+PART GEOMETRY: A compact single-finger element from a two-finger industrial robotic gripper — an elongated prismatic aluminium link approximately 90 mm long. Proximal end: a bayonet-style base with four radial engagement lugs (the fixed/constrained mounting point). Distal end: a V-groove contact pad at the fingertip. Two pivot bolt holes pierce the link body along its length where the four-bar linkage pivot pins pass through. Clean machined aluminium aesthetic visible through the mesh.
+
+STRESS DISTRIBUTION — Aluminum 6061-T6 under 50 N grip load + 15 N transverse side load:
+• The majority of the finger body (60–70% of the surface) is solid GREEN (safe zone, ~25–55 MPa) — reflecting the material's exceptional stiffness (69 GPa) and high yield strength (276 MPa)
+• A YELLOW-GREEN gradient spreads along the mid-span of the link under bending
+• Small, tightly-focused ORANGE hotspots at the two pivot bolt hole edges — stress concentration (Kt ≈ 2.3) raises local stress to ~75–90 MPa
+• A single sharp RED peak only at the lug root (proximal end), reaching ~98 MPa — still comfortably inside yield, factor of safety = 2.8
+• The fingertip V-groove region: cool CYAN-BLUE, nearly unstressed
+• CRITICAL: virtually zero visible deformation or elastic bend — the finger looks perfectly rigid and straight, emphasising aluminium's stiffness advantage
+
+FEA MESH AND VISUAL STYLE:
+• Smooth continuous Von Mises colour contour: deep blue (0 MPa) → cyan → green → yellow → orange → bright red (98 MPa peak)
+• Fine triangular surface mesh wireframe subtly overlaid — semi-transparent light grey mesh lines, element size ≈ 2–3 mm, giving it an authentic simulation screenshot texture
+• SolidWorks Simulation / ANSYS Workbench professional aesthetic — not cartoon, not schematic — photorealistic simulation quality
+• Soft ambient occlusion in the recesses, undercuts, and bolt-hole edges for geometric depth
+• Subtle blue-tinted rim glow on part edges, separating the part from the dark background
+
+CAMERA: Elevated 3/4 hero angle, medium distance, full finger visible from base lug to fingertip. Finger oriented diagonally — base lug lower-left, fingertip upper-right. 50 mm lens perspective, f/8 (fully sharp throughout).
+
+LIGHTING: Low-key technical — soft key light from upper-left, thin cold-blue rim light on the right edge, minimal ambient fill. Dark background stays dark; the stress colours are the focal point.
+
+Negative: no text, no numbers, no dimension lines, no colour legend bar, no axis triad arrows, no UI toolbars, no watermarks, no white background, no cartoon or illustrative style.
 Aspect ratio 3:4, portrait.
 ```
-**Try these:** `low hero` looking up the finger for a different framing than #5.
+
+**Tips:**
+- Generate 2–3 variants; pick the one where the green body and red lug-root hotspot are clearly distinct.
+- If the mesh lines are too heavy, add: *"mesh wireframe very subtle, almost transparent, just hinting at the mesh pattern."*
+- If DALL-E misses the bolt-hole hotspots, add: *"orange stress rings around two circular holes along the finger body."*
+- Save as `images/fea-al6061.png`. Commit with `git add -f images/fea-al6061.png`.
 
 ### 10. FEA — All Three Materials — `fea-all-materials.png` · 16:9 landscape
 ```
