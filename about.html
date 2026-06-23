@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.classList.add('js');</script>
-  <title>About — Modular Hybrid Gripper</title>
-  <meta name="description" content="The four-student ENG-203 team behind the Modular Hybrid Gripper project and their contributions." />
+  <title>About &amp; Reflection — Modular Hybrid Gripper</title>
+  <meta name="description" content="The four ENG-203 team members — their contributions to the project and individual reflections on learning." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -29,7 +29,6 @@
       <li><a href="development.html" data-th="การพัฒนา">Development</a></li>
       <li><a href="data-sources.html" data-th="แหล่งข้อมูล">Data Sources</a></li>
       <li><a href="technical-report.html" data-th="รายงานทางเทคนิค">Technical Report</a></li>
-      <li><a href="reflection.html" data-th="การสะท้อนคิด">Reflection</a></li>
       <li><a href="about.html" data-th="เกี่ยวกับเรา">About</a></li>
       <li class="nav-lang">
         <span class="lang-switch" role="group" aria-label="Language">
@@ -42,78 +41,122 @@
   </nav>
 
   <main>
+
   <!-- Hero -->
   <section class="hero hero-about">
     <div class="hero-overlay"></div>
     <div class="hero-content" data-reveal>
       <div class="hero-label" data-th="กลุ่ม เจี๊ยบตัดเชือกเราทำไม">Group · Jeab Tat Chueck Rao Tham Mai</div>
-      <h1 data-th="เกี่ยวกับทีม">About the Team</h1>
-      <p class="hero-sub" data-th="นักศึกษาวิศวกรรมสี่คนจากวิชา ENG-203 Engineering Materials ศึกษาการเพิ่มประสิทธิภาพวัสดุสำหรับระบบกริปเปอร์หุ่นยนต์">Four engineering students from ENG-203 Engineering Materials, investigating material optimization for robotic gripper systems.</p>
+      <h1 data-th="เกี่ยวกับทีมและการสะท้อนคิด">About &amp; Reflection</h1>
+      <p class="hero-sub" data-th="ส่วนที่แต่ละคนรับผิดชอบในโครงงาน และการสะท้อนคิดส่วนตัวว่าวิธีคิดเปลี่ยนไปอย่างไรผ่านโครงงานนี้">Each team member's contribution to the project and their personal reflection on what changed in how they think.</p>
     </div>
   </section>
 
-  <!-- Team -->
+  <!-- Team + Reflections -->
   <section class="section">
     <div class="container">
+
       <div class="section-head" data-reveal>
         <p class="kicker" data-th="สมาชิก">Members</p>
         <h2 data-th="กลุ่ม เจี๊ยบตัดเชือกเราทำไม">Group · Jeab Tat Chueck Rao Tham Mai</h2>
       </div>
-      <div class="team-grid" style="margin-top:2.5rem;">
 
-        <div class="team-card" data-reveal>
+      <!-- NR -->
+      <div class="member-entry" data-reveal>
+        <div class="member-bio">
           <div class="team-card-avatar">
-            <img src="images/test_profile.png" alt="Narakorn Ruangjam" onerror="this.remove()">
+            <img src="images/nr.png" alt="Narakorn Ruangjam" onerror="this.remove()">
             NR
           </div>
-          <div class="team-card-body">
+          <div>
             <h3>Narakorn Ruangjam</h3>
             <div class="team-card-id" data-th="รหัสนักศึกษา: 2411220227">Student ID: 2411220227</div>
             <div class="team-card-role" data-th="โครงสร้างจุลภาคและสมบัติเชิงกล">Microstructure &amp; Mechanical Properties</div>
-            <p data-th="นำการวิเคราะห์ลักษณะวัสดุ — เปรียบเทียบโครงสร้างจุลภาคและสมบัติเชิงกล (ความแข็งแรงดึง ความแข็งแรงคราก มอดุลัส ความหนาแน่น) ของ Aluminum 6061-T6, CFRP และ PA12 Nylon สร้างตารางเปรียบเทียบสมบัติวัสดุที่เป็นหลักของการตัดสินใจคัดเลือก">Led material characterization — comparing the microstructure and mechanical properties (tensile strength, yield, modulus, density) of Aluminum 6061-T6, CFRP, and PA12 Nylon. Built the material property comparison table that anchors the selection decision.</p>
+            <p style="margin-top:0.75rem;" data-th="นำการวิเคราะห์ลักษณะวัสดุ — เปรียบเทียบโครงสร้างจุลภาคและสมบัติเชิงกล (ความแข็งแรงดึง ความแข็งแรงคราก มอดุลัส ความหนาแน่น) ของ Aluminum 6061-T6, CFRP และ PA12 Nylon สร้างตารางเปรียบเทียบสมบัติวัสดุที่เป็นหลักของการตัดสินใจคัดเลือก">Led material characterization — comparing the microstructure and mechanical properties (tensile strength, yield, modulus, density) of Aluminum 6061-T6, CFRP, and PA12 Nylon. Built the material property comparison table that anchors the selection decision.</p>
           </div>
         </div>
+        <div class="member-reflection">
+          <p data-th="ก่อนทำโครงงานนี้ ผมมองสมบัติวัสดุเป็นเพียงตัวเลขในตาราง การทำงานวิเคราะห์โครงสร้างจุลภาคสอนผมว่า<em>ทำไม</em>ตัวเลขเหล่านั้นจึงมีอยู่ — ความแข็งแรงของ Aluminium 6061-T6 มาจากตะกอน Mg₂Si ละเอียด และความพรุนของ PA12 คือสิ่งที่ทำให้มันล้มเหลวเร็ว ผมเรียนรู้ที่จะอ่านเอกสารข้อมูลเป็นเรื่องราวของโครงสร้าง ไม่ใช่แค่รายการของค่า">Before this project I treated material properties as numbers in a table. Working on the microstructure analysis taught me <em>why</em> those numbers exist — that Aluminium 6061-T6's strength comes from fine Mg₂Si precipitates, and that PA12's porosity is what makes it fail early. I learned to read a datasheet as a story about structure, not just a list of values.</p>
+          <p data-th="ส่วนที่ยากที่สุดคือการเชื่อมโยงโครงสร้างจุลภาคกลับไปยังผล FEA ที่ทีมสร้างขึ้น การประสาน "เหตุผล" (โครงสร้างจุลภาค) กับ "ผลลัพธ์" (ตัวเลขความเค้น) บังคับให้ผมตั้งคำถามกับสมมติฐานของตัวเองไปเรื่อย ๆ จนภาพรวมทั้งหมดสอดคล้องกัน">The hardest part was connecting microstructure back to the FEA results the team produced. Reconciling the "why" (microstructure) with the "what" (stress numbers) forced me to keep questioning my own assumptions until the whole picture was consistent.</p>
+          <div class="skill-tags">
+            <span class="ref-tag" data-th="การคิดเชิงวิพากษ์และวิเคราะห์"><i data-lucide="microscope"></i>Critical &amp; Analytical Thinking</span>
+            <span class="ref-tag" data-th="ทักษะอภิปัญญา"><i data-lucide="brain"></i>Metacognitive Skills</span>
+          </div>
+        </div>
+      </div>
 
-        <div class="team-card" data-reveal>
+      <!-- PB -->
+      <div class="member-entry" data-reveal>
+        <div class="member-bio">
           <div class="team-card-avatar">
-            <img src="images/test_profile.png" alt="Pawit Bunchokchaigrit" onerror="this.remove()">
+            <img src="images/pb.jpg" alt="Pawit Bunchokchaigrit" onerror="this.remove()">
             PB
           </div>
-          <div class="team-card-body">
+          <div>
             <h3>Pawit Bunchokchaigrit</h3>
             <div class="team-card-id" data-th="รหัสนักศึกษา: 2411220243">Student ID: 2411220243</div>
             <div class="team-card-role" data-th="FMEA และการออกแบบกลไกโมดูลาร์">FMEA &amp; Modular Mechanism Design</div>
-            <p data-th="ออกแบบจุดต่อนิ้วจับบาโยเน็ตแบบโมดูลาร์และทำการวิเคราะห์รูปแบบความล้มเหลวและผลกระทบ (FMEA) — ระบุรูปแบบความล้มเหลวหลักที่ข้อต่อหมุนและโคนลั่ก แล้วป้อนข้อกำหนดการแก้ไขกลับเข้าสู่การออกแบบกลไก">Designed the modular bayonet finger interface and ran the Failure Mode and Effects Analysis (FMEA) — identifying primary failure modes at the pivot joints and lug roots, then feeding mitigation requirements back into the mechanism design.</p>
+            <p style="margin-top:0.75rem;" data-th="ออกแบบจุดต่อนิ้วจับบาโยเน็ตแบบโมดูลาร์และทำการวิเคราะห์รูปแบบความล้มเหลวและผลกระทบ (FMEA) — ระบุรูปแบบความล้มเหลวหลักที่ข้อต่อหมุนและโคนลั่ก แล้วป้อนข้อกำหนดการแก้ไขกลับเข้าสู่การออกแบบกลไก">Designed the modular bayonet finger interface and ran the Failure Mode and Effects Analysis (FMEA) — identifying primary failure modes at the pivot joints and lug roots, then feeding mitigation requirements back into the mechanism design.</p>
           </div>
         </div>
+        <div class="member-reflection">
+          <p data-th="การออกแบบจุดต่อบาโยเน็ตแบบโมดูลาร์และการทำ FMEA เปลี่ยนวิธีที่ผมเข้าหาการออกแบบ — จาก "มันจะทำงานไหม?" เป็น "มันจะล้มเหลวอย่างไร?" การไล่เรียงรูปแบบความล้มเหลวและให้คะแนนความเสี่ยงทำให้ผมเพิ่มฟิลเล็ตที่โคนลั่กและเดเทนต์อย่างตั้งใจ แทนที่จะทำตามความเคยชิน">Designing the modular bayonet interface and running the FMEA changed how I approach design — from "will it work?" to "how will it fail?". Listing failure modes and scoring their risk made me add the lug-root fillet and the detent deliberately, instead of by habit.</p>
+          <p data-th="ผมต้องแก้ไขกลไกหลายครั้งเมื่อมีรูปแบบความล้มเหลวใหม่ ๆ ปรากฏ การคงความยืดหยุ่นและปล่อยวางแบบแรกของตัวเอง แทนที่จะปกป้องมัน คือบทเรียนที่แท้จริงของโครงงานนี้">I had to revise the mechanism several times as new failure modes surfaced. Staying flexible and letting go of my first design, rather than defending it, was the real lesson of this project.</p>
+          <div class="skill-tags">
+            <span class="ref-tag" data-th="การคิดเชิงวิพากษ์และวิเคราะห์"><i data-lucide="microscope"></i>Critical &amp; Analytical Thinking</span>
+            <span class="ref-tag" data-th="ความยืดหยุ่น การปรับตัว และความคล่องตัว"><i data-lucide="zap"></i>Resilience, Flexibility &amp; Agility</span>
+          </div>
+        </div>
+      </div>
 
-        <div class="team-card" data-reveal>
+      <!-- RM -->
+      <div class="member-entry" data-reveal>
+        <div class="member-bio">
           <div class="team-card-avatar">
-            <img src="images/test_profile.png" alt="Rujinarong Meeda" onerror="this.remove()">
+            <img src="images/rm.jpg" alt="Rujinarong Meeda" onerror="this.remove()">
             RM
           </div>
-          <div class="team-card-body">
+          <div>
             <h3>Rujinarong Meeda</h3>
             <div class="team-card-id" data-th="รหัสนักศึกษา: 2411290014">Student ID: 2411290014</div>
             <div class="team-card-role" data-th="การจำลอง FEA และการตรวจสอบเชิงโครงสร้าง">FEA Simulation &amp; Structural Validation</div>
-            <p data-th="สร้างแบบจำลอง SolidWorks Simulation และทำ FEA เชิงโครงสร้างแบบสถิตในวัสดุทั้งสามชนิดภายใต้โหลดจับ 50 นิวตันและโหลดด้านข้าง 15 นิวตันเท่ากัน — ดึงค่าความเค้น Von Mises การเคลื่อนตัว และค่าความปลอดภัยเพื่อตรวจสอบการออกแบบ">Built the SolidWorks Simulation models and ran static structural FEA across all three materials under identical 50 N grip and 15 N side loads — extracting Von Mises stress, displacement, and factor of safety to validate the design.</p>
+            <p style="margin-top:0.75rem;" data-th="สร้างแบบจำลอง SolidWorks Simulation และทำ FEA เชิงโครงสร้างแบบสถิตในวัสดุทั้งสามชนิดภายใต้โหลดจับ 50 นิวตันและโหลดด้านข้าง 15 นิวตันเท่ากัน — ดึงค่าความเค้น Von Mises การเคลื่อนตัว และค่าความปลอดภัยเพื่อตรวจสอบการออกแบบ">Built the SolidWorks Simulation models and ran static structural FEA across all three materials under identical 50 N grip and 15 N side loads — extracting Von Mises stress, displacement, and factor of safety to validate the design.</p>
           </div>
         </div>
+        <div class="member-reflection">
+          <p data-th="การสร้างแบบจำลอง FEA สอนผมว่าการจำลองจะดีได้เท่ากับเงื่อนไขขอบเขตของมันเท่านั้น การตั้งค่าโหลดและจุดยึดให้เหมือนกันในวัสดุทั้งสามเพื่อให้การเปรียบเทียบยุติธรรม กลับยากกว่าการรันโซลเวอร์เสียอีก">Building the FEA models taught me that a simulation is only as good as its boundary conditions. Setting up identical loads and fixtures across three materials so the comparison would be fair turned out to be harder than running the solver itself.</p>
+          <p data-th="เมื่อผลลัพธ์ช่วงแรกดูผิด ผมเรียนรู้ที่จะตรวจหาข้อผิดพลาดในการตั้งค่าของตัวเอง แทนที่จะเชื่อกราฟแรก — ตรวจคุณภาพเมช จุดยึด และหน่วยทีละขั้น นิสัยการไม่เชื่อคำตอบที่ดูสะอาดจนกว่าจะเข้าใจมัน คือสิ่งที่ผมจะนำติดตัวไป">When my early results looked wrong, I learned to debug my own setup rather than trust the first plot — checking mesh quality, fixtures, and units step by step. That habit of distrusting a clean-looking answer until I understand it is what I'll carry forward.</p>
+          <div class="skill-tags">
+            <span class="ref-tag" data-th="การคิดเชิงวิพากษ์และวิเคราะห์"><i data-lucide="microscope"></i>Critical &amp; Analytical Thinking</span>
+            <span class="ref-tag" data-th="ทักษะอภิปัญญา"><i data-lucide="brain"></i>Metacognitive Skills</span>
+          </div>
+        </div>
+      </div>
 
-        <div class="team-card" data-reveal>
+      <!-- TK -->
+      <div class="member-entry" data-reveal>
+        <div class="member-bio">
           <div class="team-card-avatar">
-            <img src="images/test_profile.png" alt="Theeraput Khanthee" onerror="this.remove()">
+            <img src="images/tk.jpg" alt="Theeraput Khanthee" onerror="this.remove()">
             TK
           </div>
-          <div class="team-card-body">
+          <div>
             <h3>Theeraput Khanthee</h3>
             <div class="team-card-id" data-th="รหัสนักศึกษา: 2511220135">Student ID: 2511220135</div>
             <div class="team-card-role" data-th="การวิเคราะห์ LEAN และกรณีศึกษาธุรกิจ">LEAN Analysis &amp; Business Case</div>
-            <p data-th="นำการวิเคราะห์การผลิตแบบลีนและกรณีศึกษาทางธุรกิจ — วัดปริมาณเวลาที่ประหยัดได้จากการเปลี่ยนรุ่นด้วยการออกแบบโมดูลาร์ และสร้างข้อโต้แย้งด้านต้นทุนและ ROI เบื้องหลังข้อเสนอแนะวัสดุสุดท้าย">Led the lean manufacturing analysis and business case — quantifying the changeover-time savings enabled by the modular design and building the cost and ROI argument behind the final material recommendation.</p>
+            <p style="margin-top:0.75rem;" data-th="นำการวิเคราะห์การผลิตแบบลีนและกรณีศึกษาทางธุรกิจ — วัดปริมาณเวลาที่ประหยัดได้จากการเปลี่ยนรุ่นด้วยการออกแบบโมดูลาร์ และสร้างข้อโต้แย้งด้านต้นทุนและ ROI เบื้องหลังข้อเสนอแนะวัสดุสุดท้าย">Led the lean manufacturing analysis and business case — quantifying the changeover-time savings enabled by the modular design and building the cost and ROI argument behind the final material recommendation.</p>
           </div>
         </div>
-
+        <div class="member-reflection">
+          <p data-th="การแปลงงานออกแบบทางวิศวกรรมเป็นกรณีศึกษาทางธุรกิจทำให้ผมมองกริปเปอร์ผ่านสายตาของผู้จัดการโรงงาน การเชื่อมโยงการออกแบบโมดูลาร์กับความสูญเปล่า 7 ประการของ LEAN เชื่อมคุณลักษณะเชิงกลเข้ากับเงินที่ประหยัดได้บนสายการผลิตโดยตรง">Translating an engineering design into a business case made me see the gripper through the eyes of a factory manager. Mapping the modular design to the seven LEAN wastes connected mechanical features directly to money saved on the line.</p>
+          <p data-th="การคิดเรื่อง ROI และวิธีนำเสนอการออกแบบผักดันให้ผมสร้างสรรค์เรื่อง<em>คุณค่า</em> ไม่ใช่แค่การใช้งาน — และจินตนาการถึงลูกค้าจริงที่จะซื้อและพึ่งพามัน">Thinking about ROI and how to pitch the design pushed me to be creative about <em>value</em>, not just function — and to imagine the real customer who would actually buy and rely on it.</p>
+          <div class="skill-tags">
+            <span class="ref-tag" data-th="ความคิดสร้างสรรค์ ความริเริ่ม และการเป็นผู้ประกอบการ"><i data-lucide="lightbulb"></i>Creativity, Originality &amp; Entrepreneurship</span>
+            <span class="ref-tag" data-th="ความเห็นอกเห็นใจและสัมผัสความเป็นมนุษย์"><i data-lucide="heart"></i>Empathy &amp; Human Touch</span>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -136,6 +179,7 @@
       </div>
     </div>
   </section>
+
   </main>
 
   <!-- Footer -->
@@ -149,5 +193,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
