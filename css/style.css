@@ -423,20 +423,30 @@ html[lang="th"] p, html[lang="th"] h2, html[lang="th"] h3 {
 /* ── Member entries (About + Reflection merged) ─────────────── */
 .member-entry {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 2rem 3.5rem;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem 3rem;
   padding: 3rem 0;
   border-bottom: 1px solid var(--border);
   align-items: start;
 }
 .member-entry:first-of-type { padding-top: 2.5rem; }
 .member-entry:last-of-type { border-bottom: none; padding-bottom: 0; }
-.member-bio { display: flex; gap: 1.25rem; align-items: flex-start; }
-.member-bio .team-card-avatar { flex-shrink: 0; }
-.member-bio h3 { font-size: 1.1rem; margin-bottom: 2px; }
-.member-reflection > p + p { margin-top: 0.9rem; }
+.member-left {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 6px;
+}
+.member-left h3 { font-size: 1.05rem; margin: 4px 0 0; }
+.member-avatar { width: 160px !important; height: 160px !important; }
+.member-right > p + p { margin-top: 0.9rem; }
+.member-contribution { color: var(--text-2); }
+.member-divider {
+  border: none; border-top: 1px solid var(--border);
+  margin: 1.25rem 0;
+}
 @media (max-width: 720px) {
   .member-entry { grid-template-columns: 1fr; gap: 1.5rem; }
+  .member-left { flex-direction: row; text-align: left; align-items: center; gap: 1rem; }
+  .member-avatar { width: 80px !important; height: 80px !important; }
 }
 
 /* ── Footer ────────────────────────────────────────────────── */
