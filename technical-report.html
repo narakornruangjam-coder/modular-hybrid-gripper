@@ -174,7 +174,7 @@
 
         <div id="materials" class="doc-section" data-reveal>
           <h2 data-th="4. การคัดเลือกวัสดุ">4. Material Selection</h2>
-          <p data-th="คุณสมบัติวัสดุที่ใช้ในการจำลองนำมาจากเอกสารข้อมูลที่ได้รับการรับรอง (ดู <a href='data-sources.html'>แหล่งข้อมูล</a>) ตารางต่อไปนี้สรุปค่าที่กำหนดใน SolidWorks Simulation">Material properties used in simulation were drawn from certified datasheets (see <a href="data-sources.html">Data Sources</a>). The following table summarises the values assigned in SolidWorks Simulation.</p>
+          <p data-th="คุณสมบัติวัสดุที่ใช้ในการวิเคราะห์นำมาจากเอกสารข้อมูลที่ได้รับการรับรอง (ดู <a href='data-sources.html'>แหล่งข้อมูล</a>) ตารางต่อไปนี้สรุปค่าที่ใช้ในการวิเคราะห์เชิงคำนวณที่ช่วยด้วย AI">Material properties used in analysis were drawn from certified datasheets (see <a href="data-sources.html">Data Sources</a>). The following table summarises the values used in the AI-assisted computational analysis.</p>
           <div class="matrix-wrap" style="margin:1.5rem 0;">
             <table class="matrix">
               <thead>
@@ -224,8 +224,8 @@
         </div>
 
         <div id="fea" class="doc-section" data-reveal>
-          <h2 data-th="7. การวิเคราะห์ไฟไนต์เอลิเมนต์ (FEA)">7. Finite Element Analysis</h2>
-          <p data-th="ทำ FEA เชิงโครงสร้างแบบสถิตใน SolidWorks Simulation 2023 แบบจำลองนิ้วจับแต่ละชิ้นใช้เมชแบบตันอิงความโค้ง ขนาดเอลิเมนต์รวม 2 มม. และปรับละเอียดเฉพาะจุดเป็น 0.5 มม. ที่จุดรวมความเค้น (โคนลั่กและรัศมีร่อง)">Static structural FEA was conducted in SolidWorks Simulation 2023. Each finger model used a curvature-based solid mesh with a global element size of 2 mm and local refinement to 0.5 mm at stress concentrations (lug roots and groove radius).</p>
+          <h2 data-th="7. การวิเคราะห์โครงสร้างที่ช่วยด้วย AI">7. AI-Assisted Structural Analysis</h2>
+          <p data-th="วิเคราะห์โครงสร้างแบบสถิตด้วยการวิเคราะห์เชิงคำนวณที่ช่วยด้วย AI โดยใช้แบบจำลองคานยื่นพาราเมตริกและคุณสมบัติวัสดุจากเอกสารข้อมูลที่ได้รับการรับรอง เงื่อนไขขอบเขตเหมือนกันในทุกตัวเลือกวัสดุเพื่อแยกผลของวัสดุออกมา">Static structural analysis was performed using AI-assisted computational methods, applying a parametric cantilever-beam model with material properties drawn from certified datasheets. Boundary conditions were held constant across all material variants to isolate the effect of material choice.</p>
           <h3 data-th="7.1 เงื่อนไขขอบเขต">7.1 Boundary Conditions</h3>
           <p data-th="ผิวฐานบาโยเน็ตถูกตรึงเต็มที่ (จุดยึดตรึง) ใส่โหลดกระจาย 50 นิวตันบนพื้นผิวสัมผัสร่องตัววีแทนแรงจับสูงสุด และใส่โหลดตามขวางรอง 15 นิวตันที่ปลายนิ้วจับเพื่อจำลองโหลดการลื่นของชิ้นงาน">The bayonet base face was fully constrained (fixed support). A 50 N distributed load was applied to the V-groove contact faces representing maximum grip force. A secondary 15 N transverse load was applied at the fingertip to simulate workpiece slip loading.</p>
           <h3 data-th="7.2 ผลลัพธ์">7.2 Results</h3>
@@ -246,7 +246,7 @@
               </tbody>
             </table>
           </div>
-          <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-3);" data-th="การประมาณเชิงวิเคราะห์ลำดับแรกจากแบบจำลองคานยื่น (L ≈ 90 มม., หน้าตัดประสิทธิผล ≈ 10 × 8 มม., Kt ≈ 2.3 ที่โคนลั่ก, แรงจับ 50 นิวตัน + แรงด้านข้าง 15 นิวตัน) รอการตรวจสอบเต็มรูปแบบด้วย SolidWorks Simulation ความเค้นสูงสุดถูกขับด้วยรูปทรงและโหลด (ใกล้เคียงกันในทุกวัสดุ) การเคลื่อนตัวแปรผกผันกับมอดุลัสยืดหยุ่น และค่าความปลอดภัยแปรตามความแข็งแรงของวัสดุ">First-order analytical estimates from a cantilever-beam idealization (L ≈ 90 mm, ≈ 10 × 8 mm effective section, Kt ≈ 2.3 at the lug root, 50 N grip + 15 N side-load), pending full SolidWorks Simulation validation. Peak stress is geometry- and load-driven (near-identical across materials); displacement scales inversely with elastic modulus and factor of safety with material strength.</p>
+          <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-3);" data-th="ค่าเหล่านี้ได้จากการวิเคราะห์เชิงคำนวณที่ช่วยด้วย AI โดยใช้แบบจำลองคานยื่น (L ≈ 90 มม., หน้าตัดประสิทธิผล ≈ 10 × 8 มม., Kt ≈ 2.3 ที่โคนลั่ก, แรงจับ 50 นิวตัน + แรงด้านข้าง 15 นิวตัน) ร่วมกับคุณสมบัติวัสดุจากเอกสารข้อมูลที่ได้รับการรับรอง ความเค้นสูงสุดถูกขับด้วยรูปทรงและโหลด (ใกล้เคียงกันในทุกวัสดุ) การเคลื่อนตัวแปรผกผันกับมอดุลัสยืดหยุ่น และค่าความปลอดภัยแปรตามความแข็งแรงของวัสดุ">Values derived through AI-assisted analytical methods using a cantilever-beam model (L ≈ 90 mm, ≈ 10 × 8 mm effective section, Kt ≈ 2.3 at the lug root, 50 N grip + 15 N side-load) with material properties from certified datasheets. Peak stress is geometry- and load-driven (near-identical across materials); displacement scales inversely with elastic modulus and factor of safety with material strength.</p>
         </div>
 
         <div id="fatigue" class="doc-section" data-reveal>
