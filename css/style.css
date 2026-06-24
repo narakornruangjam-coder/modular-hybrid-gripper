@@ -374,6 +374,36 @@ html[lang="th"] p, html[lang="th"] h2, html[lang="th"] h3 {
 .team-name { font-size: 0.88rem; font-weight: 500; color: var(--text); }
 .team-id { font-size: 0.72rem; color: var(--text-3); font-family: var(--mono); }
 
+/* ── Video embed (home page) ────────────────────────────────── */
+.video-embed-wrap {
+  margin-top: 2.5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+.video-embed-wrap iframe {
+  width: 100%; height: 100%; display: block;
+}
+.video-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 16px;
+}
+.video-placeholder-icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--accent-dim); border: 1px solid var(--border-2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; color: var(--accent);
+}
+.video-placeholder-label {
+  font-size: 0.85rem; color: var(--text-3);
+}
+
 /* ── Team cards row (home page) ────────────────────────────── */
 .team-cards-row {
   display: flex; gap: 24px; justify-content: center;
@@ -848,4 +878,117 @@ html[lang="th"] p, html[lang="th"] h2, html[lang="th"] h3 {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VISUAL ENHANCEMENTS  —  revert: git checkout css/style.css
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 1 ─ Gradient text on headings — blue-dominant */
+.hero h1 {
+  background: linear-gradient(135deg, #a8d4ff 0%, #4eabff 45%, #2997FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+h2 {
+  background: linear-gradient(135deg, #7ec4ff 0%, #2997FF 55%, #0055cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* 2 ─ Kicker as glowing accent pill */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent-dim);
+  border: 1px solid var(--border-2);
+  color: var(--accent);
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-family: var(--mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  box-shadow: 0 0 12px rgba(41,151,255,0.12);
+}
+
+/* 3 ─ Section background images on sections 3, 5, 7 */
+.section { position: relative; }
+.section > .container { position: relative; z-index: 1; }
+main > section.section:nth-child(3)::before,
+main > section.section:nth-child(5)::before,
+main > section.section:nth-child(7)::before,
+main > section.section:nth-child(9)::before,
+main > section.section:nth-child(11)::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+main > section.section:nth-child(3)::before  { background-image: url('../images/bg/bg2.png'); }
+main > section.section:nth-child(5)::before  { background-image: url('../images/bg/bg4.png'); }
+main > section.section:nth-child(7)::before  { background-image: url('../images/bg/bg1.png'); }
+main > section.section:nth-child(9)::before  { background-image: url('../images/bg/bg3.png'); }
+main > section.section:nth-child(11)::before { background-image: url('../images/bg/bg5.png'); }
+
+
+/* 4 ─ Card hover — lift + blue glow */
+.card {
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.card:hover {
+  border-color: var(--border-2);
+  box-shadow:
+    0 0 0 1px var(--border-2),
+    0 12px 40px rgba(0,0,0,0.5),
+    0 0 56px rgba(41,151,255,0.12);
+  transform: translateY(-6px);
+}
+.team-card-v {
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.team-card-v:hover {
+  border-color: var(--border-2);
+  box-shadow:
+    0 0 0 1px var(--border-2),
+    0 12px 36px rgba(0,0,0,0.5),
+    0 0 48px rgba(41,151,255,0.12);
+  transform: translateY(-6px);
+}
+.team-card {
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.team-card:hover {
+  border-color: var(--border-2);
+  box-shadow:
+    0 0 0 1px var(--border-2),
+    0 10px 32px rgba(0,0,0,0.45),
+    0 0 48px rgba(41,151,255,0.10);
+  transform: translateY(-4px);
+}
+
+/* 6 ─ Hero — remove colour tints, keep dark readability overlay */
+.hero-home .hero-overlay,
+.hero-dev .hero-overlay,
+.hero-about .hero-overlay,
+.hero-data .hero-overlay,
+.hero-report .hero-overlay {
+  background: linear-gradient(160deg, rgba(8,8,14,0.78) 0%, rgba(10,10,15,0.52) 65%, rgba(10,10,15,0.28) 100%);
+}
+
+/* 5 ─ Dot-grid background texture */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: -1;
+  background-image: radial-gradient(rgba(255,255,255,0.032) 1px, transparent 1px);
+  background-size: 26px 26px;
+  pointer-events: none;
 }
